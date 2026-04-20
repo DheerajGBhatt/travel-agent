@@ -1,0 +1,599 @@
+{
+  "conversations": [
+    {
+      "id": "conv_hotel_033",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "room_not_as_described",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "The room is NOTHING like the photos! I booked an ocean view room but I can barely see the water through a tiny window! Booking HO556677",
+          "timestamp": "2025-09-15T17:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry the room doesn't meet your expectations. Let me look at booking HO556677 and see how we can resolve this.",
+          "timestamp": "2025-09-15T17:31:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see you booked an Ocean View Room at the Hilton Miami Beach. You're currently checked in. Let me contact the hotel right now to see if we can move you to a room with a better ocean view... The hotel manager is checking availability now. One moment please.",
+          "timestamp": "2025-09-15T17:33:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I paid extra for an ocean view! This is unacceptable!",
+          "timestamp": "2025-09-15T17:34:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand your frustration. You paid for a specific experience and you should receive it. Good news - the hotel has a Deluxe Ocean View room available with floor-to-ceiling windows and a balcony overlooking the beach. They're offering to move you there at no additional charge. Would you like to accept this upgrade?",
+          "timestamp": "2025-09-15T17:36:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes! That sounds much better! When can I move?",
+          "timestamp": "2025-09-15T17:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "The room is being prepared now and will be ready in about 30 minutes. You can pick up new room keys from the front desk. The hotel will also send a bellhop to help transfer your luggage if needed. As an apology for the inconvenience, they're also providing complimentary breakfast for your entire stay. Does that work for you?",
+          "timestamp": "2025-09-15T17:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, that's much better. Thank you for fixing this quickly.",
+          "timestamp": "2025-09-15T17:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! I'm glad we could resolve this. The new room number will be provided at the front desk. I've noted your case as HC-HO556677. Enjoy your upgraded room and the ocean view you paid for!",
+          "timestamp": "2025-09-15T17:40:30Z"
+        }
+      ],
+      "resolution_summary": "Customer's ocean view room had obstructed view, not matching description. Agent contacted hotel, arranged free upgrade to Deluxe Ocean View with balcony plus complimentary breakfast as apology.",
+      "tags": ["room_not_as_described", "obstructed_view", "room_upgrade", "complimentary_amenity", "resolved"]
+    },
+    {
+      "id": "conv_hotel_034",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "cleanliness_issue",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "This hotel room is disgusting! There's hair in the bathroom, stains on the sheets, and the carpet looks filthy! Booking HC778899",
+          "timestamp": "2025-08-20T20:15:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm so sorry to hear about these cleanliness issues! That's completely unacceptable. Are you currently at the hotel? Let me help resolve this immediately.",
+          "timestamp": "2025-08-20T20:16:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes I just checked in 20 minutes ago at the Marriott Chicago. I do NOT want to stay in this room!",
+          "timestamp": "2025-08-20T20:17:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely understood. I'm contacting the hotel manager right now. You should not have to stay in an unclean room. Let me get you moved to a clean room immediately... The manager is personally inspecting a room for you now and will meet you at the front desk within 10 minutes. Can you go down to the lobby?",
+          "timestamp": "2025-08-20T20:19:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok I'm heading down now. But I'm really not happy about this experience.",
+          "timestamp": "2025-08-20T20:20:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand, and you have every right to be upset. While you're moving to the clean room, I'm also arranging: 1) 50% discount on your first night ($75 refund), 2) Complimentary room service dinner tonight up to $50, 3) Report to housekeeping management about the unacceptable room condition. The manager will provide the new room keys and dinner voucher when you arrive at the desk.",
+          "timestamp": "2025-08-20T20:22:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, that's better than nothing. I'm at the desk now.",
+          "timestamp": "2025-08-20T20:24:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! The manager should be with you any moment. Your compensation is confirmed: $75 refund + $50 dining credit. I've also flagged your account for VIP service for the remainder of your stay. Please let me know if you have any other issues. Case number is CL-HC778899.",
+          "timestamp": "2025-08-20T20:25:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "They just gave me new keys. I'll check if this room is acceptable. Thanks for handling this.",
+          "timestamp": "2025-08-20T20:26:15Z"
+        }
+      ],
+      "resolution_summary": "Customer found room with severe cleanliness issues (hair, stains, dirty carpet). Agent arranged immediate room change, 50% first night discount, $50 dining credit, and VIP service flag.",
+      "tags": ["cleanliness_issue", "unacceptable_condition", "immediate_room_change", "substantial_compensation", "resolved"]
+    },
+    {
+      "id": "conv_hotel_035",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "noisy_room",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I can't sleep! My room is right next to the elevator and it's SO loud! It's 11pm and I have an early meeting tomorrow! Booking HN445588",
+          "timestamp": "2025-09-08T23:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry about the noise disrupting your sleep! Let me help you get moved to a quieter room right away. Looking at booking HN445588.",
+          "timestamp": "2025-09-08T23:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're at the Westin Boston for 2 more nights. I'm contacting the front desk now to arrange a room change to a quiet location away from elevators... They have a room available on a higher floor at the end of the hallway - much quieter. They can move you right now if you'd like, or first thing tomorrow morning. Your preference?",
+          "timestamp": "2025-09-08T23:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Can they really move me at 11pm at night? I don't want to pack everything now but I also need sleep!",
+          "timestamp": "2025-09-08T23:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand the dilemma. Here's what they're offering: They'll move you now if you want, and they'll send a bellhop to help with your luggage so you don't have to carry anything. Or, they can move you first thing at 7:00 AM before your meeting. They're also providing earplugs and a white noise machine for tonight. What would work better for you?",
+          "timestamp": "2025-09-08T23:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Let's do it now with the bellhop help. I don't think I can sleep here anyway.",
+          "timestamp": "2025-09-08T23:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Smart decision. The front desk is preparing your new room keys right now (Room 1247 - corner room, very quiet). A bellhop will be at your current room within 5 minutes to help move your belongings. As an apology, they're also crediting your account $50 that will come off your final bill. Your booking reference remains HN445588.",
+          "timestamp": "2025-09-08T23:08:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok good. Someone's knocking, must be the bellhop. Thanks for the quick help.",
+          "timestamp": "2025-09-08T23:10:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! I hope you get good rest in the new quiet room. Good luck with your morning meeting!",
+          "timestamp": "2025-09-08T23:10:30Z"
+        }
+      ],
+      "resolution_summary": "Customer couldn't sleep due to noisy room near elevator at 11 PM. Agent arranged immediate late-night room change with bellhop assistance to quiet corner room, plus $50 account credit.",
+      "tags": ["noise_complaint", "elevator_noise", "late_night_room_change", "sleep_disruption", "resolved"]
+    },
+    {
+      "id": "conv_hotel_036",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "ac_not_working",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "The AC in my room isn't working and it's 85 degrees! It's like a sauna in here! Booking HA889900",
+          "timestamp": "2025-08-28T16:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's terrible, especially in the summer heat! Let me get maintenance sent to your room immediately. Looking at booking HA889900.",
+          "timestamp": "2025-08-28T16:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're at the Hilton Orlando. I'm calling the hotel right now to dispatch maintenance... They're sending someone within 15 minutes. In the meantime, would you like them to bring a fan to your room? And if the AC can't be fixed quickly, we'll move you to a different room.",
+          "timestamp": "2025-08-28T16:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes send the fan! I'm sweating! How long will maintenance take to fix it?",
+          "timestamp": "2025-08-28T16:33:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "The fan is being brought up now. Maintenance will assess the AC within 15 minutes. If it's a quick fix (like thermostat reset), it could be working in 20 minutes. If it requires parts or more extensive repair, we'll move you to a working room immediately. I won't keep you in a hot room. Let me stay on this case - can you text or call me back in 20 minutes with an update after maintenance arrives?",
+          "timestamp": "2025-08-28T16:35:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, I'll message back. The fan just arrived at least.",
+          "timestamp": "2025-08-28T16:36:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Good! I'm keeping your case active (AC-HA889900) and monitoring. If you don't message back in 30 minutes, I'll call the hotel to check on the repair status. Stay as cool as you can!",
+          "timestamp": "2025-08-28T16:37:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "[20 minutes later] Hey, maintenance fixed it! AC is working now. It was a thermostat issue. Room is cooling down.",
+          "timestamp": "2025-08-28T16:57:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent! I'm glad it was a quick fix. As an apology for the discomfort, the hotel is crediting your account $40. You should feel the temperature drop significantly in the next 30 minutes. If you have any other issues, please don't hesitate to reach out!",
+          "timestamp": "2025-08-28T16:58:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thanks for following up quickly. Much better now.",
+          "timestamp": "2025-08-28T16:58:30Z"
+        }
+      ],
+      "resolution_summary": "Customer's AC not working in summer heat. Agent dispatched maintenance within 15 minutes, arranged fan delivery, monitored repair (thermostat fix), provided $40 credit for inconvenience.",
+      "tags": ["ac_not_working", "maintenance_issue", "immediate_response", "summer_heat", "resolved"]
+    },
+    {
+      "id": "conv_hotel_037",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "overbooking_situation",
+      "resolution_status": "escalated",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I just arrived at the hotel and they're saying they don't have my room! They're overbooked! I have a confirmation! Booking HV667788",
+          "timestamp": "2025-09-20T18:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "This is unacceptable! You have a confirmed reservation and they must honor it. Let me intervene immediately. Looking at booking HV667788 now.",
+          "timestamp": "2025-09-20T18:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Marriott San Diego is confirmed for tonight through September 23rd. I'm calling the hotel manager directly right now... Please stay on the line or at the front desk. This should not be your problem to solve.",
+          "timestamp": "2025-09-20T18:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm exhausted from traveling all day! This is ridiculous!",
+          "timestamp": "2025-09-20T18:03:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand your frustration. I'm speaking with the manager now... They don't have rooms available at this location, but they're arranging to accommodate you at their sister property (Marriott Gaslamp) 2 blocks away. It's actually a nicer hotel. They'll: 1) Cover the rate difference (normally $50/night more), 2) Provide free transportation, 3) Comp your first night, and 4) Give you $100 dining credit. Is that acceptable or would you prefer a different solution?",
+          "timestamp": "2025-09-20T18:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't want to deal with another hotel! Can't they find me a room HERE?",
+          "timestamp": "2025-09-20T18:07:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I pushed back hard on that. The manager confirmed this location is completely full with no options until tomorrow afternoon. Here's what else I can offer: If you accept the sister property tonight, tomorrow they guarantee to move you back to the original hotel in an upgraded suite for the remaining 2 nights at no extra charge. Or, I can find you a completely different hotel of your choice nearby. What would you prefer?",
+          "timestamp": "2025-09-20T18:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Fine. I'll take the Gaslamp tonight and then the suite here for the other nights. But this better all be confirmed!",
+          "timestamp": "2025-09-20T18:10:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely. I'm documenting everything: Tonight at Marriott Gaslamp (free night + $100 dining credit + transportation). Sept 21-23 at Marriott San Diego in an upgraded suite (no extra charge). The hotel is preparing a written confirmation now. Your case is escalated as OB-HV667788. The manager will personally handle your check-in at Gaslamp. I apologize this happened to you.",
+          "timestamp": "2025-09-20T18:12:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright. Thank you for fighting for me on this.",
+          "timestamp": "2025-09-20T18:13:00Z"
+        }
+      ],
+      "resolution_summary": "Hotel overbooked, couldn't accommodate confirmed reservation. Agent escalated, arranged sister property for first night (comped + dining credit), guaranteed suite upgrade at original hotel for remaining nights.",
+      "tags": ["overbooking", "confirmed_reservation_denied", "escalated", "alternative_accommodation", "substantial_compensation"]
+    },
+    {
+      "id": "conv_hotel_038",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "poor_service",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "The front desk staff was extremely rude to me! When I asked about late checkout they rolled their eyes and were dismissive! Booking HS889922",
+          "timestamp": "2025-09-15T09:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry you experienced rude service. That's not acceptable at all. Let me look into this and speak with management. Can you tell me approximately what time this happened and if you remember the staff member's name?",
+          "timestamp": "2025-09-15T09:01:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "It was about 20 minutes ago, around 8:40am. I didn't catch the name but it was a young guy with glasses at the front desk.",
+          "timestamp": "2025-09-15T09:02:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Thank you for the details. I'm contacting the hotel manager at the Hilton Boston right now to report this incident... The manager is very apologetic and wants to speak with you personally to address this. Would you be comfortable with them calling your room, or would you prefer to handle this through me?",
+          "timestamp": "2025-09-15T09:04:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't need to talk to them. I just want an apology and for them to know this is unacceptable. And I still need late checkout!",
+          "timestamp": "2025-09-15T09:05:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Understood. The manager sends their sincere apology and is addressing the staff behavior internally. For your late checkout: They're providing complimentary late checkout until 4:00 PM (normally $50) as an apology gesture. They've also credited your account $75 for the poor service experience. Is there anything else I can do to help?",
+          "timestamp": "2025-09-15T09:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's better. I just don't want to be treated like an inconvenience when I'm a paying guest.",
+          "timestamp": "2025-09-15T09:08:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're absolutely right. You deserve respectful service. Your late checkout until 4:00 PM is confirmed and the $75 credit will show on your final bill. I've documented this incident as PS-HS889922. If you experience any other issues during your stay, please contact me directly.",
+          "timestamp": "2025-09-15T09:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, thank you for handling this.",
+          "timestamp": "2025-09-15T09:10:00Z"
+        }
+      ],
+      "resolution_summary": "Customer experienced rude front desk service when requesting late checkout. Agent reported to management, secured free late checkout until 4 PM (normally $50), and $75 account credit.",
+      "tags": ["poor_service", "rude_staff", "front_desk_complaint", "service_recovery", "resolved"]
+    },
+    {
+      "id": "conv_hotel_039",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "missing_amenities",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "The hotel description said there's a pool and gym but both are closed for renovation! I specifically booked this hotel for those amenities! Booking HM556688",
+          "timestamp": "2025-08-30T15:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand how frustrating that is, especially if those amenities were important to your booking decision. Let me look into booking HM556688 and see what we can do.",
+          "timestamp": "2025-08-30T15:01:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're at the Sheraton Atlanta for 3 nights. The pool and gym closure should have been disclosed during booking. Let me check if this information was visible... I don't see any renovation notice on the booking confirmation. This is a significant omission. Are you currently checked in?",
+          "timestamp": "2025-08-30T15:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes I just checked in. I wanted to use the pool after my flight but there's a sign saying it's closed!",
+          "timestamp": "2025-08-30T15:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm contacting the hotel manager now to discuss options... They acknowledge this should have been disclosed. Here's what they're offering: 1) Free access to a nearby partner gym (5 min walk) for your entire stay, 2) 30% discount on your total booking ($135 refund), or 3) Cancel tonight penalty-free and rebook at a different hotel with working amenities. Which would you prefer?",
+          "timestamp": "2025-08-30T15:07:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't want to pack up and move. I'll take the gym access and the discount. But I really wanted a pool!",
+          "timestamp": "2025-08-30T15:08:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand. Let me see if they can do better... The hotel is adding pool access to their rooftop partner hotel (Westin, 2 blocks away) in addition to the gym access and 30% refund. You'll receive access passes at the front desk. The total compensation is $135 refund plus full fitness/pool access at better facilities. Does that help?",
+          "timestamp": "2025-08-30T15:10:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, that's much better! As long as I can use a pool I'm happy.",
+          "timestamp": "2025-08-30T15:11:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! The front desk is preparing your access passes now. The $135 refund will process within 5-7 days. Case reference is MA-HM556688. I apologize again for the lack of disclosure about the closures.",
+          "timestamp": "2025-08-30T15:12:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thanks for resolving this quickly!",
+          "timestamp": "2025-08-30T15:13:00Z"
+        }
+      ],
+      "resolution_summary": "Pool and gym closed for renovation, not disclosed at booking. Agent secured partner facility access (gym + pool at nearby hotels), plus 30% refund ($135) for undisclosed amenity closures.",
+      "tags": ["missing_amenities", "undisclosed_closure", "partner_facility_access", "partial_refund", "resolved"]
+    },
+    {
+      "id": "conv_hotel_040",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "wifi_not_working",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "The WiFi isn't working! I need to work remotely and I can't connect at all! Booking HW778822",
+          "timestamp": "2025-09-18T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand how critical internet is for remote work. Let me help troubleshoot and get this fixed immediately. Looking at booking HW778822.",
+          "timestamp": "2025-09-18T14:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're at the Marriott Chicago. Let me contact their IT team right away... They're aware of a WiFi outage affecting several rooms on floors 8-10. Which floor are you on?",
+          "timestamp": "2025-09-18T14:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm on floor 9! When will it be fixed?? I have a video call in 30 minutes!",
+          "timestamp": "2025-09-18T14:03:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "IT is working on it but estimates 60-90 minutes for repair. Since you have an urgent call in 30 minutes, let me arrange immediate alternatives: 1) Move you to a room on a different floor with working WiFi, or 2) Use the business center with guaranteed high-speed internet and private work pods. Which would work better for your call?",
+          "timestamp": "2025-09-18T14:05:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't want to move rooms. The business center would work if it's private and quiet.",
+          "timestamp": "2025-09-18T14:05:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm reserving a private work pod in the business center for you from 2:30-5:00 PM (no charge). It has a desk, chair, power outlets, and dedicated WiFi. The business center is on the 2nd floor. I'm also having IT prioritize the repair of your floor's WiFi and they'll call your room when it's fixed. Additionally, they're waiving your WiFi premium fee ($15/day) for the inconvenience.",
+          "timestamp": "2025-09-18T14:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok good. I'm heading down to the business center now. Thank you for the quick solution.",
+          "timestamp": "2025-09-18T14:08:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! The business center staff is expecting you. Your work pod reservation is confirmed. If you have any other issues, your case number is WF-HW778822. Good luck with your call!",
+          "timestamp": "2025-09-18T14:09:00Z"
+        }
+      ],
+      "resolution_summary": "WiFi outage on customer's floor with urgent remote work needs. Agent reserved private business center work pod for video call, waived WiFi fees, prioritized floor repair.",
+      "tags": ["wifi_not_working", "remote_work", "urgent_need", "business_center", "fee_waiver"]
+    },
+    {
+      "id": "conv_hotel_041",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "safety_concern",
+      "resolution_status": "escalated",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "The lock on my hotel room door is broken! It doesn't fully latch! This is a safety issue! Booking HR445599",
+          "timestamp": "2025-09-22T21:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "This is a serious safety concern! Let me get this addressed immediately. Are you currently in the room? Looking at booking HR445599 now.",
+          "timestamp": "2025-09-22T21:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm calling the hotel security and management right now. You should not stay in a room with a faulty lock. Please go to the lobby immediately if you feel unsafe, or wait in the room with someone if you're not alone. Help is being dispatched.",
+          "timestamp": "2025-09-22T21:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm traveling alone and it's 9pm! I don't feel safe! Can they fix it now or do I need a new room?",
+          "timestamp": "2025-09-22T21:03:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Security and maintenance are coming to your room within 5 minutes. If the lock can't be fixed immediately, they will move you to a secure room right away. I'm staying on this case until you're safely in a room with a working lock. The hotel manager is also being notified of this safety violation. Are you comfortable waiting 5 minutes or would you prefer to go to the lobby now?",
+          "timestamp": "2025-09-22T21:05:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'll wait the 5 minutes. I have the deadbolt on and I pushed a chair against the door.",
+          "timestamp": "2025-09-22T21:05:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's good thinking. Security should be knocking any moment - they'll identify themselves. I'm remaining online. Also, regardless of whether they fix it or move you, the hotel will: 1) Fully comp tonight's stay, 2) Provide a room upgrade for your remaining nights, 3) File a maintenance report on the faulty lock. Your safety is the absolute priority. Can you text me when security arrives?",
+          "timestamp": "2025-09-22T21:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "[5 minutes later] Security just looked at it. They're moving me to a suite on a higher floor with verified working locks. Moving now.",
+          "timestamp": "2025-09-22T21:12:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent! I'm glad they're taking this seriously. Your entire stay will be refunded (3 nights, $540 total) due to the safety violation. This will process within 3-5 business days. Please confirm once you're in the new secure room. Case is escalated as SF-HR445599.",
+          "timestamp": "2025-09-22T21:13:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm in the new suite now. Lock works perfectly. They tested it multiple times. Thank you for taking this seriously and staying with me.",
+          "timestamp": "2025-09-22T21:18:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome. I'm glad you're safe now. That situation should never have happened. If you have any other concerns during your stay, please don't hesitate to contact me immediately.",
+          "timestamp": "2025-09-22T21:18:45Z"
+        }
+      ],
+      "resolution_summary": "Broken door lock creating safety concern for solo female traveler at night. Agent dispatched security/maintenance immediately, arranged room move to suite, fully comped entire stay ($540) for safety violation.",
+      "tags": ["safety_concern", "broken_lock", "security_issue", "immediate_response", "full_refund"]
+    },
+    {
+      "id": "conv_hotel_042",
+      "category": "hotels",
+      "subcategory": "complaint",
+      "issue_type": "unexpected_charges",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I was charged a $150 \"incidental hold\" at check-in that I wasn't told about! When do I get that back? Booking HI667799",
+          "timestamp": "2025-09-10T16:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me explain what this charge is and when you'll see it released. Looking at booking HI667799.",
+          "timestamp": "2025-09-10T16:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "The $150 is a temporary authorization hold (not an actual charge) for incidentals like room service, minibar, or damages. It's standard hotel policy but should have been disclosed at booking and check-in. You checked in today at the Marriott Denver. This hold will be released 3-7 days after you check out on September 13th, as long as there are no actual incidental charges.",
+          "timestamp": "2025-09-10T16:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "But it shows as \"pending\" on my credit card and I only have $500 available credit! This is a problem!",
+          "timestamp": "2025-09-10T16:04:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand how this affects your available credit. Let me see if we can reduce or remove the hold... I'm speaking with the hotel accounting now. If you provide a different card specifically for the incidental hold, or if you prepay your estimated room charges, they can release the $150 hold on your main card. Would either of those options work?",
+          "timestamp": "2025-09-10T16:06:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I can give a different card for incidentals. That would free up my main card?",
+          "timestamp": "2025-09-10T16:07:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes! If you provide a different card for the incidental hold, they'll release the $150 hold from your original card within 24 hours. You can update this at the front desk. I'm also having them note your account that the hold policy should have been explained more clearly, and they're providing a $25 credit for the confusion. Your room charges will still go to your original card as planned.",
+          "timestamp": "2025-09-10T16:09:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok I'll go to the front desk now. Thanks for clarifying this.",
+          "timestamp": "2025-09-10T16:09:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! The front desk is expecting you to swap the incidental hold to a different card. The $150 release should show as pending within 24 hours, then fully released in 3-5 days. Your $25 credit will apply to your final bill. Case number is IC-HI667799.",
+          "timestamp": "2025-09-10T16:10:30Z"
+        }
+      ],
+      "resolution_summary": "Customer surprised by $150 incidental hold affecting credit limit. Agent explained authorization vs charge, arranged to move hold to different card, provided $25 credit for poor disclosure.",
+      "tags": ["unexpected_charge", "incidental_hold", "authorization", "credit_limit_impact", "resolved"]
+    }
+  ]
+}

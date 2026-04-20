@@ -1,0 +1,39 @@
+{
+  "name": "travel-agency-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "vitest run",
+    "sam:build": "sam build",
+    "sam:deploy": "sam deploy --no-confirm-changeset --no-fail-on-empty-changeset"
+  },
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^2.10.0",
+    "@aws-sdk/client-apigatewaymanagementapi": "^3.1030.0",
+    "@aws-sdk/client-bedrock-agent-runtime": "^3.658.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.1030.0",
+    "@aws-sdk/client-dynamodb": "^3.658.0",
+    "@aws-sdk/client-rds": "^3.658.0",
+    "@aws-sdk/client-s3vectors": "^3.1030.0",
+    "@aws-sdk/lib-dynamodb": "^3.658.0",
+    "@middy/core": "^5.5.0",
+    "@middy/http-error-handler": "^5.5.0",
+    "@middy/http-json-body-parser": "^5.5.0",
+    "@neondatabase/serverless": "^0.10.1",
+    "drizzle-orm": "^0.36.4",
+    "ws": "^8.18.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.145",
+    "@types/node": "^22.7.0",
+    "@types/ws": "^8.5.12",
+    "drizzle-kit": "^0.28.1",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0",
+    "vitest": "^2.1.0"
+  }
+}

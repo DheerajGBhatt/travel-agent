@@ -1,0 +1,579 @@
+{
+  "conversations": [
+    {
+      "id": "conv_flight_001",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "payment_failed_amount_deducted",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi, I tried booking a flight to New York but the payment failed. However, $520 has been deducted from my account! Booking ref: FL234567",
+          "timestamp": "2025-09-15T14:23:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'm sorry to hear about this issue. Let me check booking FL234567 for you right away. Can you please confirm the last 4 digits of the card used for payment?",
+          "timestamp": "2025-09-15T14:24:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "it's 4521. The money was taken but I never got confirmation",
+          "timestamp": "2025-09-15T14:25:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Thank you. I can see the payment was authorized but the booking wasn't completed due to a technical timeout. The $520 is on a temporary hold and will be automatically released by your bank within 3-5 business days. Would you like me to help you rebook the same flight now?",
+          "timestamp": "2025-09-15T14:27:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please. But how do I know it won't charge me twice?",
+          "timestamp": "2025-09-15T14:28:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's a valid concern. I've verified that no booking was created with the previous transaction, so you won't be charged twice. I'll create a new booking now and monitor it through completion. The flight is JFK-LAX departing Oct 5th at 9:30 AM, correct?",
+          "timestamp": "2025-09-15T14:29:45Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes thats right",
+          "timestamp": "2025-09-15T14:30:20Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've successfully completed your booking. Your new confirmation number is FL987234. You'll receive an email confirmation within the next 5 minutes. I've also added a note to expedite the release of the held amount. Is there anything else I can help with?",
+          "timestamp": "2025-09-15T14:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's all. Thanks for the help!",
+          "timestamp": "2025-09-15T14:33:45Z"
+        }
+      ],
+      "resolution_summary": "Payment authorization hold occurred without booking completion. Agent explained the temporary hold would be released in 3-5 days and successfully completed a new booking without double charging.",
+      "tags": ["payment_hold", "booking_failure", "technical_issue", "rebooking", "resolved"]
+    },
+    {
+      "id": "conv_flight_002",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "confirmation_not_received",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked a flight 2 hours ago but haven't received any confirmation email. Booking number BK445678",
+          "timestamp": "2025-08-22T11:15:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hi there! Let me look into booking BK445678 for you. Could you please provide the email address you used for the booking?",
+          "timestamp": "2025-08-22T11:16:20Z"
+        },
+        {
+          "role": "customer",
+          "content": "sarah.martinez@email.com",
+          "timestamp": "2025-08-22T11:17:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Thank you, Sarah. I've located your booking for London to Paris on September 10th. The booking is confirmed in our system. Let me check your email address - I notice it shows sarah.martines@email.com (with an 's' instead of 'z'). Did you perhaps mistype it during checkout?",
+          "timestamp": "2025-08-22T11:19:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Oh no! Yes I must have mistyped. Can you fix it?",
+          "timestamp": "2025-08-22T11:19:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I've updated your email to sarah.martinez@email.com and I'm resending the confirmation now. You should receive it within the next 2-3 minutes. Please check your spam folder as well, just in case.",
+          "timestamp": "2025-08-22T11:21:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Got it! Thank you so much!",
+          "timestamp": "2025-08-22T11:23:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome, Sarah! Have a wonderful trip to Paris. If you need anything else, feel free to reach out!",
+          "timestamp": "2025-08-22T11:24:00Z"
+        }
+      ],
+      "resolution_summary": "Customer didn't receive booking confirmation due to typo in email address. Agent corrected the email and resent confirmation successfully.",
+      "tags": ["confirmation_email", "email_typo", "booking_confirmed", "quick_resolution"]
+    },
+    {
+      "id": "conv_flight_003",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "wrong_passenger_name",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "URGENT! I just booked a flight but realized I entered the wrong name! I put Robert instead of Robertson for the last name. Flight is tomorrow! Booking: TX778899",
+          "timestamp": "2025-10-18T20:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I understand this is urgent. Let me pull up booking TX778899 immediately. I can see the flight to Miami departing tomorrow at 2:15 PM. Can you confirm the correct full name as it appears on your ID?",
+          "timestamp": "2025-10-18T20:46:15Z"
+        },
+        {
+          "role": "customer",
+          "content": "It should be Michael Robertson not Michael Robert. Will I be able to board??",
+          "timestamp": "2025-10-18T20:47:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Don't worry, Michael. Since this is a minor spelling variation of the last name (Robert vs Robertson), I can submit a name correction request right now. For United Airlines, minor corrections like this are typically processed within 2-4 hours. I'm flagging this as priority given your departure time tomorrow.",
+          "timestamp": "2025-10-18T20:49:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok thank you. Is there a fee for this?",
+          "timestamp": "2025-10-18T20:49:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "For minor name corrections like yours (adding missing letters in the last name), most airlines including United don't charge a fee as long as it's done before check-in. I've submitted the correction with priority status. You'll receive an email confirmation once it's processed, likely within the next 2 hours. I recommend checking in online once you receive that confirmation.",
+          "timestamp": "2025-10-18T20:51:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "What if it doesn't get processed in time?",
+          "timestamp": "2025-10-18T20:52:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "If you don't receive confirmation by 8 AM tomorrow, please call our 24/7 support line at 1-800-555-0199 and mention case number NC-778899-10. The airport staff can also process minor name corrections, but it's better to have it done beforehand. I'm confident it will be processed tonight though.",
+          "timestamp": "2025-10-18T20:54:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, thank you for the quick help!",
+          "timestamp": "2025-10-18T20:54:45Z"
+        }
+      ],
+      "resolution_summary": "Customer entered wrong last name variation (Robert vs Robertson) for next-day flight. Agent submitted priority name correction request with no fee, provided case number and backup plan.",
+      "tags": ["name_correction", "urgent", "minor_spelling", "priority_request", "next_day_flight"]
+    },
+    {
+      "id": "conv_flight_004",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "duplicate_booking",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi I think I accidentally created two bookings for the same flight. Can you check? My email is j.chen@email.com",
+          "timestamp": "2025-07-30T09:12:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'd be happy to check that for you. Let me search for bookings under j.chen@email.com. One moment please.",
+          "timestamp": "2025-07-30T09:13:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see two bookings: KL556677 and KL556688, both for Seattle to Denver on August 15th at 1:45 PM. You're right - these are duplicates. Were you double-charged for both?",
+          "timestamp": "2025-07-30T09:14:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes! The page was loading slow so I clicked book again and it must have gone through twice. I only need one ticket.",
+          "timestamp": "2025-07-30T09:15:20Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's understandable - system delays can cause this. I'll cancel booking KL556688 and process a full refund for $287. Your confirmed booking KL556677 will remain active. The refund will be processed to your original payment method within 5-7 business days.",
+          "timestamp": "2025-07-30T09:17:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect. Will I get a cancellation confirmation?",
+          "timestamp": "2025-07-30T09:17:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes, you'll receive two emails: one confirming the cancellation of KL556688, and another confirming the refund initiation with a transaction reference number. Both should arrive within 15 minutes. Is there anything else I can help you with today?",
+          "timestamp": "2025-07-30T09:18:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's all, thanks!",
+          "timestamp": "2025-07-30T09:19:00Z"
+        }
+      ],
+      "resolution_summary": "Customer accidentally created duplicate booking due to slow page load. Agent cancelled duplicate booking and processed full refund of $287 to original payment method.",
+      "tags": ["duplicate_booking", "refund", "system_issue", "quick_resolution", "cancellation"]
+    },
+    {
+      "id": "conv_flight_005",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "promo_code_not_applied",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I just booked a flight but my promo code SUMMER25 didn't apply! It said 25% off but I was charged full price. Booking MN334455",
+          "timestamp": "2025-08-05T16:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hi there! I apologize for the inconvenience. Let me check booking MN334455 and the SUMMER25 promo code right away.",
+          "timestamp": "2025-08-05T16:31:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking for Boston to Chicago on August 20th at $340. The SUMMER25 code is valid, but I notice it has specific terms: 25% off for bookings above $400. Your base fare was $340, which is just under the threshold. The terms are mentioned in the fine print of the promotion.",
+          "timestamp": "2025-08-05T16:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's so misleading! The ad didn't make that clear at all. This is frustrating.",
+          "timestamp": "2025-08-05T16:34:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand your frustration, and I apologize that the terms weren't clearer upfront. Let me see what I can do to help. Would you be interested in upgrading to a flexible fare or adding checked baggage? That would bring your total above $400 and activate the 25% discount.",
+          "timestamp": "2025-08-05T16:35:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't need flexible fare but I do need to check a bag. How much is that?",
+          "timestamp": "2025-08-05T16:36:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Checked baggage is $35 for the first bag. If I add that, your new total would be $375, then with 25% off it becomes $281.25. So you'd save about $94 total and get your bag checked. Shall I modify your booking?",
+          "timestamp": "2025-08-05T16:38:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Wait that doesn't add up. 340 + 35 = 375, and 25% off would be about $94 off, so $281? That works! Yes please do it.",
+          "timestamp": "2025-08-05T16:39:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Exactly right! I've added the checked bag and applied the SUMMER25 code. Your new total is $281.25 - that's a savings of $93.75. You'll receive an updated confirmation email shortly with the baggage included. The difference of $58.75 will be refunded to your original payment method within 3-5 days.",
+          "timestamp": "2025-08-05T16:41:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great, thank you for working that out!",
+          "timestamp": "2025-08-05T16:41:45Z"
+        }
+      ],
+      "resolution_summary": "Promo code didn't apply due to minimum purchase threshold. Agent creatively resolved by adding checked baggage customer needed, enabling discount and resulting in overall savings.",
+      "tags": ["promo_code", "minimum_threshold", "creative_solution", "baggage", "discount_applied"]
+    },
+    {
+      "id": "conv_flight_006",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "seat_selection_issue",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hello, I'm trying to select seats for my booking but the website keeps giving me an error. Booking ref: AA998877",
+          "timestamp": "2025-09-28T10:20:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'm sorry you're experiencing this issue. Let me help you with seat selection for booking AA998877. Could you tell me which seats you'd like?",
+          "timestamp": "2025-09-28T10:21:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I want aisle seats for both passengers. We're flying Dallas to Orlando on Oct 12",
+          "timestamp": "2025-09-28T10:22:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I can see your booking for two passengers. Looking at the seat map for your flight AA425 on October 12th, I have several aisle seat options available. Would you prefer to sit together (like 15C and 15D) or separate aisle seats?",
+          "timestamp": "2025-09-28T10:24:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Together please, but both aisle if possible?",
+          "timestamp": "2025-09-28T10:24:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand you want to sit together with aisle access. Since this is a single-aisle aircraft, I can offer you seats 15C and 15D - these are on opposite sides of the plane but in the same row, so you'll be across from each other with both aisle seats. Would that work?",
+          "timestamp": "2025-09-28T10:26:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Oh I see. Yes that's perfect actually!",
+          "timestamp": "2025-09-28T10:26:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent! I've assigned seats 15C and 15D to your booking. You'll receive an updated confirmation email with your seat assignments. The technical issue you encountered has been reported to our IT team. Is there anything else I can help with?",
+          "timestamp": "2025-09-28T10:28:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Nope that's all. Thanks for the help!",
+          "timestamp": "2025-09-28T10:28:30Z"
+        }
+      ],
+      "resolution_summary": "Customer couldn't select seats due to website error. Agent manually assigned opposite aisle seats in same row per customer's preference and reported technical issue.",
+      "tags": ["seat_selection", "website_error", "manual_assignment", "aisle_seats", "resolved"]
+    },
+    {
+      "id": "conv_flight_007",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "unable_to_add_baggage",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi, I'm trying to add checked baggage to my booking but can't find the option. Booking PQ776655",
+          "timestamp": "2025-08-12T14:10:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I can help you add checked baggage to booking PQ776655. Let me pull up your reservation.",
+          "timestamp": "2025-08-12T14:11:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see your booking for San Francisco to Las Vegas on August 25th. You booked a Basic Economy fare, which typically requires baggage to be added during initial booking. However, I can add it for you now. How many checked bags do you need?",
+          "timestamp": "2025-08-12T14:12:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Just one bag. How much will it cost?",
+          "timestamp": "2025-08-12T14:13:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "For this route on Southwest Airlines, your first checked bag is actually included free with your fare! I can add it to your booking right now at no extra charge. Would you like me to do that?",
+          "timestamp": "2025-08-12T14:14:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Oh great! Yes please add it.",
+          "timestamp": "2025-08-12T14:14:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Done! I've added one checked bag (up to 50 lbs) to your booking at no charge. You'll see this reflected in your updated confirmation email. Just make sure to check in at least 2 hours before departure. Anything else I can assist with today?",
+          "timestamp": "2025-08-12T14:16:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's perfect. Thank you!",
+          "timestamp": "2025-08-12T14:16:30Z"
+        }
+      ],
+      "resolution_summary": "Customer couldn't find option to add baggage online. Agent added complimentary checked bag to Southwest booking and explained weight limits and check-in requirements.",
+      "tags": ["baggage", "southwest", "free_baggage", "basic_economy", "resolved"]
+    },
+    {
+      "id": "conv_flight_008",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "payment_method_declined",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My card keeps getting declined but I know there's money in the account! I'm trying to book a flight for tmrw and prices keep going up!",
+          "timestamp": "2025-10-03T22:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand how stressful this must be, especially with a flight tomorrow. Let me help you complete this booking. Which route are you trying to book?",
+          "timestamp": "2025-10-03T22:46:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Phoenix to Seattle, leaving tomorrow afternoon. The price was $210 now its $245!",
+          "timestamp": "2025-10-03T22:46:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me see if I can help. Card declines for online travel bookings are often due to fraud protection triggers, especially for last-minute purchases. Have you tried contacting your bank to authorize the transaction?",
+          "timestamp": "2025-10-03T22:48:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No I didn't think of that. But the bank is closed now. Can you hold the $210 price for me?",
+          "timestamp": "2025-10-03T22:48:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can't guarantee the exact price, but let me check alternative options. Do you have another card you could try? Or would you be able to use PayPal, Apple Pay, or another payment method?",
+          "timestamp": "2025-10-03T22:49:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I have PayPal! Can we try that?",
+          "timestamp": "2025-10-03T22:50:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I can create a booking link for you with PayPal as the payment option. The current price for Phoenix to Seattle tomorrow at 3:15 PM is $245. Let me generate a secure payment link that will hold this price for 15 minutes. One moment.",
+          "timestamp": "2025-10-03T22:51:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I've created a priority booking link and sent it to your email. This link will hold the $245 fare for 15 minutes and includes PayPal as a payment option. Please complete the payment within this window to secure the rate.",
+          "timestamp": "2025-10-03T22:53:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Got it! Paying now... OK it worked! Booking number is VX445566. Thank you so much!",
+          "timestamp": "2025-10-03T22:55:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent! I'm so glad it worked. Your booking VX445566 is confirmed for tomorrow at 3:15 PM. Have a great flight, and for future bookings, you might want to notify your bank about travel purchases to avoid declines.",
+          "timestamp": "2025-10-03T22:56:15Z"
+        }
+      ],
+      "resolution_summary": "Customer's card was repeatedly declined for last-minute booking. Agent explained fraud protection triggers, offered alternative payment methods, created priority booking link with PayPal option, successfully completing purchase.",
+      "tags": ["payment_declined", "fraud_protection", "paypal", "last_minute_booking", "alternative_payment"]
+    },
+    {
+      "id": "conv_flight_009",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "booking_error_incorrect_date",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need help ASAP. I just realized I booked my flight for September 3rd but I need September 30th! Can this be fixed?? Booking RT889900",
+          "timestamp": "2025-08-28T19:20:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I understand the urgency. Let me look at booking RT889900 right away. I'll check what options we have for changing the date.",
+          "timestamp": "2025-08-28T19:21:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking for Atlanta to Denver on September 3rd with Delta Airlines. You purchased a Main Cabin fare which allows changes. I can modify this to September 30th. There will be a fare difference if the price has changed. Let me check availability and pricing for September 30th.",
+          "timestamp": "2025-08-28T19:23:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "How much more will it cost?",
+          "timestamp": "2025-08-28T19:23:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Good news! The September 30th flight at a similar departure time (2:45 PM) is actually $15 cheaper than what you paid. So I can change your date and issue you a $15 credit to your original payment method. Would you like me to proceed?",
+          "timestamp": "2025-08-28T19:25:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Really? That's amazing! Yes please change it!",
+          "timestamp": "2025-08-28T19:25:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've changed your flight to September 30th at 2:45 PM. Your booking reference remains RT889900. You'll receive an updated confirmation email with the new flight details, and the $15 difference will be refunded within 5-7 business days. All your seat selections and baggage allowances remain the same.",
+          "timestamp": "2025-08-28T19:27:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much! I was so worried I'd have to pay a huge fee.",
+          "timestamp": "2025-08-28T19:28:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! I'm glad we could resolve this smoothly. Since you booked a Main Cabin fare, you have flexibility for changes. Have a great flight on September 30th!",
+          "timestamp": "2025-08-28T19:28:45Z"
+        }
+      ],
+      "resolution_summary": "Customer booked wrong date (September 3 instead of 30). Agent changed date successfully, and new flight was cheaper, resulting in $15 refund instead of change fee.",
+      "tags": ["date_change", "booking_error", "main_cabin", "fare_difference_refund", "resolved"]
+    },
+    {
+      "id": "conv_flight_010",
+      "category": "flights",
+      "subcategory": "booking",
+      "issue_type": "special_assistance_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi, I just booked a flight but forgot to add that I need wheelchair assistance. Can you help? Booking CD112233",
+          "timestamp": "2025-09-10T15:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Absolutely, I can add wheelchair assistance to your booking. Let me pull up CD112233. Could you please let me know what type of assistance you need - wheelchair for the full journey, only to/from the gate, or just for long distances?",
+          "timestamp": "2025-09-10T15:31:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I can walk short distances but need wheelchair from check-in to gate and then gate to gate for my connection",
+          "timestamp": "2025-09-10T15:32:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Thank you for clarifying. I can see you're flying Newark to Miami with a connection in Charlotte on September 22nd. I've added wheelchair assistance (WCHR code) for both legs of your journey - check-in to gate at Newark, and gate-to-gate in Charlotte. Is there anything specific about your mobility I should note for the airline?",
+          "timestamp": "2025-09-10T15:34:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that should be fine. Do I need to do anything special at the airport?",
+          "timestamp": "2025-09-10T15:35:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "When you arrive at Newark, inform the check-in desk that you have wheelchair assistance arranged. They'll coordinate everything from there. At Charlotte during your 90-minute layover, an attendant will meet you at the arrival gate and transport you to your connecting gate. I recommend arriving at the airport 2.5 hours before your flight to allow extra time. You'll receive an updated confirmation email with these details.",
+          "timestamp": "2025-09-10T15:37:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, and there's no extra charge for this right?",
+          "timestamp": "2025-09-10T15:37:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Correct! Wheelchair assistance is always provided free of charge by all airlines. It's an essential service. I've also added a note for priority boarding which you're entitled to. Is there anything else you need for your trip?",
+          "timestamp": "2025-09-10T15:38:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's everything. Thank you so much!",
+          "timestamp": "2025-09-10T15:39:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! Have a safe and comfortable flight. If you have any questions before your trip, feel free to reach out anytime.",
+          "timestamp": "2025-09-10T15:39:30Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to add wheelchair assistance after booking. Agent added WCHR code for both flight legs, explained airport procedures, confirmed no extra charges, and added priority boarding note.",
+      "tags": ["wheelchair_assistance", "special_needs", "accessibility", "connecting_flight", "priority_boarding"]
+    }
+  ]
+}

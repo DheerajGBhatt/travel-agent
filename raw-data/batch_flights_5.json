@@ -1,0 +1,460 @@
+{
+  "conversations": [
+    {
+      "id": "conv_flight_043",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "baggage_allowance",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi, what's the baggage allowance for my flight to London? Booking GB445566",
+          "timestamp": "2025-09-28T13:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your specific booking details for GB445566.",
+          "timestamp": "2025-09-28T13:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your flight from New York to London on British Airways includes: 1 free carry-on bag (up to 22 lbs) and 1 personal item. For checked bags: Economy allows 1 free checked bag up to 50 lbs. Each additional bag costs $100. Are you planning to check bags?",
+          "timestamp": "2025-09-28T13:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes I need 2 checked bags. So one is free and the second is $100?",
+          "timestamp": "2025-09-28T13:03:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Exactly right! Your first checked bag (up to 50 lbs) is included free, and the second bag will be $100. You can prepay for the second bag now for $100, or pay at the airport for $120. Would you like to add it to your booking now to save $20?",
+          "timestamp": "2025-09-28T13:04:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, add the second bag now. And what if one bag is slightly over 50 lbs?",
+          "timestamp": "2025-09-28T13:05:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Good question! If a bag is 51-70 lbs, there's a $100 overweight fee per bag. Over 70 lbs is $200. I recommend using a luggage scale before the airport to avoid surprises. I'm adding your second checked bag now for $100. You'll receive an updated confirmation email.",
+          "timestamp": "2025-09-28T13:07:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you for the info!",
+          "timestamp": "2025-09-28T13:07:30Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about international baggage allowance. Agent explained free and paid bag limits, offered prepay discount on second bag, explained overweight fees, and added bag to booking.",
+      "tags": ["baggage_allowance", "international_flight", "prepay_discount", "weight_limits", "resolved"]
+    },
+    {
+      "id": "conv_flight_044",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "check_in_process",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "How do I check in for my flight? I've never flown before. Booking NH778899",
+          "timestamp": "2025-08-15T16:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! No problem, I'm happy to walk you through the check-in process for your first flight! Let me look at booking NH778899.",
+          "timestamp": "2025-08-15T16:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your flight from Chicago to Denver is on August 22nd. You have two check-in options: 1) Online check-in opens 24 hours before departure - you'll receive an email reminder. Or 2) Check in at the airport at least 2 hours early. Which would you prefer to do?",
+          "timestamp": "2025-08-15T16:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I think online would be easier? How does that work?",
+          "timestamp": "2025-08-15T16:34:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect choice! Here's the simple process: 1) 24 hours before your flight, you'll get an email with a check-in link. 2) Click the link and confirm your details. 3) Select your seat if you haven't already. 4) Get your mobile boarding pass sent to your phone. Then at the airport, just show your mobile boarding pass at security and at the gate. Super easy!",
+          "timestamp": "2025-08-15T16:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "What if I have a checked bag?",
+          "timestamp": "2025-08-15T16:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "If you're checking a bag, you still check in online, but you'll need to drop your bag at the airline counter when you arrive at the airport. Look for the \"Bag Drop\" signs - it's usually faster than the regular check-in line. Still arrive 2 hours early to have plenty of time. Make sense?",
+          "timestamp": "2025-08-15T16:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, that makes sense! Thank you for explaining everything!",
+          "timestamp": "2025-08-15T16:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! Have a great first flight! If you have any questions when it's time to check in, feel free to reach out. Safe travels!",
+          "timestamp": "2025-08-15T16:40:15Z"
+        }
+      ],
+      "resolution_summary": "First-time flyer asked about check-in process. Agent explained online check-in procedure step-by-step, mobile boarding pass usage, bag drop process, and timing recommendations.",
+      "tags": ["check_in", "first_time_flyer", "online_check_in", "mobile_boarding_pass", "customer_education"]
+    },
+    {
+      "id": "conv_flight_045",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "visa_requirements",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Do I need a visa to fly to Mexico from the US? Booking MX556677",
+          "timestamp": "2025-09-03T11:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me help with that. First, are you a US citizen or permanent resident, or do you hold a different nationality?",
+          "timestamp": "2025-09-03T11:01:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm a US citizen with a US passport.",
+          "timestamp": "2025-09-03T11:01:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Great! US citizens don't need a visa for tourist visits to Mexico up to 180 days. You'll just need your valid US passport (make sure it's valid for the duration of your stay). When you arrive in Mexico, you'll fill out a tourist card on the plane or at immigration. That's it!",
+          "timestamp": "2025-09-03T11:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok good! What about returning to the US? Do I need anything special?",
+          "timestamp": "2025-09-03T11:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "To return to the US, you just need your US passport. Make sure to keep the tourist card you receive in Mexico - you'll need to return it when you leave. That's all! Your flight from San Diego to Cancun on September 15th will be straightforward. Have a great trip!",
+          "timestamp": "2025-09-03T11:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you for clearing that up!",
+          "timestamp": "2025-09-03T11:06:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Just a reminder: while I can provide general guidance, I always recommend checking the official US State Department website or Mexican consulate for the most current entry requirements before you travel. Enjoy Mexico!",
+          "timestamp": "2025-09-03T11:07:00Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about visa requirements for Mexico travel. Agent confirmed US citizens don't need visa, explained passport requirements, tourist card process, and re-entry procedures.",
+      "tags": ["visa_requirements", "international_travel", "mexico", "passport", "tourist_card"]
+    },
+    {
+      "id": "conv_flight_046",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "airport_transfer",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "What's the best way to get from JFK airport to Manhattan? I land at 8pm. Booking NY889900",
+          "timestamp": "2025-08-25T14:20:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! There are several options from JFK to Manhattan. Your budget and comfort preferences matter. I can explain: taxi, rideshare, public transit, or private car service. Which are you most interested in?",
+          "timestamp": "2025-08-25T14:21:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I want something affordable but not too complicated. I have luggage.",
+          "timestamp": "2025-08-25T14:22:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'd recommend the AirTrain + Subway combo. It's $11 total: Take AirTrain from your terminal to Jamaica Station ($8.25), then subway into Manhattan ($2.90). Takes about 60-75 minutes. There are elevators if you have heavy bags. This is the most popular budget option.",
+          "timestamp": "2025-08-25T14:24:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "That does sound complicated for 8pm with bags. What about a taxi?",
+          "timestamp": "2025-08-25T14:25:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Taxis from JFK to Manhattan are a flat $70 fare plus tolls and tip - usually around $85-90 total. Much simpler! Just follow the \"Yellow Taxi\" signs at JFK, join the queue, and a dispatcher will help you. Takes 45-60 minutes depending on traffic. The driver handles your luggage. No apps or navigation needed.",
+          "timestamp": "2025-08-25T14:27:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "That sounds better for arriving at night. How do I know it's a real taxi?",
+          "timestamp": "2025-08-25T14:28:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Only use the official taxi stand inside the terminal - never accept rides from people approaching you inside the airport. Real yellow cabs are in a designated area with airport staff managing the queue. They're all metered and regulated. Very safe!",
+          "timestamp": "2025-08-25T14:29:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you for the advice!",
+          "timestamp": "2025-08-25T14:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy your time in New York City!",
+          "timestamp": "2025-08-25T14:30:30Z"
+        }
+      ],
+      "resolution_summary": "Customer asked about JFK to Manhattan transport options. Agent presented budget-friendly AirTrain/subway option and more convenient taxi option with pricing, explained safety procedures for official taxis.",
+      "tags": ["airport_transfer", "ground_transportation", "jfk_airport", "taxi_information", "travel_advice"]
+    },
+    {
+      "id": "conv_flight_047",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "frequent_flyer_points",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "How many miles will I earn on my upcoming flight? Booking FF223344",
+          "timestamp": "2025-09-10T10:15:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your booking FF223344 and calculate the miles you'll earn.",
+          "timestamp": "2025-09-10T10:16:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your flight from Los Angeles to New York (2,475 miles distance) is booked in Main Cabin. You'll earn 2,475 base miles plus a 25% Main Cabin bonus = 3,094 total miles. This is for United MileagePlus. Do you have a frequent flyer number added to your booking?",
+          "timestamp": "2025-09-10T10:18:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm not sure. How do I check?",
+          "timestamp": "2025-09-10T10:18:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me look... I don't see a MileagePlus number on your booking. If you have a United MileagePlus account, I can add it now. Or if you don't have one, you can create a free account and add it before your flight. You have until your flight date to add it. Do you have an account number?",
+          "timestamp": "2025-09-10T10:20:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes it's MP556677889. Can you add it?",
+          "timestamp": "2025-09-10T10:21:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've added MileagePlus number MP556677889 to your booking. The 3,094 miles will automatically post to your account within 3-5 days after your flight. You'll be able to see them in your MileagePlus account online. Anything else I can help with?",
+          "timestamp": "2025-09-10T10:23:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's great, thank you!",
+          "timestamp": "2025-09-10T10:23:30Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about frequent flyer miles for upcoming flight. Agent calculated miles with cabin bonus, discovered missing FF number, added customer's MileagePlus account to booking.",
+      "tags": ["frequent_flyer", "mileage_calculation", "loyalty_program", "mileageplus", "account_update"]
+    },
+    {
+      "id": "conv_flight_048",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "special_meal_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I request a vegetarian meal for my flight? Booking SM778899",
+          "timestamp": "2025-08-18T09:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, I can help with that. Let me check booking SM778899 to see what meal service is available on your flight.",
+          "timestamp": "2025-08-18T09:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your flight from San Francisco to Singapore on September 5th is a long-haul international flight with full meal service. I can request a vegetarian meal for you. We have several options: 1) Asian vegetarian (no meat, can include dairy/eggs), 2) Vegan (no animal products), or 3) Lacto-ovo vegetarian (includes dairy and eggs). Which would you prefer?",
+          "timestamp": "2025-08-18T09:33:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Lacto-ovo vegetarian please. I eat eggs and dairy.",
+          "timestamp": "2025-08-18T09:34:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm requesting the lacto-ovo vegetarian meal for all meal services on your flight. Special meal requests need to be made at least 24 hours before departure, and you're booking this 18 days ahead, so no problem. You'll receive the vegetarian meal instead of the standard options. Request confirmed!",
+          "timestamp": "2025-08-18T09:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great! What if I change my mind?",
+          "timestamp": "2025-08-18T09:36:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You can modify or cancel the special meal request anytime up to 24 hours before departure by contacting us. After that, the meal is already loaded on the aircraft. I'm sending you a confirmation email with your meal request details now. Anything else?",
+          "timestamp": "2025-08-18T09:38:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, that's all. Thank you!",
+          "timestamp": "2025-08-18T09:38:30Z"
+        }
+      ],
+      "resolution_summary": "Customer requested vegetarian meal for international flight. Agent explained meal options, confirmed lacto-ovo vegetarian preference, submitted request with timing requirements explained.",
+      "tags": ["special_meal", "vegetarian", "international_flight", "dietary_requirements", "meal_service"]
+    },
+    {
+      "id": "conv_flight_049",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "tsa_precheck",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I have TSA PreCheck but it's not showing on my boarding pass. Booking TS445566",
+          "timestamp": "2025-09-22T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me help get your TSA PreCheck added to booking TS445566. Do you have your Known Traveler Number (KTN)?",
+          "timestamp": "2025-09-22T14:01:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes it's 987654321",
+          "timestamp": "2025-09-22T14:01:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm adding KTN 987654321 to your booking now. However, I need to make sure the name on your booking exactly matches your TSA PreCheck enrollment. Can you confirm your full name as it appears on your TSA PreCheck?",
+          "timestamp": "2025-09-22T14:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "It's Thomas Andrew Martinez - but I think my booking just says Thomas Martinez",
+          "timestamp": "2025-09-22T14:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's likely the issue! TSA PreCheck is very particular about name matching. Let me check your booking... Yes, it shows Thomas Martinez. I need to add the middle name Andrew. I'm updating that now along with your KTN. You'll need to reprint your boarding pass after this update for the PreCheck indicator to show.",
+          "timestamp": "2025-09-22T14:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, when can I reprint it?",
+          "timestamp": "2025-09-22T14:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "The update is processing now. Give it about 15-20 minutes, then check in online again and your new boarding pass should show the TSA PreCheck logo. If it still doesn't appear, contact us and we can troubleshoot further. Your flight isn't until September 30th, so we have plenty of time.",
+          "timestamp": "2025-09-22T14:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great, thank you for fixing that!",
+          "timestamp": "2025-09-22T14:08:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy the faster security line with TSA PreCheck!",
+          "timestamp": "2025-09-22T14:09:00Z"
+        }
+      ],
+      "resolution_summary": "Customer's TSA PreCheck wasn't appearing on boarding pass. Agent identified name mismatch (missing middle name), added KTN and corrected name, instructed customer to reprint boarding pass.",
+      "tags": ["tsa_precheck", "known_traveler_number", "name_mismatch", "boarding_pass", "security"]
+    },
+    {
+      "id": "conv_flight_050",
+      "category": "flights",
+      "subcategory": "inquiry",
+      "issue_type": "traveling_with_infant",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I'm traveling with a 6-month-old baby. What do I need to know? Booking IB667788",
+          "timestamp": "2025-08-28T15:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Congrats on the little one! Let me check booking IB667788 and provide information for traveling with an infant.",
+          "timestamp": "2025-08-28T15:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your flight is Portland to Miami on September 15th. First, do you have the infant added to your booking? Infants under 2 can travel as a lap child (no seat) for a reduced fee, usually around $50-150 depending on the route.",
+          "timestamp": "2025-08-28T15:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I haven't added the baby yet! How do I do that?",
+          "timestamp": "2025-08-28T15:34:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can add the infant to your booking right now. I'll need the baby's full name and date of birth as they appear on their birth certificate. Also, even though the infant won't have a seat, airlines require this information for safety and documentation purposes.",
+          "timestamp": "2025-08-28T15:35:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Name is Emma Rose Martinez, born February 15, 2025. What about bringing formula and baby food through security?",
+          "timestamp": "2025-08-28T15:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Adding Emma Rose Martinez now... Done! Infant fare is $75. For TSA: formula, breast milk, and baby food are exempt from the 3.4 oz liquid rule. You can bring reasonable quantities. Inform TSA officers at screening - they may test it but you can bring what you need. Also, you're allowed one diaper bag in addition to your carry-on.",
+          "timestamp": "2025-08-28T15:39:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Can I bring a stroller?",
+          "timestamp": "2025-08-28T15:40:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes! Strollers can be gate-checked for free. You can use it all the way to the airplane door, then they'll tag it and store it in cargo. You'll get it back at the gate when you land. Car seats can also be gate-checked or brought on board if you purchased a seat for the infant. You'll receive an updated confirmation email with Emma added to your booking.",
+          "timestamp": "2025-08-28T15:42:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Thank you for all the information!",
+          "timestamp": "2025-08-28T15:42:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! Have a safe flight with little Emma. If you have any questions closer to your travel date, don't hesitate to reach out!",
+          "timestamp": "2025-08-28T15:43:15Z"
+        }
+      ],
+      "resolution_summary": "Customer traveling with 6-month-old needed information. Agent added infant to booking with lap child fare, explained TSA liquid exemptions for formula, gate-check procedures for stroller, and diaper bag allowance.",
+      "tags": ["infant_travel", "lap_child", "tsa_exemptions", "stroller_policy", "family_travel"]
+    }
+  ]
+}

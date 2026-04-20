@@ -1,0 +1,564 @@
+{
+  "conversations": [
+    {
+      "id": "conv_hotel_001",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "booking_not_confirmed",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked a hotel 2 days ago but never received confirmation! I'm checking in tomorrow! Booking HB445566",
+          "timestamp": "2025-09-14T18:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand your concern, especially with check-in tomorrow. Let me look up booking HB445566 right away.",
+          "timestamp": "2025-09-14T18:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I found your booking for the Hilton Downtown Seattle, checking in September 15th for 3 nights. The booking is confirmed in our system. Can you confirm the email address you used for the booking?",
+          "timestamp": "2025-09-14T18:32:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "jennifer.parks@email.com - I've checked spam too, nothing there!",
+          "timestamp": "2025-09-14T18:33:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check... I see the issue. The email on file shows jennifer.parks@emai.com - it's missing the 'l' in email. Did you perhaps mistype it during booking?",
+          "timestamp": "2025-09-14T18:34:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Oh no! Yes I must have! Can you fix it and resend the confirmation?",
+          "timestamp": "2025-09-14T18:35:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I've updated your email to jennifer.parks@email.com and I'm resending the confirmation now. You should receive it within the next 2-3 minutes. The confirmation includes your booking number HB445566, check-in details, and hotel contact information. Anything else you need?",
+          "timestamp": "2025-09-14T18:36:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Just got it! Thank you so much, I was really worried!",
+          "timestamp": "2025-09-14T18:38:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! Have a wonderful stay in Seattle! If you need anything else, feel free to reach out.",
+          "timestamp": "2025-09-14T18:38:30Z"
+        }
+      ],
+      "resolution_summary": "Customer didn't receive booking confirmation due to email typo. Agent corrected email address and resent confirmation for next-day check-in.",
+      "tags": ["confirmation_missing", "email_typo", "urgent", "next_day_checkin", "resolved"]
+    },
+    {
+      "id": "conv_hotel_002",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "wrong_dates_selected",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I just realized I booked the hotel for the wrong dates!! I need Oct 10-13 but I booked Oct 3-6! Booking HW778899",
+          "timestamp": "2025-09-25T20:15:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me help you fix that right away. Looking at booking HW778899 now.",
+          "timestamp": "2025-09-25T20:16:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking at the Marriott Times Square for October 3-6. You need October 10-13 instead. This hotel has a flexible cancellation policy (free cancellation up to 48 hours before check-in). Let me check availability for October 10-13.",
+          "timestamp": "2025-09-25T20:18:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Is it going to cost me more?",
+          "timestamp": "2025-09-25T20:18:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Checking rates... Good news! The rate for October 10-13 is actually $15 per night cheaper - $285/night vs your current $300/night. Your original total was $900, and the new dates will be $855. I can cancel your current booking and rebook for the correct dates. You'd save $45. Shall I proceed?",
+          "timestamp": "2025-09-25T20:21:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Really? That's amazing! Yes please change it!",
+          "timestamp": "2025-09-25T20:21:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've cancelled booking HW778899 and created a new booking for October 10-13. Your new confirmation number is HW778900. Same room type (King Deluxe), same hotel. The $45 difference will be refunded to your original payment method within 5-7 days. You'll receive a new confirmation email shortly.",
+          "timestamp": "2025-09-25T20:24:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much! I was worried this would be expensive to fix!",
+          "timestamp": "2025-09-25T20:24:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Always check your dates, but I'm glad we could fix this easily and save you money in the process! Enjoy your stay!",
+          "timestamp": "2025-09-25T20:25:15Z"
+        }
+      ],
+      "resolution_summary": "Customer booked wrong dates (Oct 3-6 instead of 10-13). Agent cancelled original booking, rebooked correct dates which were cheaper, resulting in $45 refund.",
+      "tags": ["wrong_dates", "rebooking", "flexible_cancellation", "cost_savings", "resolved"]
+    },
+    {
+      "id": "conv_hotel_003",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "payment_failed",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I'm trying to book a hotel but my payment keeps failing! My card is fine, I just used it somewhere else. Help!",
+          "timestamp": "2025-08-30T16:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm sorry you're having payment issues! Let me help you complete your booking. Which hotel are you trying to book and for what dates?",
+          "timestamp": "2025-08-30T16:46:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Hyatt Regency Boston, September 5-8. The charge is like $650 and it keeps declining.",
+          "timestamp": "2025-08-30T16:47:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Large hotel charges often trigger fraud alerts with banks, especially if this is your first time booking with us or if you're booking from a different location. Have you tried contacting your bank to authorize the transaction?",
+          "timestamp": "2025-08-30T16:48:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't want to call the bank right now, it's after hours. Is there another way?",
+          "timestamp": "2025-08-30T16:49:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "A few options: 1) Try a different card if you have one, 2) Use PayPal if you have an account, or 3) I can create a booking request that holds the room for 2 hours while you sort out the payment issue. Which would work best for you?",
+          "timestamp": "2025-08-30T16:51:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I have PayPal! Can we try that?",
+          "timestamp": "2025-08-30T16:51:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm creating a booking link for the Hyatt Regency Boston, September 5-8 (3 nights) with PayPal as the payment option. The total is $647.85 including taxes. I'm sending the secure payment link to your email now. This link will hold the room rate for 30 minutes.",
+          "timestamp": "2025-08-30T16:53:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Got it! Paying now... Done! Booking number is HP889922. Thank you!",
+          "timestamp": "2025-08-30T16:55:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent! Your booking HP889922 is confirmed. You'll receive a confirmation email shortly. For future bookings, you might want to notify your bank about travel purchases to avoid declines. Enjoy your stay in Boston!",
+          "timestamp": "2025-08-30T16:56:15Z"
+        }
+      ],
+      "resolution_summary": "Customer's credit card repeatedly declined for hotel booking. Agent suggested alternative payment methods, created secure PayPal payment link, successfully completed booking.",
+      "tags": ["payment_failed", "fraud_alert", "paypal", "alternative_payment", "resolved"]
+    },
+    {
+      "id": "conv_hotel_004",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "special_requests_not_captured",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I added special requests during booking but I'm not sure if they went through. Can you check? Booking HS556677",
+          "timestamp": "2025-09-08T11:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'd be happy to check your special requests. Let me pull up booking HS556677.",
+          "timestamp": "2025-09-08T11:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I have your booking for the Westin Atlanta, checking in September 20th. I'm looking at the special requests section... it appears empty. What requests did you want to make?",
+          "timestamp": "2025-09-08T11:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I need a high floor room (I'm afraid of heights but high floors are quieter), and an extra pillow. Also arriving late around 11pm.",
+          "timestamp": "2025-09-08T11:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm adding all three requests to your booking now: 1) High floor room (noting your preference for quiet), 2) Extra pillow in room, 3) Late arrival at approximately 11:00 PM. I should mention that special requests are noted but not guaranteed by the hotel. However, late arrival notification is important and they'll definitely hold your room. Let me also add a note about the pillow being ready at check-in.",
+          "timestamp": "2025-09-08T11:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "What if the high floor isn't available?",
+          "timestamp": "2025-09-08T11:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "High floor requests are accommodated when possible, but it depends on availability at check-in. The hotel will do their best. If it's critical, you could also mention it directly to the front desk when checking in - they might have more flexibility at that moment. Your other requests (extra pillow and late arrival) are more straightforward and should definitely be accommodated.",
+          "timestamp": "2025-09-08T11:08:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok that makes sense. Thank you for adding those!",
+          "timestamp": "2025-09-08T11:09:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! All requests are now on your booking. You'll receive an updated confirmation email. Have a great stay!",
+          "timestamp": "2025-09-08T11:09:30Z"
+        }
+      ],
+      "resolution_summary": "Customer's special requests (high floor, extra pillow, late arrival) weren't captured during booking. Agent added all requests with notes, explained which are guaranteed vs best-effort.",
+      "tags": ["special_requests", "high_floor", "late_arrival", "extra_amenities", "resolved"]
+    },
+    {
+      "id": "conv_hotel_005",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "room_type_discrepancy",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My confirmation says Queen Room but I'm pretty sure I booked a King Room? Can you check? Booking HR223344",
+          "timestamp": "2025-08-22T14:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check that for you right away. Looking at booking HR223344 now.",
+          "timestamp": "2025-08-22T14:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking at the Sheraton Chicago for August 30th. The confirmed room type is Standard Queen Room. Do you recall specifically selecting a King Room during booking, or is this just a preference?",
+          "timestamp": "2025-08-22T14:32:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm traveling alone and I definitely wanted a King bed, that's why I'm surprised. Can I change it?",
+          "timestamp": "2025-08-22T14:33:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check availability and pricing for a King Room... Good news! I can upgrade you to a Standard King Room. There's a $20 per night difference ($155 vs $135), so $20 total for one night. Would you like me to make that change?",
+          "timestamp": "2025-08-22T14:35:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please, $20 is fine for the bigger bed.",
+          "timestamp": "2025-08-22T14:35:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've upgraded your room to Standard King. Your booking reference remains HR223344. The additional $20 will be charged to your original payment method. You'll receive an updated confirmation email showing the King Room within 5 minutes. Anything else I can help with?",
+          "timestamp": "2025-08-22T14:37:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's great, thank you!",
+          "timestamp": "2025-08-22T14:37:30Z"
+        }
+      ],
+      "resolution_summary": "Customer expected King Room but received Queen Room confirmation. Agent checked availability, offered upgrade for $20 additional fee, processed room type change successfully.",
+      "tags": ["room_type", "upgrade", "bed_preference", "price_difference", "resolved"]
+    },
+    {
+      "id": "conv_hotel_006",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "guest_name_error",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "There's a typo in the guest name on my booking. It says \"Mchael\" instead of \"Michael\". Booking HN667788",
+          "timestamp": "2025-09-15T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! That's an easy fix. Let me pull up booking HN667788.",
+          "timestamp": "2025-09-15T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see the booking for the Hilton Garden Inn Denver with the name showing as \"Mchael Johnson.\" I'll correct it to \"Michael Johnson\" right now.",
+          "timestamp": "2025-09-15T10:02:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you! Will this cause any issues at check-in?",
+          "timestamp": "2025-09-15T10:02:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Not at all! The correction is updated in the hotel's system immediately. When you check in on September 22nd, they'll have the correct name \"Michael Johnson\" on file. You'll just need to show your ID as usual. The hotel staff won't even know there was a typo. You'll receive an updated confirmation email with the correct spelling in about 5 minutes.",
+          "timestamp": "2025-09-15T10:04:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thanks for fixing it so quickly!",
+          "timestamp": "2025-09-15T10:04:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Have a great stay in Denver!",
+          "timestamp": "2025-09-15T10:05:00Z"
+        }
+      ],
+      "resolution_summary": "Customer's first name had typo (Mchael vs Michael). Agent corrected name spelling immediately, confirmed no check-in issues would occur.",
+      "tags": ["name_correction", "typo", "quick_fix", "check_in", "resolved"]
+    },
+    {
+      "id": "conv_hotel_007",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "double_booking_error",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I think I accidentally booked the same hotel twice! I see two charges on my card. Bookings HT445566 and HT445577",
+          "timestamp": "2025-08-18T19:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check those bookings right away. Looking up both HT445566 and HT445577 now.",
+          "timestamp": "2025-08-18T19:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see both bookings are for the Courtyard Marriott Las Vegas, same dates (September 10-12), same room type. They were booked 3 minutes apart. It looks like the page might have double-processed. You definitely only need one room, correct?",
+          "timestamp": "2025-08-18T19:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes! Just one room! The website was being slow so I might have clicked twice. Can you cancel one and refund me?",
+          "timestamp": "2025-08-18T19:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I'm cancelling booking HT445577 right now and keeping HT445566 active. Your room is confirmed for September 10-12. The duplicate charge of $356 will be refunded to your card within 5-7 business days. You'll receive a cancellation confirmation email for the duplicate booking shortly.",
+          "timestamp": "2025-08-18T19:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you! I was worried I'd be stuck paying for both rooms!",
+          "timestamp": "2025-08-18T19:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Not at all! These things happen with online bookings, especially when pages load slowly. Your active booking is HT445566, and the refund is processing. All set! Is there anything else you need?",
+          "timestamp": "2025-08-18T19:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, that's everything. Thanks!",
+          "timestamp": "2025-08-18T19:08:00Z"
+        }
+      ],
+      "resolution_summary": "Customer accidentally created duplicate hotel booking (3 minutes apart due to slow website). Agent cancelled duplicate reservation and processed full refund of $356.",
+      "tags": ["duplicate_booking", "double_charge", "refund", "website_issue", "resolved"]
+    },
+    {
+      "id": "conv_hotel_008",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "promo_code_not_applied",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I used promo code SUMMER30 but I don't think it was applied to my booking. Can you check? Booking HL889900",
+          "timestamp": "2025-08-10T13:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check your booking and the promo code. Looking at HL889900 now.",
+          "timestamp": "2025-08-10T13:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking for the Renaissance Miami for August 25-28 (3 nights). The total is $540. Let me check if SUMMER30 was supposed to apply... I'm verifying the promo code terms now.",
+          "timestamp": "2025-08-10T13:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "It said 30% off when I saw the ad!",
+          "timestamp": "2025-08-10T13:34:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I found the issue. The SUMMER30 code is valid for 30% off, but it excludes weekend stays. Your booking includes Friday and Saturday nights (August 26-27), which are weekend dates. The promo code is valid only for Sunday-Thursday stays. I'm sorry this wasn't clearer in the advertising.",
+          "timestamp": "2025-08-10T13:36:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's frustrating! Can you apply any discount at all?",
+          "timestamp": "2025-08-10T13:37:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me see what I can do... I can apply a different code, MEMBER15, which gives 15% off with no restrictions. That would reduce your total from $540 to $459 - a savings of $81. Would that help?",
+          "timestamp": "2025-08-10T13:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Not as good as 30% but better than nothing! Yes please apply it.",
+          "timestamp": "2025-08-10T13:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Done! I've applied MEMBER15 to your booking. Your new total is $459 (you'll save $81). The difference will be credited back to your payment method within 5-7 days. You'll receive an updated confirmation email with the new rate. I apologize again about the weekend restriction on the original code.",
+          "timestamp": "2025-08-10T13:41:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, thank you for finding an alternative!",
+          "timestamp": "2025-08-10T13:42:00Z"
+        }
+      ],
+      "resolution_summary": "Customer's 30% promo code didn't apply due to weekend exclusion. Agent explained restrictions, found alternative 15% discount code with no restrictions, applied and saved customer $81.",
+      "tags": ["promo_code", "weekend_exclusion", "alternative_discount", "partial_savings", "resolved"]
+    },
+    {
+      "id": "conv_hotel_009",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "booking_wrong_hotel",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked the wrong hotel! I meant to book the Hilton DOWNTOWN but I booked the Hilton AIRPORT by mistake! Booking HX556688",
+          "timestamp": "2025-09-20T15:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me help you fix that. Looking at booking HX556688 now.",
+          "timestamp": "2025-09-20T15:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see you booked the Hilton Airport Seattle for October 5-7. You need the Hilton Downtown Seattle instead. This hotel has free cancellation up to 24 hours before check-in, so we can cancel and rebook. Let me check availability at the Downtown location.",
+          "timestamp": "2025-09-20T15:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "How much more is the downtown one? I bet it's more expensive.",
+          "timestamp": "2025-09-20T15:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Checking rates... Yes, the Downtown location is more expensive. Your Airport booking is $280 total for 2 nights. The Downtown location for the same dates would be $420 total - a difference of $140. Would you still like to make the change?",
+          "timestamp": "2025-09-20T15:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ugh, that's a lot more but I need to be downtown for my conference. Yes, please change it.",
+          "timestamp": "2025-09-20T15:07:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Understood. I'm cancelling booking HX556688 at the Airport location and creating a new booking at the Downtown location for October 5-7. Your new confirmation number is HX556699. You'll be charged $420 for the Downtown booking, and the $280 from the Airport booking will be refunded within 5-7 days. Net difference is $140 charged to your card.",
+          "timestamp": "2025-09-20T15:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, at least I caught it before the trip. Thank you for fixing it.",
+          "timestamp": "2025-09-20T15:10:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Good catch booking it ahead of time. You'll receive both a cancellation email for the Airport location and a confirmation for the Downtown location. Enjoy your conference!",
+          "timestamp": "2025-09-20T15:11:00Z"
+        }
+      ],
+      "resolution_summary": "Customer booked wrong hotel location (Airport instead of Downtown). Agent cancelled incorrect booking, rebooked at correct property with $140 price difference, processed refund and new charge.",
+      "tags": ["wrong_hotel", "location_error", "cancel_rebook", "price_difference", "conference_travel"]
+    },
+    {
+      "id": "conv_hotel_010",
+      "category": "hotels",
+      "subcategory": "booking",
+      "issue_type": "accessibility_requirements",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to make sure my room is wheelchair accessible. How do I confirm that? Booking HA778822",
+          "timestamp": "2025-08-28T11:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your booking and ensure you have an accessible room. Looking at HA778822 now.",
+          "timestamp": "2025-08-28T11:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking is for the Marriott San Diego for September 10-13. I'm checking the room type... I see it's booked as a Standard King Room with no accessibility notation. Let me verify if accessible rooms are available and update your booking. What specific accessibility features do you need?",
+          "timestamp": "2025-08-28T11:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I use a wheelchair so I need a roll-in shower, grab bars, and lowered fixtures. Is that available?",
+          "timestamp": "2025-08-28T11:34:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes, the Marriott San Diego has ADA-compliant rooms with all those features: roll-in shower, grab bars, lowered closet rods and thermostats, and accessible furniture layout. I'm updating your booking to an Accessible King Room now - same price, no additional charge. The change is confirmed.",
+          "timestamp": "2025-08-28T11:36:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great! Is the hotel entrance accessible too?",
+          "timestamp": "2025-08-28T11:37:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes, the hotel has accessible parking with designated spaces, a ramped main entrance, and accessible elevators throughout. I'm also adding a note to your booking about your accessibility needs so the hotel staff can ensure everything is ready upon your arrival. You'll receive an updated confirmation with the Accessible King Room details.",
+          "timestamp": "2025-08-28T11:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you for handling this!",
+          "timestamp": "2025-08-28T11:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! If you need any other accommodations or have questions about accessibility, please don't hesitate to contact us or the hotel directly. Have a wonderful stay!",
+          "timestamp": "2025-08-28T11:40:15Z"
+        }
+      ],
+      "resolution_summary": "Customer needed wheelchair-accessible room with specific features. Agent upgraded to ADA-compliant room at no extra charge, confirmed all accessibility features, added notes for hotel staff.",
+      "tags": ["accessibility", "wheelchair_accessible", "ada_compliant", "special_needs", "no_extra_charge"]
+    }
+  ]
+}

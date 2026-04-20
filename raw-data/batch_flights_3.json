@@ -1,0 +1,644 @@
+{
+  "conversations": [
+    {
+      "id": "conv_flight_023",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "date_change_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi I need to change my flight date from Oct 5 to Oct 12. Is that possible? Booking DF889900",
+          "timestamp": "2025-09-25T10:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, I can help you change your flight date. Let me pull up booking DF889900.",
+          "timestamp": "2025-09-25T10:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see your flight from Boston to San Francisco on October 5th. You have a Standard fare which allows date changes. Let me check availability and pricing for October 12th at a similar time.",
+          "timestamp": "2025-09-25T10:32:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "How much will the change cost?",
+          "timestamp": "2025-09-25T10:33:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Good news! There's a flight on October 12th at 10:45 AM (your current is 11:15 AM). The fare difference is only $25 more, and there's no change fee with your ticket type. So the total cost to change would be $25. Shall I go ahead with this change?",
+          "timestamp": "2025-09-25T10:35:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please, and my seat selection will transfer right?",
+          "timestamp": "2025-09-25T10:35:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'll do my best to keep you in a similar seat. You currently have 12A (window). On the October 12th flight, 12A is taken but 11A is available - also a window seat, just one row forward. Would that work?",
+          "timestamp": "2025-09-25T10:37:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's perfect actually!",
+          "timestamp": "2025-09-25T10:37:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent! I've changed your flight to October 12th at 10:45 AM and assigned seat 11A. Your booking reference remains DF889900. The $25 fare difference will be charged to your original payment method, and you'll receive an updated confirmation email within 5 minutes. Anything else I can help with?",
+          "timestamp": "2025-09-25T10:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's all, thanks!",
+          "timestamp": "2025-09-25T10:39:30Z"
+        }
+      ],
+      "resolution_summary": "Customer requested date change from Oct 5 to Oct 12. Agent confirmed $25 fare difference with no change fee, transferred to similar window seat one row forward, and processed modification successfully.",
+      "tags": ["date_change", "fare_difference", "seat_transfer", "no_change_fee", "resolved"]
+    },
+    {
+      "id": "conv_flight_024",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "destination_change",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I change my destination from Dallas to Houston instead? Same date. Booking MK445566",
+          "timestamp": "2025-08-10T14:20:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check if we can modify your destination. Pulling up booking MK445566 now.",
+          "timestamp": "2025-08-10T14:21:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see you're flying from Chicago to Dallas on August 28th. Changing the destination is treated as a new booking since it's a different route. Your current ticket is $310. The Chicago to Houston flight on the same date would be $285. Would you like me to cancel the Dallas ticket and rebook you to Houston?",
+          "timestamp": "2025-08-10T14:23:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Will I get charged a cancellation fee?",
+          "timestamp": "2025-08-10T14:24:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "With your Main Cabin fare, there's no cancellation fee. Since the Houston flight is cheaper, you'd actually get a $25 refund. However, let me check if American Airlines allows a destination change instead of cancel-and-rebook, which might be simpler... Yes! I can process this as a route change. There's a $75 change fee, plus the $25 fare credit, so your net cost would be $50 for the change. Or we do cancel-and-rebook for free but you'd need to pay $285 upfront and wait for the $310 refund.",
+          "timestamp": "2025-08-10T14:27:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "The cancel and rebook sounds better actually. Let's do that.",
+          "timestamp": "2025-08-10T14:28:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Smart choice! I'm cancelling booking MK445566 now and creating a new booking for Chicago to Houston on August 28th. The flight departs at 1:30 PM, arriving Houston at 4:15 PM. I'll need to process the new booking - can you confirm the payment method?",
+          "timestamp": "2025-08-10T14:30:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Use the same card ending in 3421",
+          "timestamp": "2025-08-10T14:30:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! Your new booking is confirmed with reference MK445577. You'll be charged $285, and the $310 refund from the cancelled Dallas booking will process within 5-7 business days. Net result is a $25 refund to you. You'll receive both cancellation and new booking confirmations via email shortly.",
+          "timestamp": "2025-08-10T14:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great, thank you!",
+          "timestamp": "2025-08-10T14:33:30Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to change destination from Dallas to Houston. Agent explained route change fee vs cancel-rebook options, processed cancel-rebook which saved money, resulting in $25 refund for customer.",
+      "tags": ["destination_change", "cancel_rebook", "route_modification", "cost_comparison", "resolved"]
+    },
+    {
+      "id": "conv_flight_025",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "passenger_name_correction",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "There's a typo in my name on the booking! It says \"Johnathan\" but my passport says \"Jonathan\" (one 'h'). Can this be fixed? Booking PN778899",
+          "timestamp": "2025-09-18T09:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, this is a simple name correction and we can definitely fix it. Let me pull up booking PN778899.",
+          "timestamp": "2025-09-18T09:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see the spelling error - \"Johnathan\" instead of \"Jonathan\" Smith. This is a minor spelling correction (just removing one letter) which most airlines process for free. Your flight is to London on October 5th - international, so it's important this matches your passport exactly. Let me submit the correction now.",
+          "timestamp": "2025-09-18T09:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "How long will it take? My flight is in 2 weeks.",
+          "timestamp": "2025-09-18T09:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Minor name corrections typically process within 24-48 hours. Since you have 2 weeks until departure, we have plenty of time. I'm marking this as priority since it's for international travel. You'll receive an email confirmation once the airline approves it, along with an updated boarding pass.",
+          "timestamp": "2025-09-18T09:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "What if they don't approve it?",
+          "timestamp": "2025-09-18T09:06:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "For a single-letter spelling correction like this, approval is almost certain. However, if there were any issues, I've added a note to notify you immediately and we would escalate to get it resolved before your travel date. I'm also providing you with case number NC-778899 which you can reference if needed at the airport.",
+          "timestamp": "2025-09-18T09:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Okay good. I was really worried about this.",
+          "timestamp": "2025-09-18T09:08:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Completely understandable! Name mismatches on international flights can be stressful, but you caught this with plenty of time. You should receive confirmation by tomorrow morning. If you don't see it by then, feel free to reach out and we'll check on it.",
+          "timestamp": "2025-09-18T09:09:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much!",
+          "timestamp": "2025-09-18T09:09:30Z"
+        }
+      ],
+      "resolution_summary": "Customer had single-letter spelling error in first name for international flight. Agent submitted priority name correction request, provided case number, and assured customer of resolution timeline well before departure.",
+      "tags": ["name_correction", "spelling_error", "international_flight", "passport_match", "priority_request"]
+    },
+    {
+      "id": "conv_flight_026",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "adding_passenger",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I add another passenger to my existing booking? My friend wants to come on the trip now. Booking WX556677",
+          "timestamp": "2025-08-20T11:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your booking WX556677. Unfortunately, you can't add passengers to an existing booking - each ticket is separate. However, I can book your friend on the same flight. What date and route is your flight?",
+          "timestamp": "2025-08-20T11:31:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "It's Atlanta to Denver on September 10th at 3:45pm. Will they be able to sit with me?",
+          "timestamp": "2025-08-20T11:32:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check availability on that flight... Great news! The flight has plenty of seats available. If I book your friend now, I can select a seat next to yours. You're currently in 18C. I can put your friend in 18B or 18D. Which would you prefer?",
+          "timestamp": "2025-08-20T11:34:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "18B would be great! What's the fare?",
+          "timestamp": "2025-08-20T11:34:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "The current fare for that flight is $275. I can book this right now if you provide your friend's details: full name as it appears on their ID, date of birth, and email address for confirmation.",
+          "timestamp": "2025-08-20T11:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Name is Rachel Martinez, DOB 03/15/1990, email rachel.m@email.com",
+          "timestamp": "2025-08-20T11:37:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm creating the booking now... Done! Rachel's booking reference is WX556688 (similar to yours for easy reference). Seat 18B confirmed. She'll receive her confirmation email at rachel.m@email.com. What payment method would you like to use?",
+          "timestamp": "2025-08-20T11:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Can I pay with the same card I used for my booking?",
+          "timestamp": "2025-08-20T11:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I've charged the $275 to your card ending in 7734. Both bookings are now set - you in 18C and Rachel in 18B on the September 10th flight to Denver. You'll both receive individual confirmation emails. Anything else you need?",
+          "timestamp": "2025-08-20T11:41:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's perfect! Thanks so much!",
+          "timestamp": "2025-08-20T11:41:30Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to add friend to existing booking. Agent explained separate tickets required, booked friend on same flight in adjacent seat, used same payment method, and provided clear confirmation details.",
+      "tags": ["add_passenger", "separate_booking", "adjacent_seats", "new_booking", "resolved"]
+    },
+    {
+      "id": "conv_flight_027",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "cabin_class_upgrade",
+      "resolution_status": "resolved",
+      "sentiment": "satisfied",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Hi, can I upgrade my economy seat to business class? Booking UG223344",
+          "timestamp": "2025-09-05T15:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'd be happy to help with an upgrade. Let me check booking UG223344 and see what's available.",
+          "timestamp": "2025-09-05T15:46:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see your flight from New York to Los Angeles on September 20th. Currently in Economy ($420). There are 4 business class seats available on this flight. The upgrade would cost an additional $650. That would give you priority boarding, extra legroom, complimentary meals and drinks, and 2 free checked bags. Interested?",
+          "timestamp": "2025-09-05T15:48:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's pricey but it's a long flight. What if I upgrade to premium economy instead?",
+          "timestamp": "2025-09-05T15:49:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Smart question! Premium Economy upgrade would be $180 additional. You'd get extra legroom, priority boarding, 1 free checked bag, and complimentary snacks and drinks. It's a great middle ground for a cross-country flight. Would you like me to compare the benefits side by side?",
+          "timestamp": "2025-09-05T15:51:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, Premium Economy sounds perfect for $180. Let's do that.",
+          "timestamp": "2025-09-05T15:51:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Excellent choice! I'm upgrading you to Premium Economy now. You'll be moved to seat 9D - extra legroom, still a window seat. The $180 upgrade fee will be charged to your original payment method. Your booking reference remains UG223344. You'll receive an updated confirmation with your Premium Economy boarding pass shortly.",
+          "timestamp": "2025-09-05T15:53:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Can I still select a different Premium Economy seat if I want?",
+          "timestamp": "2025-09-05T15:54:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes! You can change your seat selection anytime through your booking or by contacting us. There are several Premium Economy seats available. Would you like to choose a different one now, or are you happy with 9D?",
+          "timestamp": "2025-09-05T15:55:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "9D sounds great. Thanks for the help!",
+          "timestamp": "2025-09-05T15:55:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy your upgraded flight experience! Have a great trip!",
+          "timestamp": "2025-09-05T15:56:00Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about business class upgrade, agent offered premium economy as cost-effective alternative, customer accepted $180 upgrade with extra legroom and benefits. Processed successfully.",
+      "tags": ["cabin_upgrade", "premium_economy", "cost_comparison", "seat_change", "satisfied"]
+    },
+    {
+      "id": "conv_flight_028",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "change_fee_explanation",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to change my flight date but I'm being charged $200 change fee! That's insane for just changing a date! Booking CF778899",
+          "timestamp": "2025-08-15T13:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I understand your frustration. Let me look at booking CF778899 and explain the fee structure.",
+          "timestamp": "2025-08-15T13:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see you booked a Basic Economy fare from Phoenix to Miami for August 30th. Basic Economy tickets have a $200 change fee as stated in the fare rules at booking. This is the most restrictive ticket type, which is why it was priced lower initially. May I ask what date you'd like to change to?",
+          "timestamp": "2025-08-15T13:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I need September 5th instead. But $200 is almost as much as the ticket cost!",
+          "timestamp": "2025-08-15T13:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're right - your original ticket was $235. Let me check something... The September 5th flight is currently $220. Here's your option: Pay $200 change fee + any fare difference ($220 new fare - $235 original = no difference) = $200 total cost. Or, cancel this booking for a travel credit (minus $75 cancellation fee) = $160 credit, then book the new flight for $220. You'd pay $60 out of pocket plus use the credit.",
+          "timestamp": "2025-08-15T13:07:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "So either way I'm losing money but the second option is cheaper?",
+          "timestamp": "2025-08-15T13:08:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Correct. Option 1: Pay $200 total. Option 2: Pay $60 now + use $160 credit = essentially losing $75 instead of $200. The downside is the credit expires in 12 months. If you're certain you'll fly again this year, option 2 saves you money. Which would you prefer?",
+          "timestamp": "2025-08-15T13:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Option 2 then. This is so annoying but I guess I should've read the fine print.",
+          "timestamp": "2025-08-15T13:10:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand the frustration. I'm processing the cancellation now and booking your new flight for September 5th. You'll be charged $220, and receive a $160 travel credit. Total out-of-pocket for the change is $60. New booking reference will be CF778900. Confirmation emails coming shortly.",
+          "timestamp": "2025-08-15T13:12:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, thanks for finding the cheaper option at least.",
+          "timestamp": "2025-08-15T13:12:45Z"
+        }
+      ],
+      "resolution_summary": "Customer frustrated by $200 Basic Economy change fee. Agent explained fare rules, calculated alternative cancel-and-rebook option saving $140, processed more economical solution despite customer dissatisfaction with policies.",
+      "tags": ["change_fee", "basic_economy", "cost_comparison", "cancel_rebook", "fare_rules_education"]
+    },
+    {
+      "id": "conv_flight_029",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "remove_passenger",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked 2 tickets but one person can't come anymore. Can I remove them and get a partial refund? Booking DU556789",
+          "timestamp": "2025-09-22T10:15:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, I can help remove one passenger. Let me pull up booking DU556789.",
+          "timestamp": "2025-09-22T10:16:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see you have 2 passengers booked: Marcus Davis and Jennifer Davis, flying Seattle to Orlando on October 8th. Which passenger needs to be removed?",
+          "timestamp": "2025-09-22T10:17:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Remove Jennifer Davis. She can't get time off work.",
+          "timestamp": "2025-09-22T10:18:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Understood. Each ticket was $385. Since you booked a non-refundable fare, cancelling Jennifer's ticket will result in a travel credit of $335 (after $50 cancellation fee). The credit will be issued in her name and valid for 12 months. Marcus's ticket remains active. Shall I process this?",
+          "timestamp": "2025-09-22T10:20:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "If the credit is in her name, can I use it for myself later?",
+          "timestamp": "2025-09-22T10:21:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Unfortunately, travel credits are tied to the passenger name, so it can only be used to book a flight for Jennifer Davis. However, if Jennifer wants to travel on different dates, even to a different destination, she can use that credit. Is she completely unable to travel, or just not able to make this specific trip?",
+          "timestamp": "2025-09-22T10:22:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Just this trip. She might come join for another weekend. Okay, go ahead and remove her ticket.",
+          "timestamp": "2025-09-22T10:23:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've cancelled Jennifer Davis's ticket. She'll receive an email with her travel credit voucher code TC-DU556789-JD worth $335, valid until October 22, 2026. Marcus's booking remains confirmed under the same reference DU556789. All set!",
+          "timestamp": "2025-09-22T10:25:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great, thank you!",
+          "timestamp": "2025-09-22T10:25:30Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to remove one passenger from two-person booking. Agent cancelled one ticket, explained travel credit tied to passenger name, issued $335 credit after cancellation fee, kept other booking active.",
+      "tags": ["remove_passenger", "partial_cancellation", "travel_credit", "name_restricted_credit", "resolved"]
+    },
+    {
+      "id": "conv_flight_030",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "time_change_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I change my 6am flight to a later time? Same day same route. Booking TM889933",
+          "timestamp": "2025-08-28T16:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Early morning flights are tough. Let me see what later options are available. Pulling up booking TM889933.",
+          "timestamp": "2025-08-28T16:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're currently booked on the 6:00 AM flight from Dallas to Chicago on September 12th. I have several later options: 9:30 AM, 12:45 PM, 3:15 PM, and 6:00 PM. Which time frame works best for you?",
+          "timestamp": "2025-08-28T16:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "The 12:45pm sounds good. How much more?",
+          "timestamp": "2025-08-28T16:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check the fare for that flight... The 12:45 PM flight is actually $15 cheaper than your current 6:00 AM booking! So you'd get $15 back. Would you like me to make the switch?",
+          "timestamp": "2025-08-28T16:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Really? Why is it cheaper?",
+          "timestamp": "2025-08-28T16:06:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Early morning and evening flights are typically more expensive because they're more convenient for business travelers. Midday flights are less in demand so airlines price them lower. Lucky timing for you! Shall I change it?",
+          "timestamp": "2025-08-28T16:07:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Definitely! Yes please change it to 12:45pm.",
+          "timestamp": "2025-08-28T16:07:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Done! You're now booked on the 12:45 PM flight on September 12th. Your seat has been moved to 15C (window, similar to your original 14C). The $15 difference will be refunded to your original payment method within 5-7 business days. Booking reference remains TM889933. You'll get an updated confirmation email shortly.",
+          "timestamp": "2025-08-28T16:09:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Awesome! Thanks so much!",
+          "timestamp": "2025-08-28T16:09:30Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to change early morning flight to midday. Agent found later flight was actually cheaper, processed time change, transferred similar seat, and issued $15 refund.",
+      "tags": ["time_change", "same_day", "fare_reduction", "seat_transfer", "positive_outcome"]
+    },
+    {
+      "id": "conv_flight_031",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "add_baggage_after_booking",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to add a checked bag to my booking. Can I do that now or do I have to wait until airport? Booking PL667788",
+          "timestamp": "2025-09-10T11:20:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! You can definitely add checked baggage now, and it's actually cheaper to add it before arriving at the airport. Let me pull up booking PL667788.",
+          "timestamp": "2025-09-10T11:21:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see your flight from Portland to Miami on September 25th. You currently have no checked bags on your Basic Economy ticket. Adding one bag now costs $35 for the first bag. At the airport, it would be $45. How many bags do you need to add?",
+          "timestamp": "2025-09-10T11:23:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Just one bag. Can I add it for $35 now?",
+          "timestamp": "2025-09-10T11:23:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I'm adding one checked bag (up to 50 lbs) to your booking right now. The $35 will be charged to your original payment method. You'll receive an updated confirmation email showing the baggage included.",
+          "timestamp": "2025-09-10T11:25:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "What if I end up not checking a bag?",
+          "timestamp": "2025-09-10T11:25:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Once purchased, the baggage fee is non-refundable even if you don't use it. However, having it prepaid means you have the flexibility to check a bag if needed. If you're unsure, you could wait and pay the $45 at the airport, but you'd lose the $10 savings. Most people prefer to prepay for the discount.",
+          "timestamp": "2025-09-10T11:27:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No I definitely need it, I'm bringing surfboards. Actually, those might need a special bag allowance?",
+          "timestamp": "2025-09-10T11:28:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Good catch! Surfboards are considered special/oversized items and have different fees. For United Airlines, surfboards cost $150 each as sporting equipment. The standard checked bag allowance wouldn't cover it. Would you still like the regular checked bag for your clothes, plus the surfboard fee?",
+          "timestamp": "2025-09-10T11:30:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, I need both. Can you add the surfboard fee too?",
+          "timestamp": "2025-09-10T11:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I've added the standard checked bag ($35). For the surfboard, I'll add a note to your booking and you'll need to pay the $150 sporting equipment fee at the airport when you check in - this can't be prepaid online. Make sure your surfboard is properly packaged and under 100 lbs. Total fees: $35 now + $150 at airport.",
+          "timestamp": "2025-09-10T11:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Got it, thanks for the help!",
+          "timestamp": "2025-09-10T11:33:45Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to add checked bag, discovered need for special surfboard fee. Agent added standard bag at discounted prepay rate, explained special equipment fees and airport payment process.",
+      "tags": ["add_baggage", "prepay_discount", "special_equipment", "sporting_goods", "fee_explanation"]
+    },
+    {
+      "id": "conv_flight_032",
+      "category": "flights",
+      "subcategory": "modification",
+      "issue_type": "change_multiple_bookings",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I have 3 separate bookings for my family all on the same flight. Can we change all of them to a new date together? Bookings: FY112233, FY112244, FY112255",
+          "timestamp": "2025-08-18T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, I can help change all three bookings to the same new date. Let me pull them up - FY112233, FY112244, and FY112255.",
+          "timestamp": "2025-08-18T14:01:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see all three bookings are for the Philadelphia to San Antonio flight on September 5th. All three are Main Cabin fares with no change fees. What's your preferred new date?",
+          "timestamp": "2025-08-18T14:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "We need September 12th instead. Same flight time if possible.",
+          "timestamp": "2025-08-18T14:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! There's a flight on September 12th at 2:30 PM (your current is 2:15 PM - very close). Checking availability... Excellent, plenty of seats available. Let me calculate the fare difference for all three tickets: Current total paid: $870. New total: $915. Difference: $45 total ($15 per person). Should I proceed with changing all three?",
+          "timestamp": "2025-08-18T14:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, and can we all sit together?",
+          "timestamp": "2025-08-18T14:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I can see you're currently in seats 20A, 20B, and 20C. On the September 12th flight, I can put you in 22A, 22B, and 22C - same configuration (window, middle, aisle) just two rows back. Does that work?",
+          "timestamp": "2025-08-18T14:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Yes please make the changes.",
+          "timestamp": "2025-08-18T14:08:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "All done! All three bookings have been changed to September 12th at 2:30 PM with seats 22A, 22B, and 22C. The $45 fare difference will be charged to the original payment methods. You'll receive three separate updated confirmation emails. The booking references remain the same. Anything else you need?",
+          "timestamp": "2025-08-18T14:10:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No that's great! Thanks for handling all three at once!",
+          "timestamp": "2025-08-18T14:11:00Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to change three family member bookings to new date. Agent processed all three modifications simultaneously, calculated total fare difference, arranged adjacent seating, and maintained booking organization.",
+      "tags": ["multiple_bookings", "family_travel", "date_change", "group_seats", "coordinated_change"]
+    }
+  ]
+}

@@ -1,0 +1,693 @@
+{
+  "conversations": [
+    {
+      "id": "conv_hotel_011",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "free_cancellation_policy",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "What's the cancellation policy for my booking? I might need to cancel. Booking HC445566",
+          "timestamp": "2025-09-05T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check the cancellation policy for booking HC445566.",
+          "timestamp": "2025-09-05T14:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Holiday Inn Chicago for September 18-20 has a flexible cancellation policy: free cancellation up to 48 hours (2 days) before check-in. That means you can cancel for free anytime before September 16th at 3:00 PM. After that, you'll be charged for one night as a cancellation fee.",
+          "timestamp": "2025-09-05T14:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok so if I cancel today, I get a full refund?",
+          "timestamp": "2025-09-05T14:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Correct! If you cancel today (September 5th), you're well within the free cancellation window. You'll receive a full refund of $380 to your original payment method within 7-10 business days. Would you like me to process the cancellation now?",
+          "timestamp": "2025-09-05T14:05:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Not yet, I'm still deciding. Just wanted to know my options. Thanks!",
+          "timestamp": "2025-09-05T14:05:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "No problem at all! Just remember the deadline is September 16th at 3:00 PM if you decide to cancel. Feel free to reach out if you need anything else!",
+          "timestamp": "2025-09-05T14:06:15Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about cancellation policy. Agent explained 48-hour free cancellation window, deadline calculation, and refund process. Customer chose not to cancel yet.",
+      "tags": ["cancellation_policy", "free_cancellation", "policy_inquiry", "flexible_booking", "no_action"]
+    },
+    {
+      "id": "conv_hotel_012",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "non_refundable_cancellation_request",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to cancel my hotel but I just realized it says non-refundable! I didn't know that when I booked! Booking HN778899",
+          "timestamp": "2025-08-20T16:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand your concern. Let me look at booking HN778899 and see what options we have.",
+          "timestamp": "2025-08-20T16:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking at the Hilton Garden Inn Miami for August 28-30. It is indeed a non-refundable rate, which was 20% cheaper than the flexible rate at booking. Non-refundable means if you cancel, you won't receive a refund. May I ask why you need to cancel?",
+          "timestamp": "2025-08-20T16:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "My trip got cancelled by my company. I understand I got a discount but losing $240 is really painful!",
+          "timestamp": "2025-08-20T16:34:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand. While I can't offer a refund for non-refundable bookings, let me check a few things: 1) Can you reschedule instead of cancel? The booking can usually be modified to different dates for a small fee. 2) Does your company have travel insurance that might cover this?",
+          "timestamp": "2025-08-20T16:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't have travel insurance. What do you mean by reschedule? To when?",
+          "timestamp": "2025-08-20T16:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Even though the rate is non-refundable, many hotels allow you to change the dates for a $50 modification fee. So instead of losing $240, you'd pay $50 and keep the reservation for a future personal trip. You'd have to travel within the next year. Would that work for you?",
+          "timestamp": "2025-08-20T16:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Actually yes! I could visit Miami on vacation later this year. Can you change it to November?",
+          "timestamp": "2025-08-20T16:40:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check November availability... Perfect! I can move your 2-night stay to November 15-17. The $50 modification fee will be charged, and your booking reference remains HN778899. You're saving $190 compared to cancelling. Shall I confirm this change?",
+          "timestamp": "2025-08-20T16:42:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes absolutely! That's so much better than losing all the money!",
+          "timestamp": "2025-08-20T16:42:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Done! Your booking is now for November 15-17. You'll be charged the $50 modification fee, and you'll receive an updated confirmation email. Enjoy your Miami vacation!",
+          "timestamp": "2025-08-20T16:44:00Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to cancel non-refundable booking due to company trip cancellation. Agent offered date modification option for $50 fee instead of losing $240, successfully rescheduled to November.",
+      "tags": ["non_refundable", "date_modification", "alternative_solution", "fee_vs_forfeiture", "resolved"]
+    },
+    {
+      "id": "conv_hotel_013",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "partial_stay_cancellation",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked 5 nights but I only need 3 now. Can I cancel some of the nights? Booking HP556677",
+          "timestamp": "2025-09-12T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your booking and see if we can shorten your stay. Looking at HP556677 now.",
+          "timestamp": "2025-09-12T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking is at the Sheraton Boston for September 25-30 (5 nights). You want to shorten it to 3 nights? Would you like to keep September 25-28, or different dates?",
+          "timestamp": "2025-09-12T10:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Keep Sept 25-28 (3 nights), cancel the last 2 nights.",
+          "timestamp": "2025-09-12T10:03:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I can modify your check-out date from September 30th to September 28th. Your original booking was $750 for 5 nights ($150/night). The new 3-night booking will be $450. The difference of $300 will be refunded to your original payment method within 7-10 days. Should I make this change?",
+          "timestamp": "2025-09-12T10:05:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please! And there's no fee to shorten the stay?",
+          "timestamp": "2025-09-12T10:05:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Correct - since you're still keeping a 3-night minimum and modifying well in advance (13 days before check-in), there's no fee. I'm updating your checkout date to September 28th now. Your booking reference remains HP556677. You'll receive an updated confirmation email showing the new dates and the $300 refund.",
+          "timestamp": "2025-09-12T10:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Excellent, thank you!",
+          "timestamp": "2025-09-12T10:08:00Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to shorten 5-night stay to 3 nights. Agent modified checkout date, processed $300 refund for cancelled nights with no modification fee.",
+      "tags": ["partial_cancellation", "shorten_stay", "checkout_modification", "no_fee", "refund"]
+    },
+    {
+      "id": "conv_hotel_014",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "no_show_charge",
+      "resolution_status": "escalated",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I was charged for a hotel stay even though I never showed up! I forgot to cancel but I didn't use the room! Booking HO889900",
+          "timestamp": "2025-09-22T11:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand your frustration. Let me look at booking HO889900 and review what happened.",
+          "timestamp": "2025-09-22T11:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking at the Hyatt Orlando for September 18-20. The hotel marked this as a no-show, which means you didn't check in and didn't cancel. The cancellation policy stated free cancellation up to 48 hours before check-in (September 16th). Because you didn't cancel or show up, you were charged the full amount of $420. Did something prevent you from canceling?",
+          "timestamp": "2025-09-22T11:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I had a family emergency and completely forgot about the hotel! It seems unfair to charge me for a room I didn't even use!",
+          "timestamp": "2025-09-22T11:04:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry to hear about your family emergency. While the standard policy is to charge for no-shows, given the circumstances, I'd like to escalate this to our customer relations team. Can you provide any documentation of the emergency (hospital admission, etc.)? This would support a compassionate exception.",
+          "timestamp": "2025-09-22T11:06:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, I have hospital paperwork from that day. Where do I send it?",
+          "timestamp": "2025-09-22T11:07:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect. I'm creating a special review case right now. Please email the documentation to exceptions@travelsite.com with your booking reference HO889900 in the subject line. Our team will review within 3-5 business days. While I can't guarantee a refund, emergency situations are often approved. Your case number is NS-HO889900.",
+          "timestamp": "2025-09-22T11:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, I'll send that today. I really hope they understand.",
+          "timestamp": "2025-09-22T11:10:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I've marked your case as priority and included notes about the family emergency. The review team is generally understanding with documented emergencies. You should hear back via email within 5 business days. I hope everything is okay with your family now.",
+          "timestamp": "2025-09-22T11:11:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you, things are better now. I appreciate your help.",
+          "timestamp": "2025-09-22T11:12:00Z"
+        }
+      ],
+      "resolution_summary": "Customer charged for no-show due to family emergency. Agent escalated for compassionate exception review, requested emergency documentation, created priority case for possible refund.",
+      "tags": ["no_show", "emergency_exception", "escalated", "documentation_required", "compassionate_case"]
+    },
+    {
+      "id": "conv_hotel_015",
+      "category": "hotels",
+      "subcategory": "refund",
+      "issue_type": "refund_processing_delay",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I cancelled my hotel 2 weeks ago and still haven't received my refund! Where is my money?? Booking HR667788",
+          "timestamp": "2025-09-10T15:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm sorry about the refund delay! Let me investigate booking HR667788 right away and find out what's happening.",
+          "timestamp": "2025-09-10T15:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see you cancelled your Marriott San Francisco booking on August 25th. The refund of $615 was processed on August 27th. Hotel refunds typically take 7-10 business days to appear, and it's been about 11 business days. Have you checked with your credit card company?",
+          "timestamp": "2025-09-10T15:33:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, I assumed it would just show up. Can you give me proof it was sent?",
+          "timestamp": "2025-09-10T15:34:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I'm sending you an email right now with the refund confirmation document. It includes: refund amount ($615), processing date (August 27th), transaction ID (RF-HR667788-0827), and the last 4 digits of the card (7823). You can share this with your bank to help them locate the refund.",
+          "timestamp": "2025-09-10T15:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok got the email. What if my bank says they never got it?",
+          "timestamp": "2025-09-10T15:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "If your bank confirms they haven't received the refund, contact us immediately with case number RD-667788, and we'll initiate a payment trace. This process usually takes 2-3 business days and will determine where the refund went. Most of the time, the bank just needs a few more days to post it to your account, but we'll help track it down if needed.",
+          "timestamp": "2025-09-10T15:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, I'll call my bank. Thanks for the documentation.",
+          "timestamp": "2025-09-10T15:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! I hope it shows up in your account soon. If you need any further assistance, don't hesitate to reach out with that case number.",
+          "timestamp": "2025-09-10T15:40:15Z"
+        }
+      ],
+      "resolution_summary": "Customer's refund delayed 2 weeks after cancellation. Agent verified refund was processed, sent documentation with transaction details, explained bank processing times, provided escalation path.",
+      "tags": ["refund_delay", "transaction_trace", "documentation_provided", "bank_issue", "resolved"]
+    },
+    {
+      "id": "conv_hotel_016",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "emergency_cancellation",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to cancel my hotel due to a death in the family. The cancellation deadline passed but this is an emergency. Booking HE445577",
+          "timestamp": "2025-08-15T09:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry for your loss. Let me help you with this right away. Looking at booking HE445577 now.",
+          "timestamp": "2025-08-15T09:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Westin Philadelphia for August 22-25 has a cancellation deadline that passed on August 20th. However, we have compassionate policies for emergencies like this. I can process an exception cancellation with a full refund. We would need documentation (death certificate or obituary) within 7 days. Is that possible?",
+          "timestamp": "2025-08-15T09:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, I can get that. Should I cancel the trip or will you do it?",
+          "timestamp": "2025-08-15T09:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'll process the cancellation for you right now as an emergency exception. The full amount of $545 will be refunded to your original payment method within 7-10 business days. Please email the documentation to compassionate@travelsite.com with booking reference HE445577 within 7 days to finalize the exception.",
+          "timestamp": "2025-08-15T09:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you. What happens if I can't get the documentation?",
+          "timestamp": "2025-08-15T09:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "If documentation isn't provided within 7 days, the standard cancellation policy would apply - you'd be charged for one night ($181) and receive a partial refund of $364 instead. But we'll work with you on the documentation requirements. Most funeral homes can provide what's needed. I'm noting your case as EC-HE445577.",
+          "timestamp": "2025-08-15T09:08:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Understood. Thank you for being understanding during this difficult time.",
+          "timestamp": "2025-08-15T09:09:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Of course. Again, I'm very sorry for your loss. We're here if you need any additional help. Take care.",
+          "timestamp": "2025-08-15T09:09:30Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to cancel after deadline due to death in family. Agent processed compassionate exception cancellation with full refund, pending documentation within 7 days.",
+      "tags": ["emergency_cancellation", "compassionate_policy", "bereavement", "documentation_required", "full_refund"]
+    },
+    {
+      "id": "conv_hotel_017",
+      "category": "hotels",
+      "subcategory": "refund",
+      "issue_type": "partial_refund_dispute",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I was only refunded $150 but my booking was $200! What happened to the other $50? Booking HP334455",
+          "timestamp": "2025-09-18T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me look into that refund discrepancy for you. Checking booking HP334455 now.",
+          "timestamp": "2025-09-18T14:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your booking for the Hampton Inn Dallas, original price $200. You cancelled on September 10th, which was within the free cancellation window. Let me review the refund breakdown... I see the issue. There was a $50 early booking discount applied that was non-refundable. The base rate was $200, with a $50 discount making it $150 - that's what you paid. Wait, let me recheck...",
+          "timestamp": "2025-09-18T14:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, I definitely paid $200! I have the charge on my credit card statement!",
+          "timestamp": "2025-09-18T14:04:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're absolutely right, I apologize for the confusion. Your booking confirmation shows $200 charged. Looking more carefully at the refund... I see a $50 resort fee that was marked as non-refundable. However, resort fees should be refundable if the stay is cancelled before arrival. This appears to be an error. Let me fix this immediately.",
+          "timestamp": "2025-09-18T14:06:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes! I never stayed there, so why would I pay a resort fee?",
+          "timestamp": "2025-09-18T14:07:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're absolutely correct. I'm processing an additional refund of $50 right now for the resort fee. You'll receive this within 5-7 business days, bringing your total refund to the full $200. I apologize for this error. Your supplemental refund reference is SR-HP334455.",
+          "timestamp": "2025-09-18T14:09:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you for fixing that. I was really confused about where that money went.",
+          "timestamp": "2025-09-18T14:09:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand your frustration. The additional $50 is being processed now. You'll receive a confirmation email. Again, I apologize for the error and thank you for bringing it to our attention.",
+          "timestamp": "2025-09-18T14:10:30Z"
+        }
+      ],
+      "resolution_summary": "Customer received partial refund missing $50 resort fee. Agent identified erroneous non-refundable resort fee charge for cancelled stay, processed additional $50 refund for full reimbursement.",
+      "tags": ["partial_refund", "resort_fee_error", "additional_refund", "billing_error", "resolved"]
+    },
+    {
+      "id": "conv_hotel_018",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "weather_emergency_cancellation",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "There's a hurricane warning for Miami! I need to cancel my hotel but it's non-refundable! Booking HM778899",
+          "timestamp": "2025-09-01T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand your concern about the hurricane! Safety comes first. Let me look at booking HM778899 and see what we can do.",
+          "timestamp": "2025-09-01T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Miami Beach Resort for September 5-8 is a non-refundable rate. However, we have a weather emergency policy. If there's an official evacuation order or state of emergency declared for your destination, we can waive the non-refundable restriction. Let me check the current status...",
+          "timestamp": "2025-09-01T10:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "The news says it might hit this weekend. Should I wait to see if it's declared an emergency?",
+          "timestamp": "2025-09-01T10:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm checking real-time emergency declarations... Miami-Dade County currently has a tropical storm watch but no evacuation order yet. Here are your options: 1) Wait to see if an official emergency is declared (usually 24-48 hours before), then cancel for free, or 2) Cancel now and request a full refund if an emergency is declared before your check-in date. I'd recommend option 2 for peace of mind.",
+          "timestamp": "2025-09-01T10:06:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Let's do option 2. I don't want to risk traveling into a hurricane.",
+          "timestamp": "2025-09-01T10:07:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Smart decision. I'm cancelling booking HM778899 now and marking it as weather-related. If an evacuation order or state of emergency is declared for Miami before September 5th, you'll automatically receive a full refund of $690. If no emergency is declared, the standard non-refundable policy applies and no refund would be issued. You'll receive monitoring updates via email. Case number is WE-HM778899.",
+          "timestamp": "2025-09-01T10:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That works. Better safe than sorry. Thank you!",
+          "timestamp": "2025-09-01T10:10:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! Stay safe, and we'll monitor the situation for you. You'll receive email updates if an emergency is declared.",
+          "timestamp": "2025-09-01T10:10:30Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to cancel due to hurricane warning in Miami. Agent explained weather emergency policy, cancelled booking with conditional refund pending official evacuation order or emergency declaration.",
+      "tags": ["weather_emergency", "hurricane", "conditional_refund", "safety_first", "non_refundable_exception"]
+    },
+    {
+      "id": "conv_hotel_019",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "group_booking_cancellation",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked 4 rooms for a family reunion but 2 families can't make it anymore. Can I cancel just 2 rooms? Booking HG556688",
+          "timestamp": "2025-08-25T11:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, you can cancel part of a group booking. Let me look at HG556688.",
+          "timestamp": "2025-08-25T11:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your group booking for 4 rooms at the Hilton Garden Inn Orlando, September 15-18 (3 nights). All rooms have the same cancellation policy: free cancellation up to 48 hours before check-in. Which 2 rooms would you like to cancel? Can you provide the guest names?",
+          "timestamp": "2025-08-25T11:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Cancel the rooms for Smith family and Johnson family. Keep the Davis and Martinez rooms.",
+          "timestamp": "2025-08-25T11:34:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect. I'm cancelling 2 rooms (Smith and Johnson) from your group booking. Each room was $135 per night x 3 nights = $405 per room. Total refund: $810. The remaining 2 rooms (Davis and Martinez) stay active under the same group booking reference HG556688. Refund will process within 7-10 days.",
+          "timestamp": "2025-08-25T11:36:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Will the remaining rooms still get the group rate?",
+          "timestamp": "2025-08-25T11:37:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes! Group rates typically require a minimum of 2 rooms, which you still have. Your rate of $135/night remains locked in for the Davis and Martinez rooms. You'll receive separate confirmation emails: one showing the cancellation of 2 rooms with the $810 refund, and another confirming the 2 remaining rooms.",
+          "timestamp": "2025-08-25T11:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Thank you for keeping this simple!",
+          "timestamp": "2025-08-25T11:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy your family reunion with the Davis and Martinez families!",
+          "timestamp": "2025-08-25T11:40:15Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to cancel 2 of 4 rooms in group booking. Agent processed partial cancellation, maintained group rate for remaining rooms, issued $810 refund.",
+      "tags": ["group_booking", "partial_cancellation", "group_rate_maintained", "family_reunion", "resolved"]
+    },
+    {
+      "id": "conv_hotel_020",
+      "category": "hotels",
+      "subcategory": "refund",
+      "issue_type": "refund_to_different_card",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I cancelled my hotel but the credit card I used is now closed. Can you refund to a different card? Booking HD223344",
+          "timestamp": "2025-09-08T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check booking HD223344 and see what options we have for the refund.",
+          "timestamp": "2025-09-08T14:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your cancellation for the Doubletree Seattle was processed on September 5th. The refund of $420 was sent to the card ending in 6789. If that card is closed, your bank will typically redirect the refund to your current active account automatically. Have you contacted your bank about this?",
+          "timestamp": "2025-09-08T14:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, I haven't. But I closed that card and opened a new one with a different bank. Will they still forward it?",
+          "timestamp": "2025-09-08T14:04:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "If you switched banks entirely, the old bank might reject the refund and send it back to us. That process takes about 2-3 weeks. Once it's returned, we can reissue the refund via check or to a different card. Let me do this: I'll put a note on your account to monitor the refund. If it's returned to us, I'll proactively reach out to arrange the reissue. Can you provide your new contact information?",
+          "timestamp": "2025-09-08T14:06:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, my new email is alex.kim.new@email.com and phone is 555-0123. How will I know if it gets rejected?",
+          "timestamp": "2025-09-08T14:07:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I've updated your contact information. You should first check with your old bank in about 7-10 days to see if they received and forwarded the refund. If they reject it, it will return to us and I've set up automatic alerts to notify you via your new email. You'll then need to provide new payment details for reissue. Your case monitoring number is RF-HD223344.",
+          "timestamp": "2025-09-08T14:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, I'll call my old bank first. Thanks for setting up the monitoring!",
+          "timestamp": "2025-09-08T14:10:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Hopefully your old bank will forward it smoothly. If not, we've got you covered with the monitoring system. Feel free to reach out if you have any questions!",
+          "timestamp": "2025-09-08T14:10:30Z"
+        }
+      ],
+      "resolution_summary": "Customer's refund sent to closed credit card at different bank. Agent explained bank redirect process, set up proactive monitoring for rejected refund, updated contact info for reissue if needed.",
+      "tags": ["refund_redirect", "closed_account", "bank_change", "monitoring_setup", "proactive_service"]
+    },
+    {
+      "id": "conv_hotel_021",
+      "category": "hotels",
+      "subcategory": "cancellation",
+      "issue_type": "last_minute_cancellation_fee",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to cancel my hotel for tonight but it's past the cancellation deadline! My car broke down and I can't get there! Booking HL889922",
+          "timestamp": "2025-09-20T16:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm sorry about your car trouble! Let me look at booking HL889922 and see what we can do.",
+          "timestamp": "2025-09-20T16:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Courtyard Denver for tonight has a 48-hour cancellation policy, and the deadline was September 18th at 3:00 PM. Unfortunately, cancelling now would incur a one-night cancellation charge of $145. Given your car breakdown, let me check if the hotel can make an exception. One moment...",
+          "timestamp": "2025-09-20T16:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I have a tow truck receipt if that helps prove the breakdown!",
+          "timestamp": "2025-09-20T16:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's helpful! I'm contacting the hotel directly right now to explain the situation... The hotel manager has agreed to waive the cancellation fee as a one-time courtesy given the documented emergency. You'll need to email the tow truck receipt to exceptions@travelsite.com with booking reference HL889922 within 24 hours. Full refund of $435 will be processed once we receive the documentation.",
+          "timestamp": "2025-09-20T16:07:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Really? That's amazing! I'll send the receipt right now!",
+          "timestamp": "2025-09-20T16:07:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm cancelling the booking now with a notation for emergency waiver. Once we receive and verify your tow receipt, the full refund will process within 5-7 business days. Your case number is EW-HL889922. I hope you get your car situation sorted out soon!",
+          "timestamp": "2025-09-20T16:09:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much for helping with this! I was so stressed!",
+          "timestamp": "2025-09-20T16:09:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! Car breakdowns are stressful enough without losing money on a hotel. Take care!",
+          "timestamp": "2025-09-20T16:10:00Z"
+        }
+      ],
+      "resolution_summary": "Customer needed last-minute cancellation due to car breakdown. Agent contacted hotel directly, secured exception waiver, arranged full refund pending tow receipt documentation.",
+      "tags": ["last_minute_cancellation", "emergency_waiver", "car_breakdown", "documentation_required", "hotel_exception"]
+    },
+    {
+      "id": "conv_hotel_022",
+      "category": "hotels",
+      "subcategory": "refund",
+      "issue_type": "overcharge_refund",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I was charged $450 but my booking confirmation says $380! Why was I overcharged? Booking HV556699",
+          "timestamp": "2025-09-15T10:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm sorry about the billing discrepancy! Let me investigate booking HV556699 right away.",
+          "timestamp": "2025-09-15T10:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm looking at your booking for the Sheraton Atlanta, September 22-24. The confirmation shows a total of $380 (2 nights at $190/night). Let me check what you were actually charged... I see a charge of $450 on September 12th. Let me review the itemized breakdown...",
+          "timestamp": "2025-09-15T10:33:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes! It should be $380 total! Where did the extra $70 come from??",
+          "timestamp": "2025-09-15T10:34:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I found the issue. You were charged $450 which includes: $380 (room rate) + $70 (taxes and fees). Your confirmation might have shown the base rate excluding taxes. Let me verify if taxes were supposed to be included... Actually, I see the confirmation clearly states \"$380 total including taxes.\" This is an error - you should not have been charged the additional $70.",
+          "timestamp": "2025-09-15T10:37:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Exactly! It says INCLUDING taxes! I want that $70 back!",
+          "timestamp": "2025-09-15T10:38:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're absolutely right, and I apologize for this billing error. I'm processing a refund of $70 right now. This will return to your original payment method within 5-7 business days. You'll receive a corrected invoice showing $380 as the final charge. Your refund reference is OC-HV556699.",
+          "timestamp": "2025-09-15T10:40:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you. I'm glad I checked my credit card statement!",
+          "timestamp": "2025-09-15T10:40:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! Always good to double-check. I apologize again for the error, and the refund is being processed now. Is there anything else I can help with?",
+          "timestamp": "2025-09-15T10:41:15Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, that's all. Thanks for fixing it quickly.",
+          "timestamp": "2025-09-15T10:41:45Z"
+        }
+      ],
+      "resolution_summary": "Customer overcharged $70 (charged $450 vs confirmed $380 including taxes). Agent identified billing error with duplicate tax charge, processed immediate $70 refund and corrected invoice.",
+      "tags": ["overcharge", "billing_error", "tax_duplicate", "immediate_refund", "resolved"]
+    }
+  ]
+}

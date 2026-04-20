@@ -1,0 +1,106 @@
+.message-input {
+  padding: 16px 20px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  background: #f3f4f6;
+  border-radius: 24px;
+  padding: 8px 8px 8px 20px;
+}
+
+.message-input textarea {
+  flex: 1;
+  border: none;
+  background: transparent;
+  resize: none;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 8px 0;
+  max-height: 120px;
+  font-family: inherit;
+}
+
+.message-input textarea:focus {
+  outline: none;
+}
+
+.message-input textarea::placeholder {
+  color: #9ca3af;
+}
+
+.message-input textarea:disabled {
+  background: transparent;
+  cursor: not-allowed;
+}
+
+.message-input button {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.1s;
+  flex-shrink: 0;
+}
+
+.message-input button:hover:not(:disabled) {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.message-input button:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.message-input button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.message-input button svg {
+  transform: translateX(2px);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: #6b7280;
+  justify-content: center;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+.status-dot.disconnected {
+  background: #f59e0b;
+}
+
+.status-dot.connected {
+  background: #10b981;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

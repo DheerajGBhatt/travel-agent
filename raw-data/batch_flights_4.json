@@ -1,0 +1,619 @@
+{
+  "conversations": [
+    {
+      "id": "conv_flight_033",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "flight_delayed_compensation",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My flight was delayed 5 hours yesterday! Do I get compensation for this?? Flight was LA to NYC. Booking QZ778899",
+          "timestamp": "2025-09-14T08:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'm sorry about the significant delay. Let me look into booking QZ778899 and see what compensation options are available.",
+          "timestamp": "2025-09-14T08:31:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your flight departed 5 hours and 15 minutes late on September 13th. May I ask what reason was given for the delay? This affects compensation eligibility.",
+          "timestamp": "2025-09-14T08:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "They said mechanical issues with the plane. I missed my daughter's school play because of this!",
+          "timestamp": "2025-09-14T08:34:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I sincerely apologize - I understand how disappointing that must be. For US domestic flights, compensation isn't federally mandated like in Europe, but airlines often provide goodwill compensation for controllable delays. Since this was a mechanical issue (airline controllable), you should be eligible for compensation. Let me file a claim for you.",
+          "timestamp": "2025-09-14T08:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "What kind of compensation are we talking about?",
+          "timestamp": "2025-09-14T08:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "For a 5+ hour delay on a cross-country flight, typical compensation ranges from $200-400 travel voucher or 15,000-25,000 airline miles. I'm submitting your claim now with priority status given the significant delay and missed event. The airline will review and respond within 7-10 business days via email.",
+          "timestamp": "2025-09-14T08:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Can I get cash instead of a voucher?",
+          "timestamp": "2025-09-14T08:40:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "For voluntary compensation on domestic flights, airlines typically only offer vouchers or miles, not cash refunds. However, I can note in your claim that you prefer the highest compensation tier. I've also documented that you missed a significant family event. Your claim reference number is DL-QZ778899-0913.",
+          "timestamp": "2025-09-14T08:42:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, I guess that's something at least. Thank you.",
+          "timestamp": "2025-09-14T08:43:00Z"
+        }
+      ],
+      "resolution_summary": "Customer's flight delayed 5+ hours due to mechanical issues, causing missed family event. Agent filed compensation claim for travel voucher/miles, explained US domestic compensation policies, provided claim reference.",
+      "tags": ["flight_delay", "mechanical_issue", "compensation_claim", "goodwill", "significant_delay"]
+    },
+    {
+      "id": "conv_flight_034",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "flight_cancelled_rebooking",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I just got notified my flight tomorrow was cancelled! I need to be in Boston for a meeting! What are my options?? Booking XL445577",
+          "timestamp": "2025-10-01T19:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm so sorry about this cancellation! Let me help you find an alternative right away. Looking at booking XL445577 now.",
+          "timestamp": "2025-10-01T19:46:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your Chicago to Boston flight tomorrow at 11:30 AM was cancelled due to weather conditions. I'm checking all available alternatives... I have: 1) Tomorrow 7:15 AM direct, 2) Tomorrow 2:45 PM with one stop, 3) Tomorrow 8:00 PM direct. What time is your meeting?",
+          "timestamp": "2025-10-01T19:48:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Meeting is at 3pm! The 715am would work but that's really early. Is there anything arriving before 2pm?",
+          "timestamp": "2025-10-01T19:49:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "The 7:15 AM flight arrives at 10:50 AM, giving you plenty of time. The connecting flight option (2:45 PM departure) wouldn't arrive until 7:30 PM, too late for your meeting. The 7:15 AM is your best option for the meeting. Shall I rebook you on that?",
+          "timestamp": "2025-10-01T19:51:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ugh, fine. Will it cost extra?",
+          "timestamp": "2025-10-01T19:51:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "No extra cost - when the airline cancels your flight, rebooking is free even if the new flight is normally more expensive. I'm rebooking you now on the 7:15 AM flight. Your seat will be 9C, similar to your original 10C. New booking reference is XL445588. You're all set!",
+          "timestamp": "2025-10-01T19:53:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok thank you for the quick help. At least I can still make the meeting.",
+          "timestamp": "2025-10-01T19:54:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! I know early flights aren't ideal, but you'll make your meeting with time to spare. Safe travels!",
+          "timestamp": "2025-10-01T19:54:30Z"
+        }
+      ],
+      "resolution_summary": "Flight cancelled due to weather day before travel. Customer had time-sensitive meeting. Agent quickly identified early morning alternative flight arriving in time, rebooked at no cost.",
+      "tags": ["flight_cancellation", "weather", "urgent_rebooking", "business_travel", "no_cost_change"]
+    },
+    {
+      "id": "conv_flight_035",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "missed_connection",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I missed my connecting flight because the first flight was delayed! Now I'm stuck in Denver. Booking MC667788",
+          "timestamp": "2025-09-20T16:20:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry you're stranded! Let me help get you to your destination. Looking up booking MC667788 right away.",
+          "timestamp": "2025-09-20T16:21:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see you were on Portland to Denver to Miami. Your first leg was delayed and you missed the 3:45 PM Denver-Miami connection. The next available flight to Miami is at 9:30 PM tonight, arriving at 3:15 AM. Or there's a 6:45 AM flight tomorrow. Which would you prefer?",
+          "timestamp": "2025-09-20T16:23:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I don't want to arrive at 3am! But I also don't want to wait until tomorrow. Are those really my only options??",
+          "timestamp": "2025-09-20T16:24:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check alternative routes... I found a flight through Dallas: Denver to Dallas at 7:20 PM, connecting to Miami arriving at 1:30 AM. Still late but better than 3:15 AM. I can also issue you a meal voucher for dinner since you're delayed, and a hotel voucher if you choose the tomorrow morning option.",
+          "timestamp": "2025-09-20T16:27:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "The Dallas route sounds better. Can you book that? And yes I'll take the meal voucher.",
+          "timestamp": "2025-09-20T16:28:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Booking you now on the Denver-Dallas-Miami route. You'll depart at 7:20 PM from gate B15. I'm issuing a $15 meal voucher - you'll receive it via email in the next 5 minutes. The rebooking is at no cost since you missed the connection due to airline delay. New confirmation number is MC667789.",
+          "timestamp": "2025-09-20T16:30:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "What about my checked bag? Will it make it?",
+          "timestamp": "2025-09-20T16:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Great question! Since you were already checked through to Miami, your bag is in the Denver system. I've added a priority tag to ensure it's transferred to your new flight. It should arrive with you in Miami. If there are any issues, United has 24/7 baggage service at Miami airport. Your baggage claim number is on your original boarding pass.",
+          "timestamp": "2025-09-20T16:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, thank you for finding a better option.",
+          "timestamp": "2025-09-20T16:33:45Z"
+        }
+      ],
+      "resolution_summary": "Customer missed connection due to first flight delay. Agent found alternative routing with earlier arrival, rebooked at no cost, issued meal voucher, and expedited baggage transfer.",
+      "tags": ["missed_connection", "flight_delay", "alternative_routing", "meal_voucher", "baggage_transfer"]
+    },
+    {
+      "id": "conv_flight_036",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "lost_baggage",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My luggage didn't arrive with my flight! I landed in Orlando 3 hours ago and still no bag! Booking PB889922",
+          "timestamp": "2025-08-25T14:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry about your missing luggage! This is understandably frustrating. Let me help track it down. Can you provide your baggage claim tag number? It's on the receipt from check-in.",
+          "timestamp": "2025-08-25T14:31:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "It's UA564789. I'm here for a wedding tomorrow and all my clothes are in that bag!",
+          "timestamp": "2025-08-25T14:32:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me track that immediately... I can see your bag was checked in Seattle for the flight to Orlando via Houston. It looks like your bag missed the Houston connection and is still there. The good news is it's located and will be on the next flight to Orlando, arriving at 8:45 PM tonight.",
+          "timestamp": "2025-08-25T14:35:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Tonight?? That's 6 hours away! I need clothes now!",
+          "timestamp": "2025-08-25T14:36:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I completely understand. The airline will reimburse you for essential items purchased while your bag is delayed. I'm authorizing up to $100 for immediate necessities - clothing, toiletries, etc. Keep your receipts and submit them via the email I'm sending you. Your bag will be delivered to your hotel address once it arrives. Can you confirm your hotel details?",
+          "timestamp": "2025-08-25T14:38:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'm staying at Marriott Downtown Orlando, 123 Orange Ave. Will they really deliver it?",
+          "timestamp": "2025-08-25T14:39:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes, absolutely! I've arranged for direct delivery to Marriott Downtown Orlando. Your bag should arrive between 10 PM and midnight tonight. I'm also sending you a tracking link so you can monitor its progress in real-time. You'll receive text updates when it's on the delivery vehicle. Your case reference is LB-PB889922.",
+          "timestamp": "2025-08-25T14:41:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, at least I can buy some clothes for today. Thank you for setting up the delivery.",
+          "timestamp": "2025-08-25T14:42:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome. I'm truly sorry about this inconvenience, especially before a wedding. If your bag doesn't arrive by midnight, please call our 24/7 baggage line at 1-800-555-0188 with your case reference. Hope you enjoy the wedding!",
+          "timestamp": "2025-08-25T14:43:00Z"
+        }
+      ],
+      "resolution_summary": "Customer's luggage missed connection and didn't arrive at destination. Agent located bag, arranged next-flight delivery to hotel, authorized $100 reimbursement for essentials, provided tracking and reference number.",
+      "tags": ["lost_baggage", "missed_connection_bag", "delivery_arrangement", "reimbursement", "urgent_situation"]
+    },
+    {
+      "id": "conv_flight_037",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "denied_boarding_oversold",
+      "resolution_status": "escalated",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I was just denied boarding because the flight is oversold!! I have a confirmed ticket! This is unacceptable! Booking OB334455",
+          "timestamp": "2025-09-18T17:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry this happened to you. Being denied boarding is an extremely frustrating experience. Let me pull up booking OB334455 and help resolve this immediately.",
+          "timestamp": "2025-09-18T17:46:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I checked in online 24 hours ago! I did everything right and now they're saying the flight is full!",
+          "timestamp": "2025-09-18T17:47:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You absolutely did everything correctly. When flights are oversold, passengers are entitled to compensation under US DOT regulations. First, let me find you an alternative flight. Where are you traveling from and to? What time do you need to arrive?",
+          "timestamp": "2025-09-18T17:49:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Miami to San Francisco. I have a hotel reservation tonight so I NEED to get there today!",
+          "timestamp": "2025-09-18T17:50:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check all options... The next direct flight to San Francisco is at 9:30 PM, arriving at 12:45 AM. There's also a 7:15 PM flight with one stop through Phoenix, arriving at 11:30 PM. Both get you there tonight. Which would you prefer? And I'm booking you in a higher cabin class at no extra charge as compensation.",
+          "timestamp": "2025-09-18T17:52:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "The connecting flight gets me there earlier so that one. But what about actual compensation? I know there are rules about this!",
+          "timestamp": "2025-09-18T17:53:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're absolutely right. Since you arrived at San Francisco more than 2 hours after your original scheduled arrival, you're entitled to 400% of your one-way fare up to $1,550. Your ticket was $420, so you'll receive $1,680 compensation ($1,550 max). I'm also providing meal vouchers and upgrading you to First Class on both segments of your new routing.",
+          "timestamp": "2025-09-18T17:56:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok that's better. How do I get the compensation?",
+          "timestamp": "2025-09-18T17:57:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You'll receive a check by mail within 24 hours to the address on your booking. I'm also emailing you a DOT compensation form with your denial of boarding confirmation and case number DB-OB334455. Your new first class booking is reference OB334466, departing gate D12 at 7:15 PM. I've notified the gate agent you'll be coming.",
+          "timestamp": "2025-09-18T17:59:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Alright, I guess that makes up for it somewhat. Thank you for handling this quickly.",
+          "timestamp": "2025-09-18T18:00:00Z"
+        }
+      ],
+      "resolution_summary": "Customer denied boarding due to oversold flight. Agent rebooked on alternative flight arriving same day, upgraded to first class, explained and processed DOT-mandated $1,550 compensation, provided meal vouchers.",
+      "tags": ["denied_boarding", "oversold_flight", "dot_compensation", "first_class_upgrade", "escalated"]
+    },
+    {
+      "id": "conv_flight_038",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "significant_delay_hotel",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My flight is now delayed until tomorrow morning! It's 11pm and I'm stuck at the airport. What am I supposed to do?? Booking DH556688",
+          "timestamp": "2025-09-08T23:05:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm so sorry you're stuck at the airport this late! Let me help arrange accommodations. Looking at booking DH556688 now.",
+          "timestamp": "2025-09-08T23:06:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I see your Atlanta to Seattle flight was delayed multiple times and is now rescheduled for 8:30 AM tomorrow. The delay is due to crew availability (controllable by airline), which means you're entitled to hotel accommodation. Let me arrange that immediately.",
+          "timestamp": "2025-09-08T23:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "They better pay for it! I'm not paying for a hotel because of their problems!",
+          "timestamp": "2025-09-08T23:09:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely correct - you won't pay anything. I'm booking you at the Courtyard Airport Hotel with shuttle service from the airport. The hotel is prepaid by the airline, and I'm issuing shuttle vouchers and a $25 dinner voucher since you've missed dinner. The shuttle picks up at door 5 of baggage claim every 15 minutes.",
+          "timestamp": "2025-09-08T23:11:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "What about my checked bag? Can I get it for the night?",
+          "timestamp": "2025-09-08T23:12:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Unfortunately, checked bags typically can't be retrieved once checked through. However, the airline will reimburse essential overnight items up to $50. Keep receipts for toiletries, clothing, etc. and submit them with case number DL-DH556688. I'm sending you the reimbursement form now.",
+          "timestamp": "2025-09-08T23:14:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "This is so frustrating but thank you for arranging the hotel. What time should I be back tomorrow?",
+          "timestamp": "2025-09-08T23:15:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your new flight departs at 8:30 AM. I recommend being back at the airport by 7:00 AM. The hotel shuttle runs starting at 5:00 AM. I've updated your booking reference (remains DH556688) and you'll receive an email with your hotel confirmation, shuttle info, and new boarding pass. Is there anything else I can help with?",
+          "timestamp": "2025-09-08T23:17:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, I just want to get to the hotel now. Thanks.",
+          "timestamp": "2025-09-08T23:17:45Z"
+        }
+      ],
+      "resolution_summary": "Flight delayed overnight due to crew issues. Agent arranged airline-paid hotel with shuttle, issued meal voucher, explained baggage reimbursement policy, and rebooked for morning departure.",
+      "tags": ["overnight_delay", "hotel_accommodation", "crew_issue", "meal_voucher", "reimbursement"]
+    },
+    {
+      "id": "conv_flight_039",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "weather_delay_refund",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My flight yesterday was delayed 6 hours due to weather. Can I get a refund? Booking WD445577",
+          "timestamp": "2025-08-30T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'm sorry about the lengthy weather delay. Let me look at booking WD445577 and explain your options.",
+          "timestamp": "2025-08-30T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your Boston to Denver flight was delayed 6 hours and 20 minutes due to thunderstorms. Unfortunately, weather delays are considered extraordinary circumstances outside the airline's control, which means refunds aren't typically provided. However, you may still have some options. Did you eventually take the flight, or did you cancel and make other arrangements?",
+          "timestamp": "2025-08-30T10:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I took the delayed flight eventually. So there's no compensation at all for 6 hours of waiting?",
+          "timestamp": "2025-08-30T10:04:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Weather delays don't qualify for DOT compensation requirements. However, I can submit a goodwill request on your behalf. Airlines sometimes offer travel vouchers as a courtesy for significant delays, even weather-related. I can't guarantee anything, but would you like me to file that request?",
+          "timestamp": "2025-08-30T10:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please, might as well try. Do I need to do anything?",
+          "timestamp": "2025-08-30T10:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm submitting the request now with your booking details and delay information. The airline will review it within 10-14 business days and contact you via email. No action needed from you. Your reference number is GW-WD445577. Even if it's denied, it's worth trying!",
+          "timestamp": "2025-08-30T10:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok thanks for trying. I figured weather meant no compensation but thought I'd ask.",
+          "timestamp": "2025-08-30T10:08:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "It's always worth asking! I hope they provide something for the inconvenience. If you have any questions when you hear back, feel free to reach out. Have a great day!",
+          "timestamp": "2025-08-30T10:09:30Z"
+        }
+      ],
+      "resolution_summary": "Customer experienced 6-hour weather delay and inquired about refund. Agent explained weather delays don't qualify for mandatory compensation but filed goodwill request for potential travel voucher.",
+      "tags": ["weather_delay", "no_compensation", "goodwill_request", "customer_education", "extraordinary_circumstances"]
+    },
+    {
+      "id": "conv_flight_040",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "damaged_baggage_claim",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My suitcase arrived damaged! The handle is broken and there's a huge crack in the side! How do I get this fixed? Flight arrived today. Booking BG778822",
+          "timestamp": "2025-09-25T15:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm very sorry about your damaged luggage! Let me help you file a claim. First, did you report this to the airline's baggage service desk at the airport?",
+          "timestamp": "2025-09-25T15:31:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, I only noticed the damage when I got to my hotel. Do I need to go back to the airport?",
+          "timestamp": "2025-09-25T15:32:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You should report baggage damage within 24 hours for the best chance of compensation. You can file online instead of returning to the airport. I can help you start the claim right now. Do you have photos of the damage?",
+          "timestamp": "2025-09-25T15:34:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes I took photos. What information do you need?",
+          "timestamp": "2025-09-25T15:35:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I need your baggage claim tag number (on the receipt from check-in), and I'll create a damage claim. Can you provide that tag number?",
+          "timestamp": "2025-09-25T15:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Tag number is AA789654. The suitcase was brand new, I bought it specifically for this trip for $250!",
+          "timestamp": "2025-09-25T15:37:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm filing your damage claim now with tag AA789654. Airlines typically either repair the damage or provide compensation up to $3,500 for domestic flights. Since your suitcase is new, keep your purchase receipt as proof of value. Upload your photos and receipt to the email I'm sending you. Claim reference is DC-BG778822-0925.",
+          "timestamp": "2025-09-25T15:39:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "How long until I hear back?",
+          "timestamp": "2025-09-25T15:40:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Baggage damage claims typically process within 7-14 business days. The airline will contact you via email or phone to discuss repair options or compensation amount. If you don't hear back within 2 weeks, reply to the email I'm sending with your claim reference number. Anything else I can help with?",
+          "timestamp": "2025-09-25T15:42:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, thank you for filing the claim quickly.",
+          "timestamp": "2025-09-25T15:42:30Z"
+        }
+      ],
+      "resolution_summary": "Customer's checked luggage arrived with broken handle and cracked side. Agent filed damage claim within 24-hour window, explained compensation process up to $3,500, requested photos and purchase receipt.",
+      "tags": ["damaged_baggage", "baggage_claim", "compensation_request", "documentation_required", "resolved"]
+    },
+    {
+      "id": "conv_flight_041",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "delay_missed_event",
+      "resolution_status": "escalated",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "This is unbelievable! My flight delay made me miss my sister's wedding! I paid $600 for this ticket and missed the most important moment! Booking ED556677",
+          "timestamp": "2025-09-12T19:45:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I am deeply sorry that you missed your sister's wedding. I can only imagine how devastating that must be. Let me review booking ED556677 and see what we can do to help with this situation.",
+          "timestamp": "2025-09-12T19:47:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "What can you even do? The wedding is over! The delay was mechanical issues - the airline's fault!",
+          "timestamp": "2025-09-12T19:48:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're absolutely right that mechanical issues are within the airline's control. I'm going to escalate this to our customer relations team for special consideration given the significant impact. While I can't undo what happened, I want to ensure you receive appropriate compensation. Can you tell me how long the delay was?",
+          "timestamp": "2025-09-12T19:50:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "The flight was delayed 4 hours. By the time I landed and got to the venue, the ceremony was completely over. I'm heartbroken.",
+          "timestamp": "2025-09-12T19:51:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm creating a priority escalation case now. Given the circumstances - 4 hour controllable delay causing you to miss an irreplaceable family event - I'm recommending full refund of your $600 ticket plus additional compensation. I'm also documenting the emotional impact. Your case will be reviewed by a senior customer relations manager within 48 hours. Case number is EC-ED556677.",
+          "timestamp": "2025-09-12T19:54:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "A refund doesn't bring back the wedding. But I guess it's something. Will they actually do anything?",
+          "timestamp": "2025-09-12T19:55:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I've marked this as the highest priority and included detailed notes about the missed wedding. While I can't promise a specific outcome, cases involving missed life events typically receive more substantial compensation than standard delays. You should receive a direct call from the customer relations team within 2 business days. I'm truly sorry this happened to you.",
+          "timestamp": "2025-09-12T19:57:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, I'll wait for their call. Thank you for escalating it.",
+          "timestamp": "2025-09-12T19:57:45Z"
+        }
+      ],
+      "resolution_summary": "Four-hour mechanical delay caused customer to miss sister's wedding ceremony. Agent escalated to senior customer relations for special consideration, recommended full refund plus additional compensation for irreplaceable missed event.",
+      "tags": ["significant_delay", "missed_life_event", "mechanical_issue", "escalated", "high_priority"]
+    },
+    {
+      "id": "conv_flight_042",
+      "category": "flights",
+      "subcategory": "disruption",
+      "issue_type": "multiple_delays_compensation",
+      "resolution_status": "resolved",
+      "sentiment": "frustrated",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My flight yesterday had THREE separate delays totaling 8 hours! This is ridiculous! Booking TH889933",
+          "timestamp": "2025-08-20T09:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm extremely sorry you experienced such extensive delays! 8 hours is incredibly frustrating. Let me pull up booking TH889933 and review what happened.",
+          "timestamp": "2025-08-20T09:01:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see your flight from San Francisco to Miami had three delay notifications: first mechanical (2 hours), then crew availability (3 hours), then gate hold due to air traffic (3 hours). The first two are airline-controllable. This definitely warrants compensation. Did you eventually take the flight or make other arrangements?",
+          "timestamp": "2025-08-20T09:04:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I took the flight eventually but I was supposed to arrive at 6pm and got there at 2am! I missed a full day of my vacation!",
+          "timestamp": "2025-08-20T09:05:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's completely unacceptable, and I apologize for ruining the first day of your vacation. For an 8-hour delay with controllable factors, I'm authorizing immediate compensation. You'll receive: 1) Full refund of your $540 ticket, 2) $200 travel voucher for future use, and 3) 25,000 airline bonus miles. Does that seem fair?",
+          "timestamp": "2025-08-20T09:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's more than I expected actually. When will I get the refund?",
+          "timestamp": "2025-08-20T09:08:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "The $540 refund will process to your original payment method within 7-10 business days. The travel voucher and miles will be emailed to you within 24 hours. I'm also adding a note to your frequent flyer account recognizing the poor experience. Your compensation case number is MC-TH889933.",
+          "timestamp": "2025-08-20T09:10:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok that at least makes me feel a bit better about it. Thank you for not making me fight for this.",
+          "timestamp": "2025-08-20T09:11:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You absolutely shouldn't have to fight for fair treatment after such a terrible experience. I hope the rest of your vacation was enjoyable despite the rough start. Is there anything else I can help with?",
+          "timestamp": "2025-08-20T09:12:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, that's all. Thanks for handling this so well.",
+          "timestamp": "2025-08-20T09:12:30Z"
+        }
+      ],
+      "resolution_summary": "Customer experienced three separate delays totaling 8 hours, missing vacation day. Agent authorized comprehensive compensation package: full $540 refund, $200 voucher, 25,000 miles for multiple controllable delays.",
+      "tags": ["multiple_delays", "extended_delay", "comprehensive_compensation", "vacation_ruined", "proactive_resolution"]
+    }
+  ]
+}

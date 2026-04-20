@@ -1,0 +1,1024 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Secure Serverless Travel AI Assistant (Bedrock Agent + Neon Postgres + S3 Vectors KB)
+
+Parameters:
+  EnvName:
+    Type: String
+    Default: dev
+  # DbName:
+  #   Type: String
+  #   Default: travel
+  # DbUsername:
+  #   Type: String
+  #   Default: app_user
+  # DbInstanceClass:
+  #   Type: String
+  #   Default: db.t4g.medium
+  # VpcId:
+  #   Type: AWS::EC2::VPC::Id
+  # PrivateSubnetIds:
+  #   Type: List<AWS::EC2::Subnet::Id>
+  # KbBucketName:
+  #   Type: String
+  #   Description: Existing S3 bucket holding historical-cases JSON
+  BedrockModelId:
+    Type: String
+    Default: global.anthropic.claude-sonnet-4-5-20250929-v1:0
+  FoundationModelId:
+    Type: String
+    Default: anthropic.claude-sonnet-4-5-20250929-v1:0
+  NeonDatabaseUrl:
+    Type: String
+    NoEcho: true
+    Description: Neon Postgres connection string (postgresql://user:pass@host/db?sslmode=require)
+
+Globals:
+  Function:
+    Runtime: nodejs20.x
+    MemorySize: 512
+    Timeout: 30
+    Architectures: [arm64]
+    Tracing: Active
+    Environment:
+      Variables:
+        LOG_LEVEL: INFO
+        POWERTOOLS_SERVICE_NAME: travel-agency-agent
+
+Resources:
+
+  # --- Networking ---
+  # LambdaSecurityGroup:
+  #   Type: AWS::EC2::SecurityGroup
+  #   Properties:
+  #     GroupDescription: Lambda egress to RDS Proxy
+  #     VpcId: !Ref VpcId
+
+  # DbSecurityGroup:
+  #   Type: AWS::EC2::SecurityGroup
+  #   Properties:
+  #     GroupDescription: RDS + Proxy ingress from Lambdas
+  #     VpcId: !Ref VpcId
+  #     SecurityGroupIngress:
+  #       - IpProtocol: tcp
+  #         FromPort: 5432
+  #         ToPort: 5432
+  #         SourceSecurityGroupId: !Ref LambdaSecurityGroup
+
+  # # --- Secrets / DB ---
+  # DbSecret:
+  #   Type: AWS::SecretsManager::Secret
+  #   Properties:
+  #     Name: !Sub travel-${EnvName}-db
+  #     GenerateSecretString:
+  #       SecretStringTemplate: !Sub '{"username":"${DbUsername}"}'
+  #       GenerateStringKey: password
+  #       ExcludePunctuation: true
+  #       PasswordLength: 32
+
+  # DbSubnetGroup:
+  #   Type: AWS::RDS::DBSubnetGroup
+  #   Properties:
+  #     DBSubnetGroupDescription: Travel RDS subnet group
+  #     SubnetIds: !Ref PrivateSubnetIds
+
+  # DbInstance:
+  #   Type: AWS::RDS::DBInstance
+  #   Properties:
+  #     DBInstanceIdentifier: !Sub travel-${EnvName}
+  #     Engine: postgres
+  #     EngineVersion: '16.4'
+  #     DBInstanceClass: !Ref DbInstanceClass
+  #     AllocatedStorage: '20'
+  #     DBName: !Ref DbName
+  #     MasterUsername: !Sub '{{resolve:secretsmanager:${DbSecret}::username}}'
+  #     MasterUserPassword: !Sub '{{resolve:secretsmanager:${DbSecret}::password}}'
+  #     VPCSecurityGroups: [!Ref DbSecurityGroup]
+  #     DBSubnetGroupName: !Ref DbSubnetGroup
+  #     BackupRetentionPeriod: 7
+  #     PubliclyAccessible: false
+  #     StorageEncrypted: true
+
+  # DbProxyRole:
+  #   Type: AWS::IAM::Role
+  #   Properties:
+  #     AssumeRolePolicyDocument:
+  #       Version: '2012-10-17'
+  #       Statement:
+  #         - Effect: Allow
+  #           Principal: { Service: rds.amazonaws.com }
+  #           Action: sts:AssumeRole
+  #     Policies:
+  #       - PolicyName: secret-read
+  #         PolicyDocument:
+  #           Version: '2012-10-17'
+  #           Statement:
+  #             - Effect: Allow
+  #               Action:
+  #                 - secretsmanager:GetSecretValue
+  #                 - secretsmanager:DescribeSecret
+  #               Resource: !Ref DbSecret
+
+  # DbProxy:
+  #   Type: AWS::RDS::DBProxy
+  #   Properties:
+  #     DBProxyName: !Sub travel-${EnvName}-proxy
+  #     EngineFamily: POSTGRESQL
+  #     RoleArn: !GetAtt DbProxyRole.Arn
+  #     Auth:
+  #       - AuthScheme: SECRETS
+  #         SecretArn: !Ref DbSecret
+  #         IAMAuth: REQUIRED
+  #     VpcSubnetIds: !Ref PrivateSubnetIds
+  #     VpcSecurityGroupIds: [!Ref DbSecurityGroup]
+  #     RequireTLS: true
+
+  # DbProxyTarget:
+  #   Type: AWS::RDS::DBProxyTargetGroup
+  #   Properties:
+  #     DBProxyName: !Ref DbProxy
+  #     TargetGroupName: default
+  #     DBInstanceIdentifiers: [!Ref DbInstance]
+
+  # --- Conversation store ---
+  ConversationsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub travel-${EnvName}-conversations
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: sessionId,     AttributeType: S }
+        - { AttributeName: turnTimestamp, AttributeType: S }
+        - { AttributeName: userId,        AttributeType: S }
+      KeySchema:
+        - { AttributeName: sessionId,     KeyType: HASH }
+        - { AttributeName: turnTimestamp, KeyType: RANGE }
+      GlobalSecondaryIndexes:
+        - IndexName: userId-turnTimestamp-index
+          KeySchema:
+            - { AttributeName: userId,        KeyType: HASH }
+            - { AttributeName: turnTimestamp, KeyType: RANGE }
+          Projection: { ProjectionType: ALL }
+      TimeToLiveSpecification: { AttributeName: ttl, Enabled: true }
+
+  ConnectionsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub travel-${EnvName}-ws-connections
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: connectionId, AttributeType: S }
+      KeySchema:
+        - { AttributeName: connectionId, KeyType: HASH }
+      TimeToLiveSpecification: { AttributeName: ttl, Enabled: true }
+
+  # --- Action Group Lambdas ---
+  BookingsActionsFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub travel-${EnvName}-bookings
+      CodeUri: .
+      Handler: index.handler
+      # VpcConfig:
+      #   SecurityGroupIds: [!Ref LambdaSecurityGroup]
+      #   SubnetIds: !Ref PrivateSubnetIds
+      Environment:
+        Variables:
+          DATABASE_URL: !Ref NeonDatabaseUrl
+          POWERTOOLS_SERVICE_NAME: bookings-actions
+      Events:
+        GetBooking:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /bookings/get }
+        CancelBooking:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /bookings/cancel }
+        RescheduleBooking:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /bookings/reschedule }
+        BookFlight:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /bookings/create }
+      Policies:
+       - Statement:
+            - Effect: Allow
+              Action: 
+                - bedrock:InvokeModel
+                - bedrock:InvokeModelWithResponseStream
+              Resource: 
+                - !Sub 'arn:aws:bedrock:us-east-1:${AWS::AccountId}:inference-profile/${BedrockModelId}'
+                - !Sub 'arn:aws:bedrock:*::foundation-model/${FoundationModelId}'
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        EntryPoints: 
+          - src/bookings-actions/index.ts
+        
+
+  FlightsActionsFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub travel-${EnvName}-flights
+      CodeUri: .
+      Handler: index.handler
+      # VpcConfig:
+      #   SecurityGroupIds: [!Ref LambdaSecurityGroup]
+      #   SubnetIds: !Ref PrivateSubnetIds
+      Environment:
+        Variables:
+          DATABASE_URL: !Ref NeonDatabaseUrl
+          POWERTOOLS_SERVICE_NAME: flights-actions
+      Events:
+        FlightStatus:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /flights/status }
+        FlightSearch:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /flights/search }
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        EntryPoints:
+          - src/flights-actions/index.ts
+        
+       
+
+  UsersActionsFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub travel-${EnvName}-users
+      CodeUri: .
+      Handler: index.handler
+      # VpcConfig:
+      #   SecurityGroupIds: [!Ref LambdaSecurityGroup]
+      #   SubnetIds: !Ref PrivateSubnetIds
+      Environment:
+        Variables:
+          DATABASE_URL: !Ref NeonDatabaseUrl
+          POWERTOOLS_SERVICE_NAME: users-actions
+      Events:
+        UserProfile:
+          Type: HttpApi
+          Properties: { ApiId: !Ref ActionsHttpApi, Method: POST, Path: /users/profile }
+      Policies:
+       - Statement:
+            - Effect: Allow
+              Action: 
+                - bedrock:InvokeModel
+                - bedrock:InvokeModelWithResponseStream
+              Resource: 
+                - !Sub 'arn:aws:bedrock:us-east-1:${AWS::AccountId}:inference-profile/${BedrockModelId}'
+                - !Sub 'arn:aws:bedrock:*::foundation-model/${FoundationModelId}'
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        EntryPoints: 
+          - src/users-actions/index.ts
+       
+        
+ 
+  # --- Custom RAG on S3 Vectors (Titan v2) ---
+  KbVectorBucket:
+    Type: AWS::S3Vectors::VectorBucket
+    Properties:
+      VectorBucketName: !Sub travel-${AWS::AccountId}-${AWS::Region}
+      EncryptionConfiguration:
+        SseType: AES256
+
+  KbVectorIndex:
+    Type: AWS::S3Vectors::Index
+    DependsOn: KbVectorBucket
+    Properties:
+      VectorBucketName: !Sub travel-${AWS::AccountId}-${AWS::Region}
+      IndexName: historical-cases
+      DataType: float32
+      Dimension: 1024
+      DistanceMetric: cosine
+
+  RagRetrievalFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub travel-${EnvName}-rag-retrieval
+      CodeUri: .
+      Handler: index.handler
+      Timeout: 30
+      MemorySize: 512
+      Environment:
+        Variables:
+          VECTOR_BUCKET_NAME: !Sub travel-${AWS::AccountId}-${AWS::Region}
+          VECTOR_INDEX_NAME: historical-cases
+          EMBED_MODEL_ID: amazon.titan-embed-text-v2:0
+          POWERTOOLS_SERVICE_NAME: rag-retrieval
+      Policies:
+        - Statement:
+            - Effect: Allow
+              Action: bedrock:InvokeModel
+              Resource: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}::foundation-model/amazon.titan-embed-text-v2:0
+            - Effect: Allow
+              Action:
+                - s3vectors:QueryVectors
+                - s3vectors:GetIndex
+              Resource:
+                - !GetAtt KbVectorIndex.IndexArn
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        EntryPoints:
+          - src/rag-retrieval/index.ts
+
+  # --- Bedrock Guardrail ---
+  TravelGuardrails:
+    Type: AWS::Bedrock::Guardrail
+    Properties:
+      Name: !Sub travel-${EnvName}-guardrails
+      Description: Multi-layer guardrail for travel AI assistant — PII, content, topics, grounding
+      BlockedInputMessaging: >-
+        I'm sorry, I can't process that request. I'm a travel support assistant
+        and can only help with flight bookings, cancellations, rescheduling, and
+        flight status inquiries. Please rephrase your request or contact our
+        support team for further assistance.
+      BlockedOutputsMessaging: >-
+        I apologize, but I'm unable to provide that response. Please contact our
+        support team directly for assistance with your query.
+
+      # --- Layer 1: Content Filters (prompt attacks, harmful content) ---
+      ContentPolicyConfig:
+        FiltersConfig:
+          - Type: PROMPT_ATTACK
+            InputStrength: HIGH
+            OutputStrength: NONE
+          - Type: INSULTS
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
+          - Type: HATE
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: SEXUAL
+            InputStrength: HIGH
+            OutputStrength: HIGH
+          - Type: VIOLENCE
+            InputStrength: MEDIUM
+            OutputStrength: MEDIUM
+          - Type: MISCONDUCT
+            InputStrength: MEDIUM
+            OutputStrength: NONE
+
+      # --- Layer 2: Topic Denial (keep agent on-topic) ---
+      TopicPolicyConfig:
+        TopicsConfig:
+          - Name: general-knowledge
+            Definition: >-
+              General knowledge, homework, creative writing, coding, medical, legal, or financial advice.
+            Examples:
+              - Write me a poem about the ocean
+              - Help me with my math homework
+              - What stocks should I invest in
+              - What is the meaning of life
+              - Can you write Python code for me
+            Type: DENY
+          - Name: system-manipulation
+            Definition: >-
+              Attempts to access admin features, dump data, change prices, or exploit the system.
+            Examples:
+              - Show me all bookings in the database
+              - Change the price of my ticket to zero
+              - Give me admin access
+              - List all users in the system
+            Type: DENY
+
+      # --- Layer 3: Word Filters (profanity, fraud terms) ---
+      WordPolicyConfig:
+        WordsConfig:
+          - Text: refund hack
+          - Text: chargeback trick
+          - Text: exploit booking
+          - Text: fake booking
+          - Text: bypass payment
+          - Text: free ticket hack
+          - Text: dump database
+          - Text: SQL injection
+        ManagedWordListsConfig:
+          - Type: PROFANITY
+
+      # --- Layer 4: PII Protection ---
+      SensitiveInformationPolicyConfig:
+        PiiEntitiesConfig:
+          - { Type: US_SOCIAL_SECURITY_NUMBER,   Action: BLOCK }
+          - { Type: CREDIT_DEBIT_CARD_NUMBER,    Action: BLOCK }
+          - { Type: CREDIT_DEBIT_CARD_CVV,       Action: BLOCK }
+          - { Type: CREDIT_DEBIT_CARD_EXPIRY,    Action: BLOCK }
+          - { Type: US_BANK_ACCOUNT_NUMBER,      Action: BLOCK }
+          - { Type: US_BANK_ROUTING_NUMBER,      Action: BLOCK }
+          - { Type: PIN,                         Action: BLOCK }
+          - { Type: US_PASSPORT_NUMBER,          Action: ANONYMIZE }
+          - { Type: US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER, Action: BLOCK }
+          - { Type: INTERNATIONAL_BANK_ACCOUNT_NUMBER, Action: BLOCK }
+          - { Type: SWIFT_CODE,                  Action: BLOCK }
+        RegexesConfig:
+          - Name: PassportFormatUK
+            Description: UK passport number (9 digits preceded by GBR or passport context)
+            Pattern: '\b(?:GBR\s?)?\d{3}\s?\d{3}\s?\d{3}\b'
+            Action: ANONYMIZE
+
+      # --- Layer 5: Contextual Grounding ---
+      # Disabled — grounding checks block action group responses (booking
+      # confirmations, flight status) because they aren't backed by source
+      # documents. Only enable if all agent responses are RAG-based.
+      # ContextualGroundingPolicyConfig:
+      #   FiltersConfig:
+      #     - Type: GROUNDING
+      #       Threshold: 0.7
+      #     - Type: RELEVANCE
+      #       Threshold: 0.7
+
+  TravelGuardrailVersion:
+    Type: AWS::Bedrock::GuardrailVersion
+    Properties:
+      GuardrailIdentifier: !GetAtt TravelGuardrails.GuardrailId
+      Description: Published guardrail version for travel agent
+
+  # --- Bedrock Agent ---
+  BedrockAgentRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: { Service: bedrock.amazonaws.com }
+            Action: sts:AssumeRole
+            Condition:
+              StringEquals:
+                aws:SourceAccount: !Ref AWS::AccountId
+      Policies:
+        - PolicyName: agent-runtime
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action:
+                  - bedrock:*
+                Resource: '*'
+            # Statement:
+            #   - Effect: Allow
+            #     Action:
+            #       - bedrock:InvokeModel
+            #       - bedrock:InvokeModelWithResponseStream
+            #       - bedrock:GetInferenceProfile
+            #     Resource: 
+            #       - !Sub 'arn:aws:bedrock:us-east-1:${AWS::AccountId}:inference-profile/${BedrockModelId}'
+            #       - !Sub 'arn:aws:bedrock:*::foundation-model/${FoundationModelId}'
+            #   - Effect: Allow
+            #     Action:
+            #       - bedrock:Retrieve
+            #       - bedrock:RetrieveAndGenerate
+            #     Resource: !GetAtt TravelKnowledgeBase.KnowledgeBaseArn
+            #   - Effect: Allow
+            #     Action: bedrock:ApplyGuardrail
+            #     Resource: !GetAtt TravelGuardrails.GuardrailArn
+
+  TravelAgents:
+    Type: AWS::Bedrock::Agent
+    Properties:
+      AgentName: !Sub travel-${EnvName}-agents-test
+      AgentResourceRoleArn: !GetAtt BedrockAgentRole.Arn
+      FoundationModel: !Sub 'arn:aws:bedrock:us-east-1:${AWS::AccountId}:inference-profile/${BedrockModelId}'
+      AutoPrepare: true
+      IdleSessionTTLInSeconds: 1800
+      Instruction: |
+        You are a travel support assistant. You help users search for flights, book flights,
+        cancel and reschedule flight bookings, check flight statuses, and answer questions
+        using historical resolved-case context.
+        When booking a flight, first search for available flights, present the options with
+        prices, and confirm the user's choice (flight and seat class) before creating the booking.
+        Always confirm destructive actions (cancel, reschedule) by quoting the booking reference
+        before invoking the action. Never ask the user for raw PII; rely on the booking reference.
+        When you call action groups, pass numeric ids returned by previous calls. Be concise.
+      GuardrailConfiguration:
+        GuardrailIdentifier: !GetAtt TravelGuardrails.GuardrailId
+        GuardrailVersion: !GetAtt TravelGuardrailVersion.Version
+      ActionGroups:
+        - ActionGroupName: bookings-actions
+          ActionGroupExecutor: { Lambda: !GetAtt BookingsActionsFn.Arn }
+          ApiSchema:
+            Payload: |
+              {
+                "openapi": "3.0.0",
+                "info": { "title": "Bookings Actions", "version": "1.0.0" },
+                "paths": {
+                  "/bookings/get": {
+                    "post": {
+                      "summary": "Get a booking by PNR",
+                      "description": "Get a booking by its PNR reference",
+                      "operationId": "getBooking",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["bookingRef"],
+                              "properties": {
+                                "bookingRef": { "type": "string", "description": "PNR" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "Booking with segments",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "bookingId": { "type": "integer", "description": "Booking numeric id" },
+                                  "bookingRef": { "type": "string", "description": "PNR reference" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "/bookings/cancel": {
+                    "post": {
+                      "summary": "Cancel a booking",
+                      "description": "Cancel a booking by its numeric id",
+                      "operationId": "cancelBooking",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["bookingId"],
+                              "properties": {
+                                "bookingId": { "type": "integer", "description": "Booking numeric id" },
+                                "reason": { "type": "string", "description": "Free-text cancellation reason" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "Cancellation confirmation",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "status": { "type": "string", "description": "Resulting booking status" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "/bookings/reschedule": {
+                    "post": {
+                      "summary": "Reschedule a booking",
+                      "description": "Reschedule a booking to a new flight",
+                      "operationId": "rescheduleBooking",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["bookingId", "newFlightId"],
+                              "properties": {
+                                "bookingId": { "type": "integer", "description": "Booking numeric id" },
+                                "newFlightId": { "type": "integer", "description": "New flight id to book" },
+                                "reason": { "type": "string", "description": "Free-text reschedule reason" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "Reschedule confirmation",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "newSegmentId": { "type": "integer", "description": "Newly created segment id" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "/bookings/create": {
+                    "post": {
+                      "summary": "Book a flight",
+                      "description": "Create a new flight booking for a given flight and seat class",
+                      "operationId": "bookFlight",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["flightId", "seatClass"],
+                              "properties": {
+                                "flightId": { "type": "integer", "description": "Flight numeric id from search results" },
+                                "seatClass": { "type": "string", "enum": ["economy", "premium_economy", "business", "first"], "description": "Cabin class" },
+                                "seatNumber": { "type": "string", "description": "Optional preferred seat (e.g. 12A)" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "201": {
+                          "description": "Booking confirmation",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "bookingId": { "type": "integer", "description": "Booking numeric id" },
+                                  "bookingRef": { "type": "string", "description": "PNR reference" },
+                                  "totalPrice": { "type": "string", "description": "Total price" },
+                                  "status": { "type": "string", "description": "Booking status" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+        - ActionGroupName: flights-actions
+          ActionGroupExecutor: { Lambda: !GetAtt FlightsActionsFn.Arn }
+          ApiSchema:
+            Payload: |
+              {
+                "openapi": "3.0.0",
+                "info": { "title": "Flights Actions", "version": "1.0.0" },
+                "paths": {
+                  "/flights/status": {
+                    "post": {
+                      "summary": "Get flight status",
+                      "description": "Get current status of a flight by id",
+                      "operationId": "getFlightStatus",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["flightId"],
+                              "properties": {
+                                "flightId": { "type": "integer", "description": "Flight numeric id" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "Flight status",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "status": { "type": "string", "description": "Current flight status" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "/flights/search": {
+                    "post": {
+                      "summary": "Search alternate flights",
+                      "description": "Search alternate scheduled flights between two IATA airports after a date",
+                      "operationId": "searchAlternateFlights",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["origin", "destination", "afterIso"],
+                              "properties": {
+                                "origin": { "type": "string", "description": "IATA code, 3 letters" },
+                                "destination": { "type": "string", "description": "IATA code, 3 letters" },
+                                "afterIso": { "type": "string", "description": "ISO-8601 datetime lower bound" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "List of candidate flights",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "flights": { "type": "string", "description": "JSON-encoded list of candidate flights" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+        - ActionGroupName: users-actions
+          ActionGroupExecutor: { Lambda: !GetAtt UsersActionsFn.Arn }
+          ApiSchema:
+            Payload: |
+              {
+                "openapi": "3.0.0",
+                "info": { "title": "Users Actions", "version": "1.0.0" },
+                "paths": {
+                  "/users/profile": {
+                    "post": {
+                      "summary": "Get user profile",
+                      "description": "Get a user profile by numeric user id",
+                      "operationId": "getUserProfile",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["userId"],
+                              "properties": {
+                                "userId": { "type": "integer", "description": "Authenticated user id" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "User profile",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "userId": { "type": "integer", "description": "Authenticated user id" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+        - ActionGroupName: rag-retrieval
+          ActionGroupExecutor: { Lambda: !GetAtt RagRetrievalFn.Arn }
+          ApiSchema:
+            Payload: |
+              {
+                "openapi": "3.0.0",
+                "info": { "title": "RAG Retrieval", "version": "1.0.0" },
+                "paths": {
+                  "/rag/search": {
+                    "post": {
+                      "summary": "Retrieve historical support cases",
+                      "description": "Semantic search over historical resolved support cases. Use for policy, prior similar cases, or carrier-specific handling.",
+                      "operationId": "ragSearch",
+                      "requestBody": {
+                        "required": true,
+                        "content": {
+                          "application/json": {
+                            "schema": {
+                              "type": "object",
+                              "required": ["query"],
+                              "properties": {
+                                "query": { "type": "string", "description": "Natural-language query" },
+                                "bookingId": { "type": "string", "description": "Optional booking reference to filter results (e.g. FL12345, BK67890)" },
+                                "topK": { "type": "integer", "description": "Number of results to return (default 5)" }
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "responses": {
+                        "200": {
+                          "description": "Top matching cases",
+                          "content": {
+                            "application/json": {
+                              "schema": {
+                                "type": "object",
+                                "properties": {
+                                  "results": { "type": "string", "description": "JSON-encoded list of matching case snippets" }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+  TravelAgentAlias:
+    Type: AWS::Bedrock::AgentAlias
+    DependsOn: TravelAgents
+    Properties:
+      AgentId: !Ref TravelAgents
+      AgentAliasName: live
+
+  BookingsActionsBedrockPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt BookingsActionsFn.Arn
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceArn: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:agent/${TravelAgents}
+
+  FlightsActionsBedrockPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt FlightsActionsFn.Arn
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceArn: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:agent/${TravelAgents}
+
+  UsersActionsBedrockPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt UsersActionsFn.Arn
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceArn: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:agent/${TravelAgents}
+
+  RagRetrievalBedrockPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !GetAtt RagRetrievalFn.Arn
+      Action: lambda:InvokeFunction
+      Principal: bedrock.amazonaws.com
+      SourceArn: !Sub arn:${AWS::Partition}:bedrock:${AWS::Region}:${AWS::AccountId}:agent/${TravelAgents}
+
+  # --- HTTP API for action-group Lambdas (bookings/flights/users) ---
+  ActionsHttpApi:
+    Type: AWS::Serverless::HttpApi
+    Properties:
+      StageName: !Ref EnvName
+      CorsConfiguration:
+        AllowOrigins: ['*']
+        AllowMethods: [POST, OPTIONS]
+        AllowHeaders: ['content-type']
+
+  # --- chat-ws Lambda + WebSocket API (frontend) ---
+  ChatWsFn:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: !Sub travel-${EnvName}-chat-ws
+      CodeUri: .
+      Handler: index.handler
+      Timeout: 120
+      MemorySize: 1024
+      Environment:
+        Variables:
+          BEDROCK_AGENT_ID: !Ref TravelAgents
+          BEDROCK_AGENT_ALIAS_ID: !GetAtt TravelAgentAlias.AgentAliasId
+          CONVERSATIONS_TABLE: !Ref ConversationsTable
+          CONNECTIONS_TABLE: !Ref ConnectionsTable
+          POWERTOOLS_SERVICE_NAME: chat-ws
+      Policies:
+        - DynamoDBCrudPolicy: { TableName: !Ref ConnectionsTable }
+        - DynamoDBWritePolicy: { TableName: !Ref ConversationsTable }
+        # - Statement:
+        #     - Effect: Allow
+        #       Action: 
+        #         - bedrock:InvokeModel
+        #         - bedrock:InvokeModelWithResponseStream
+        #       Resource: 
+        #         - !Sub 'arn:aws:bedrock:us-east-1:${AWS::AccountId}:inference-profile/${BedrockModelId}'
+        #         - !Sub 'arn:aws:bedrock:*::foundation-model/${FoundationModelId}'
+        - Statement:
+            - Effect: Allow
+              Action:
+                - bedrock:*
+              Resource: '*'
+            - Effect: Allow
+              Action: execute-api:ManageConnections
+              Resource: !Sub arn:${AWS::Partition}:execute-api:${AWS::Region}:${AWS::AccountId}:${ChatWsApi}/*
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Minify: true
+        Target: es2022
+        EntryPoints:
+          - src/chat-ws/index.ts
+        
+
+  ChatWsApi:
+    Type: AWS::ApiGatewayV2::Api
+    Properties:
+      Name: !Sub travel-${EnvName}-chat-ws
+      ProtocolType: WEBSOCKET
+      RouteSelectionExpression: $request.body.action
+
+  ChatWsIntegration:
+    Type: AWS::ApiGatewayV2::Integration
+    Properties:
+      ApiId: !Ref ChatWsApi
+      IntegrationType: AWS_PROXY
+      IntegrationUri: !Sub arn:${AWS::Partition}:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ChatWsFn.Arn}/invocations
+
+  ChatWsConnectRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref ChatWsApi
+      RouteKey: $connect
+      Target: !Sub integrations/${ChatWsIntegration}
+
+  ChatWsDisconnectRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref ChatWsApi
+      RouteKey: $disconnect
+      Target: !Sub integrations/${ChatWsIntegration}
+
+  ChatWsChatRoute:
+    Type: AWS::ApiGatewayV2::Route
+    Properties:
+      ApiId: !Ref ChatWsApi
+      RouteKey: chat
+      Target: !Sub integrations/${ChatWsIntegration}
+
+  ChatWsDeployment:
+    Type: AWS::ApiGatewayV2::Deployment
+    DependsOn:
+      - ChatWsConnectRoute
+      - ChatWsDisconnectRoute
+      - ChatWsChatRoute
+    Properties:
+      ApiId: !Ref ChatWsApi
+
+  ChatWsStage:
+    Type: AWS::ApiGatewayV2::Stage
+    Properties:
+      ApiId: !Ref ChatWsApi
+      StageName: !Ref EnvName
+      DeploymentId: !Ref ChatWsDeployment
+      AutoDeploy: true
+
+  ChatWsInvokePermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref ChatWsFn
+      Action: lambda:InvokeFunction
+      Principal: apigateway.amazonaws.com
+      SourceArn: !Sub arn:${AWS::Partition}:execute-api:${AWS::Region}:${AWS::AccountId}:${ChatWsApi}/*
+
+Outputs:
+  WebSocketEndpoint:
+    Description: WebSocket endpoint for the React portal (VITE_WS_ENDPOINT)
+    Value: !Sub wss://${ChatWsApi}.execute-api.${AWS::Region}.amazonaws.com/${EnvName}
+  ActionsHttpApiEndpoint:
+    Description: HTTP API base URL for bookings/flights/users action endpoints
+    Value: !Sub https://${ActionsHttpApi}.execute-api.${AWS::Region}.amazonaws.com/${EnvName}
+  AgentId:
+    Value: !Ref TravelAgents
+  AgentAliasId:
+    Value: !GetAtt TravelAgentAlias.AgentAliasId
+  # DbProxyEndpoint:
+  #   Value: !GetAtt DbProxy.Endpoint
+  ConversationsTableName:
+    Value: !Ref ConversationsTable
+  VectorIndexArn:
+    Value: !GetAtt KbVectorIndex.IndexArn
+  VectorBucketName:
+    Value: !Sub travel-${AWS::AccountId}-${AWS::Region}

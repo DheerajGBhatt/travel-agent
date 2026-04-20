@@ -1,0 +1,400 @@
+{
+  "conversations": [
+    {
+      "id": "conv_hotel_043",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "amenities_question",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Does the hotel have a gym and pool? I don't see it clearly listed. Booking HQ445566",
+          "timestamp": "2025-09-05T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check the amenities for your hotel. Looking at booking HQ445566.",
+          "timestamp": "2025-09-05T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Hilton Garden Inn Phoenix includes: Yes, both a fitness center (24/7 access) and an outdoor pool (open 6 AM - 10 PM). The gym has cardio machines, free weights, and yoga mats. The pool is heated year-round. Both are complimentary for all guests. Is there anything else you'd like to know about the facilities?",
+          "timestamp": "2025-09-05T10:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! What about parking?",
+          "timestamp": "2025-09-05T10:03:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Self-parking is available for $15/day. Valet parking is $25/day. The parking fee is charged daily and added to your final bill at checkout. Would you like me to add a parking note to your reservation?",
+          "timestamp": "2025-09-05T10:04:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No need, I'll arrange that at check-in. Thanks for the info!",
+          "timestamp": "2025-09-05T10:04:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy the gym and pool during your stay!",
+          "timestamp": "2025-09-05T10:05:00Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about hotel amenities. Agent confirmed 24/7 gym and heated pool included, explained parking options and fees.",
+      "tags": ["amenities_inquiry", "gym", "pool", "parking_info", "resolved"]
+    },
+    {
+      "id": "conv_hotel_044",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "location_directions",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "How far is the hotel from the airport? What's the best way to get there? Booking HL778899",
+          "timestamp": "2025-08-18T14:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me provide directions for your hotel. Looking at booking HL778899.",
+          "timestamp": "2025-08-18T14:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "The Marriott Seattle is 15 miles from SeaTac Airport (about 25-30 minutes depending on traffic). You have several transportation options: 1) Taxi - flat rate ~$50, 2) Rideshare (Uber/Lyft) - $35-45, 3) Airport shuttle - $28/person (hotel can arrange), 4) Light rail + short taxi - $3.50 + $10. Which interests you most?",
+          "timestamp": "2025-08-18T14:33:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Tell me more about the light rail option.",
+          "timestamp": "2025-08-18T14:33:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "The light rail is very budget-friendly! From the airport, take the Link Light Rail toward Northgate (about 40 minutes to downtown Seattle). Get off at University Street Station, then it's a 10-minute walk or $10 taxi ride to the hotel. Total cost: $3.50 + $10 = $13.50. Takes about 55 minutes total. Trains run every 10-15 minutes. It's reliable and scenic!",
+          "timestamp": "2025-08-18T14:35:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That sounds perfect for my budget! Can the hotel arrange pickup from the station?",
+          "timestamp": "2025-08-18T14:36:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check... The hotel doesn't offer free pickup from light rail stations, but I can add a note to your reservation with your arrival time and they can help arrange a taxi or rideshare when you call from the station. Or, the 10-minute walk is straightforward if you're comfortable walking with luggage. What would you prefer?",
+          "timestamp": "2025-08-18T14:38:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "I'll just take a quick rideshare from the station. Thanks for all the details!",
+          "timestamp": "2025-08-18T14:38:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect plan! You're welcome! Have a great trip to Seattle!",
+          "timestamp": "2025-08-18T14:39:15Z"
+        }
+      ],
+      "resolution_summary": "Customer asked about airport to hotel transportation. Agent provided multiple options with prices and details, explained budget-friendly light rail + rideshare combination.",
+      "tags": ["location_inquiry", "airport_transfer", "transportation_options", "directions", "resolved"]
+    },
+    {
+      "id": "conv_hotel_045",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "pet_policy",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I bring my dog? He's a small terrier, 15 pounds. Booking HP889900",
+          "timestamp": "2025-09-12T11:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check the pet policy for your hotel. Looking at booking HP889900.",
+          "timestamp": "2025-09-12T11:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Good news! The Westin Denver is pet-friendly. They welcome dogs up to 40 lbs for a $35 per night pet fee (max $100 for extended stays). Your 15-lb terrier is well within the limit. They also provide pet beds and bowls upon request. Would you like me to add your pet to the reservation?",
+          "timestamp": "2025-09-12T11:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please! His name is Max. Are there any restrictions on where he can go in the hotel?",
+          "timestamp": "2025-09-12T11:03:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm adding Max to your reservation now. Pets are allowed in guest rooms and public areas like the lobby, but not in the restaurant, pool, or gym areas. There's a designated pet relief area on the ground floor near the side entrance. The hotel also has information about nearby dog parks and pet-friendly restaurants. Your pet fee will be $35/night for your 2-night stay ($70 total).",
+          "timestamp": "2025-09-12T11:05:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Thank you!",
+          "timestamp": "2025-09-12T11:05:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Max is all set! You'll receive an updated confirmation. Have a great trip with Max!",
+          "timestamp": "2025-09-12T11:06:00Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about bringing 15-lb dog. Agent confirmed pet-friendly hotel with weight limit up to 40 lbs, $35/night fee, added pet to reservation, explained restrictions and amenities.",
+      "tags": ["pet_policy", "dog_friendly", "pet_fee", "pet_amenities", "resolved"]
+    },
+    {
+      "id": "conv_hotel_046",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "child_policy",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I'm traveling with my two kids (ages 5 and 8). Do they cost extra? Booking HC556677",
+          "timestamp": "2025-08-20T15:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check the child policy for your hotel. Looking at booking HC556677.",
+          "timestamp": "2025-08-20T15:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Great news! At the Hilton Chicago, children under 12 stay free when using existing bedding in the room. You've booked a room with 2 Queen Beds, which is perfect for a family of 4. There's no additional charge for your 5 and 8-year-old. Would you like me to add a note about the children's ages to your reservation?",
+          "timestamp": "2025-08-20T15:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please! Do they do anything special for kids?",
+          "timestamp": "2025-08-20T15:03:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm adding your children (ages 5 and 8) to the reservation now. The Hilton Chicago offers: kids eat free at breakfast with paying adult, pool with shallow area, and they can provide board games and coloring books at the front desk. They also have cribs and rollaway beds available free for younger children if needed. Your kids will enjoy it!",
+          "timestamp": "2025-08-20T15:04:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's perfect! Thank you!",
+          "timestamp": "2025-08-20T15:05:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Have a wonderful family trip!",
+          "timestamp": "2025-08-20T15:05:30Z"
+        }
+      ],
+      "resolution_summary": "Customer traveling with two children (ages 5 & 8) inquired about extra charges. Agent confirmed kids under 12 stay free, added children to reservation, explained kid-friendly amenities including free breakfast.",
+      "tags": ["child_policy", "kids_stay_free", "family_travel", "kid_amenities", "resolved"]
+    },
+    {
+      "id": "conv_hotel_047",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "breakfast_included",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Is breakfast included with my room? Booking HB667788",
+          "timestamp": "2025-09-18T09:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check your booking details. Looking at HB667788 now.",
+          "timestamp": "2025-09-18T09:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Hampton Inn Miami includes complimentary hot breakfast! It's served daily from 6:00 AM - 10:00 AM (until 11:00 AM on weekends) in the breakfast area on the first floor. The buffet includes eggs, sausage, waffles, cereal, fruit, yogurt, coffee, and juice. No additional charge!",
+          "timestamp": "2025-09-18T09:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great! What if I need to leave before 6am?",
+          "timestamp": "2025-09-18T09:03:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "For early departures, Hampton Inn typically offers \"On the Run\" breakfast bags available from 5:00 AM. These include a muffin, granola bar, juice, and fruit. You can request one the night before at the front desk. Would you like me to add a note to your reservation about early departure breakfast?",
+          "timestamp": "2025-09-18T09:04:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please, I have an early flight on my last day.",
+          "timestamp": "2025-09-18T09:05:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Done! I've added a note requesting early departure breakfast for your checkout day. Just remind the front desk the evening before which day you need it. Enjoy your stay!",
+          "timestamp": "2025-09-18T09:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you!",
+          "timestamp": "2025-09-18T09:06:30Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired if breakfast included. Agent confirmed complimentary hot breakfast with times and menu, explained early departure breakfast bag option, added note to reservation.",
+      "tags": ["breakfast_inquiry", "complimentary_breakfast", "early_departure", "meal_included", "resolved"]
+    },
+    {
+      "id": "conv_hotel_048",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "loyalty_program",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I'm a Marriott Bonvoy member. Will I get points for this stay? Booking HM445577",
+          "timestamp": "2025-08-25T13:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your booking and loyalty information. Looking at HM445577.",
+          "timestamp": "2025-08-25T13:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Marriott San Francisco is for 3 nights totaling $720. Let me check if your Bonvoy number is linked... I don't see a Bonvoy number on this reservation. If you provide it, I can add it now and you'll earn points for your stay. Do you have your membership number?",
+          "timestamp": "2025-08-25T13:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes it's 123456789. How many points will I get?",
+          "timestamp": "2025-08-25T13:03:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "I've added Bonvoy number 123456789 to your reservation. For Marriott Bonvoy members, you earn 10 points per dollar spent. Your $720 stay will earn 7,200 base points. If you have elite status, you'll earn additional bonus points. The points will post to your account 3-5 days after checkout. Is there anything else about your membership benefits?",
+          "timestamp": "2025-08-25T13:05:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "No, that's all I needed. Thank you!",
+          "timestamp": "2025-08-25T13:05:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy your stay and your Bonvoy points!",
+          "timestamp": "2025-08-25T13:06:00Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about earning Marriott Bonvoy points. Agent added missing loyalty number to reservation, calculated 7,200 points earnings, explained posting timeline.",
+      "tags": ["loyalty_program", "bonvoy_points", "membership_number", "points_earning", "resolved"]
+    },
+    {
+      "id": "conv_hotel_049",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "nearby_attractions",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "What tourist attractions are near the hotel? First time in San Diego. Booking HS778822",
+          "timestamp": "2025-09-10T16:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! I'd be happy to help with recommendations! Looking at booking HS778822.",
+          "timestamp": "2025-09-10T16:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your hotel, the Hilton San Diego Gaslamp, is in a perfect location! Within walking distance: Gaslamp Quarter (restaurants/nightlife - 2 blocks), Petco Park baseball stadium (5 min walk), USS Midway Museum (15 min walk), Seaport Village shopping (12 min walk). Within short drive/Uber: San Diego Zoo (10 min), Balboa Park (8 min), La Jolla beaches (20 min). What type of activities interest you most?",
+          "timestamp": "2025-09-10T16:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "I love museums and beaches. Any specific recommendations?",
+          "timestamp": "2025-09-10T16:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! For museums: USS Midway Museum (aircraft carrier, very popular), Balboa Park has 17 museums including Natural History and Air & Space. For beaches: La Jolla Cove (beautiful, seals/sea lions), Pacific Beach (lively), Coronado Beach (classic San Diego, near Hotel del Coronado). The hotel concierge can also provide discount tickets for most attractions. Would you like me to add a note requesting tourism information at check-in?",
+          "timestamp": "2025-09-10T16:06:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please! That would be helpful!",
+          "timestamp": "2025-09-10T16:07:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Done! I've added a note that you're interested in museums and beaches. The concierge will have maps and discount tickets ready at check-in. Have a wonderful first visit to San Diego!",
+          "timestamp": "2025-09-10T16:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much!",
+          "timestamp": "2025-09-10T16:08:30Z"
+        }
+      ],
+      "resolution_summary": "First-time visitor to San Diego requested nearby attractions. Agent provided walking distance and short drive options focusing on customer's interests (museums and beaches), arranged concierge tourism packet.",
+      "tags": ["nearby_attractions", "tourism_inquiry", "first_time_visitor", "concierge_services", "resolved"]
+    },
+    {
+      "id": "conv_hotel_050",
+      "category": "hotels",
+      "subcategory": "inquiry",
+      "issue_type": "room_service_hours",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Does the hotel have room service? What are the hours? Booking HV889933",
+          "timestamp": "2025-08-15T18:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Let me check the dining options for your hotel. Looking at booking HV889933.",
+          "timestamp": "2025-08-15T18:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "The Sheraton Boston offers 24/7 room service! You can order anytime day or night. The full menu is available in your room, or you can access it by calling extension 3 from your room phone. The late-night menu (11 PM - 6 AM) is more limited but still includes sandwiches, salads, and snacks. There's a $5 delivery fee plus 18% gratuity added to all room service orders.",
+          "timestamp": "2025-08-15T18:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great! Can I order in advance for breakfast delivery?",
+          "timestamp": "2025-08-15T18:03:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes! You can order breakfast the night before by calling room service or filling out the door hanger card (should be in your room). Just indicate your preferred delivery time. Breakfast is served 6:00 AM - 11:00 AM. Many guests order the night before to ensure timely morning delivery. Popular items are the continental breakfast ($18) or full American breakfast ($24).",
+          "timestamp": "2025-08-15T18:04:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Thank you!",
+          "timestamp": "2025-08-15T18:05:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! Enjoy your room service during your stay!",
+          "timestamp": "2025-08-15T18:05:30Z"
+        }
+      ],
+      "resolution_summary": "Customer inquired about room service availability. Agent confirmed 24/7 service, explained late-night menu limitations, delivery fees, and advance breakfast ordering options with pricing.",
+      "tags": ["room_service", "dining_inquiry", "24_7_service", "breakfast_ordering", "resolved"]
+    }
+  ]
+}

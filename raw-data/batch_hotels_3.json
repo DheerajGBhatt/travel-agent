@@ -1,0 +1,534 @@
+{
+  "conversations": [
+    {
+      "id": "conv_hotel_023",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "date_change",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I need to change my hotel dates from Oct 10-12 to Oct 15-17. Is that possible? Booking HC778899",
+          "timestamp": "2025-09-22T11:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Yes, let me check if we can modify your dates. Looking at booking HC778899 now.",
+          "timestamp": "2025-09-22T11:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Hilton Chicago for October 10-12 (2 nights) can be modified. Let me check availability for October 15-17... Great news! Same room type (King Deluxe) is available. The rate for October 15-17 is $165/night vs your current $170/night. Would you like me to make the change?",
+          "timestamp": "2025-09-22T11:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please! And I'll get money back since it's cheaper?",
+          "timestamp": "2025-09-22T11:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Exactly! Your original booking was $340 for 2 nights. The new dates are $330 for 2 nights. You'll be refunded $10. There's no modification fee since you're changing more than 7 days in advance. I'm updating your reservation now to October 15-17. Your booking reference remains HC778899.",
+          "timestamp": "2025-09-22T11:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! Thank you!",
+          "timestamp": "2025-09-22T11:06:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! You'll receive an updated confirmation email with the new dates and the $10 refund will process within 5-7 days. Enjoy your stay!",
+          "timestamp": "2025-09-22T11:06:30Z"
+        }
+      ],
+      "resolution_summary": "Customer requested date change from Oct 10-12 to Oct 15-17. Agent confirmed availability, new dates were cheaper ($10 refund), processed modification with no fee.",
+      "tags": ["date_change", "no_modification_fee", "price_reduction", "advance_notice", "resolved"]
+    },
+    {
+      "id": "conv_hotel_024",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "room_upgrade_request",
+      "resolution_status": "resolved",
+      "sentiment": "satisfied",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I upgrade my room to a suite? It's for my anniversary. Booking HU445566",
+          "timestamp": "2025-08-18T15:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Of course! Let me check upgrade options for your anniversary stay. Looking at booking HU445566.",
+          "timestamp": "2025-08-18T15:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Congratulations on your anniversary! Your current booking at the Westin Seattle is a Standard King Room for September 5-7 ($200/night). I have two upgrade options: 1) Deluxe Suite with separate living room - $320/night (+$120/night), or 2) Executive King with city view - $250/night (+$50/night). Which interests you?",
+          "timestamp": "2025-08-18T15:33:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "The deluxe suite sounds perfect! How much total additional cost?",
+          "timestamp": "2025-08-18T15:34:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "For 2 nights, the upgrade to Deluxe Suite would be an additional $240 total ($120 x 2 nights). Your new total would be $640 instead of $400. As a special anniversary touch, I can also add a note requesting champagne and chocolates in your room - complimentary from the hotel for special occasions. Would you like me to proceed?",
+          "timestamp": "2025-08-18T15:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "That's so thoughtful! Yes, please upgrade and add that note!",
+          "timestamp": "2025-08-18T15:36:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've upgraded your room to Deluxe Suite and added an anniversary celebration note requesting champagne and chocolates. The additional $240 will be charged to your original payment method. Booking reference remains HU445566. You'll receive an updated confirmation with the suite details. Happy anniversary!",
+          "timestamp": "2025-08-18T15:38:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much! This is going to be wonderful!",
+          "timestamp": "2025-08-18T15:39:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're very welcome! I hope you have a beautiful anniversary celebration in Seattle!",
+          "timestamp": "2025-08-18T15:39:30Z"
+        }
+      ],
+      "resolution_summary": "Customer requested room upgrade for anniversary. Agent offered suite options, upgraded to Deluxe Suite for $240 additional, arranged complimentary anniversary amenities.",
+      "tags": ["room_upgrade", "suite_upgrade", "anniversary", "special_occasion", "complimentary_amenities"]
+    },
+    {
+      "id": "conv_hotel_025",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "add_extra_nights",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I extend my stay by 2 more nights? Currently checking out Sept 15, want to stay until Sept 17. Booking HX667788",
+          "timestamp": "2025-09-10T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check if we can extend your stay. Looking at booking HX667788.",
+          "timestamp": "2025-09-10T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your current booking at the Marriott Boston is September 13-15 (2 nights) at $180/night. Let me check availability for September 15-17... Good news! The same room type is available. The rate for September 15-17 is $190/night (slightly higher than your current rate due to weekend pricing). Should I add those 2 nights?",
+          "timestamp": "2025-09-10T10:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, add them. Will I be charged now or at the hotel?",
+          "timestamp": "2025-09-10T10:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "The additional 2 nights ($380 total) will be charged to the same card you used for the original booking within 24 hours. I'm extending your checkout date from September 15th to September 17th now. You'll stay in the same room for the entire 4-night stay - no need to change rooms. Your booking reference remains HX667788.",
+          "timestamp": "2025-09-10T10:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! So I don't have to check out and check back in?",
+          "timestamp": "2025-09-10T10:06:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Correct! You'll have the same room for all 4 nights continuously. Just make sure to inform the front desk when you check in on September 13th that your stay has been extended to the 17th so they don't mark you for checkout on the 15th. You'll receive an updated confirmation email showing the new checkout date.",
+          "timestamp": "2025-09-10T10:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great, thank you!",
+          "timestamp": "2025-09-10T10:08:00Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to extend stay by 2 nights. Agent confirmed availability, added nights at weekend rate, ensured same room for continuous stay, charged additional $380.",
+      "tags": ["extend_stay", "add_nights", "same_room", "weekend_rate", "resolved"]
+    },
+    {
+      "id": "conv_hotel_026",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "change_number_of_guests",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I originally booked for 2 guests but now there will be 3 of us. Can I add another person? Booking HG889900",
+          "timestamp": "2025-08-28T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check your booking and see if we can accommodate a third guest. Looking at HG889900.",
+          "timestamp": "2025-08-28T14:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Hyatt Denver is for a Standard King Room (2 guests) for September 10-12. Adding a third guest is possible, but we need to consider sleeping arrangements. A King Room typically accommodates 2 people comfortably. Would you like to: 1) Add a rollaway bed ($25/night), or 2) Upgrade to a room with 2 beds for better comfort?",
+          "timestamp": "2025-08-28T14:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "The rollaway bed should work. How much total for 2 nights?",
+          "timestamp": "2025-08-28T14:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "The rollaway bed is $25 per night, so $50 total for your 2-night stay. I'm adding that to your booking now along with noting 3 guests instead of 2. No change to the room rate ($160/night), just the $50 rollaway fee. Your new total is $370 instead of $320. The $50 will be charged to your original payment method.",
+          "timestamp": "2025-08-28T14:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "That works! Will the bed already be in the room when we arrive?",
+          "timestamp": "2025-08-28T14:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Yes! I've added a note that the rollaway bed should be set up before your arrival on September 10th. If for any reason it's not there when you check in, just contact the front desk and they'll bring it immediately. You'll receive an updated confirmation showing 3 guests and the rollaway bed fee.",
+          "timestamp": "2025-08-28T14:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you!",
+          "timestamp": "2025-08-28T14:08:30Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to add third guest to 2-person room. Agent offered rollaway bed option for $50 (2 nights), updated guest count, arranged pre-setup before arrival.",
+      "tags": ["add_guest", "rollaway_bed", "extra_person_fee", "sleeping_arrangements", "resolved"]
+    },
+    {
+      "id": "conv_hotel_027",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "special_occasion_arrangement",
+      "resolution_status": "resolved",
+      "sentiment": "satisfied",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "It's my wife's birthday during our stay. Can you help arrange something special? Booking HB556699",
+          "timestamp": "2025-09-15T16:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'd love to help make your wife's birthday special! Let me look at booking HB556699 and see what we can arrange.",
+          "timestamp": "2025-09-15T16:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Sheraton San Diego is for October 5-8. Which day is her birthday? And do you have any preferences - flowers, cake, champagne, room decoration?",
+          "timestamp": "2025-09-15T16:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Her birthday is October 7th, the middle of our stay. She loves chocolate cake and roses. What's available?",
+          "timestamp": "2025-09-15T16:03:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! The Sheraton offers a birthday package: dozen red roses + 6-inch chocolate cake + birthday card for $85, delivered to your room on October 7th. I can also add a note for turndown service to include rose petals and a special birthday message. Would you like me to arrange this?",
+          "timestamp": "2025-09-15T16:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes! That sounds perfect! Can it be delivered while we're out at dinner? We have reservations at 7pm.",
+          "timestamp": "2025-09-15T16:06:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! I'm booking the birthday package for October 7th with delivery between 6:30-7:00 PM while you're at dinner. The room will be set up with roses, cake, and decorations when you return. The $85 will be added to your hotel bill at checkout. I've also noted that it's a surprise. Your booking reference remains HB556699.",
+          "timestamp": "2025-09-15T16:08:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "This is going to be amazing! She'll be so surprised! Thank you!",
+          "timestamp": "2025-09-15T16:09:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! I hope she has a wonderful birthday celebration! You'll receive a confirmation email (sent only to you, not shared email addresses). Enjoy the trip!",
+          "timestamp": "2025-09-15T16:09:45Z"
+        }
+      ],
+      "resolution_summary": "Customer wanted to arrange birthday surprise for wife during hotel stay. Agent arranged birthday package with roses, cake, and decorations for $85, timed delivery while couple at dinner.",
+      "tags": ["special_occasion", "birthday", "surprise_arrangement", "package_addon", "romantic"]
+    },
+    {
+      "id": "conv_hotel_028",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "early_checkin_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My flight arrives at 10am but hotel checkin is at 3pm. Can I check in early? Booking HE445577",
+          "timestamp": "2025-09-08T11:30:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check early check-in options for booking HE445577.",
+          "timestamp": "2025-09-08T11:31:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Marriott Miami for September 15th has standard 3:00 PM check-in. I have a few options: 1) Guaranteed early check-in at 10:00 AM for $50, 2) Request early check-in (free, but not guaranteed - depends on room availability that morning), or 3) Store your luggage at the bell desk and use hotel facilities until 3:00 PM. Which would you prefer?",
+          "timestamp": "2025-09-08T11:33:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "What are the chances of getting the free early checkin?",
+          "timestamp": "2025-09-08T11:34:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "It varies by occupancy - if there are clean rooms available after overnight checkouts, they'll accommodate you. September 15th is a Wednesday (typically lower occupancy), so your chances are decent, maybe 60-70%. However, you won't know for certain until you arrive. The guaranteed option ensures you have the room at 10:00 AM.",
+          "timestamp": "2025-09-08T11:36:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Let's try the free request first. If I really need guaranteed can I pay the $50 when I arrive?",
+          "timestamp": "2025-09-08T11:37:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "That's a smart approach! I'm adding an early check-in request to your booking (no charge). If a room isn't available when you arrive at 10:00 AM, you can choose to pay the $50 guarantee or wait until 3:00 PM. I'll also note that you have luggage and may want to use hotel facilities while waiting. Your booking reference remains HE445577.",
+          "timestamp": "2025-09-08T11:39:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect! That gives me options. Thank you!",
+          "timestamp": "2025-09-08T11:39:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "You're welcome! The hotel will do their best to accommodate you. Have a great trip!",
+          "timestamp": "2025-09-08T11:40:15Z"
+        }
+      ],
+      "resolution_summary": "Customer arriving 5 hours before standard check-in time. Agent explained guaranteed ($50) vs requested (free, not guaranteed) early check-in options, added free request with flexibility to upgrade on arrival.",
+      "tags": ["early_checkin", "request_vs_guarantee", "arrival_flexibility", "luggage_storage", "resolved"]
+    },
+    {
+      "id": "conv_hotel_029",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "late_checkout_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "My flight isn't until 8pm on my checkout day. Can I get a late checkout? Booking HL778822",
+          "timestamp": "2025-08-20T14:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check late checkout options for booking HL778822.",
+          "timestamp": "2025-08-20T14:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Hilton Chicago has standard 12:00 PM checkout on August 30th. For late checkout, I have: 1) 2:00 PM checkout - $25, 2) 4:00 PM checkout - $50, or 3) 6:00 PM checkout - $75. Given your 8:00 PM flight, which time would work best?",
+          "timestamp": "2025-08-20T14:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "6pm would be ideal but $75 is steep. Is there a free option?",
+          "timestamp": "2025-08-20T14:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "I understand. You can request a free late checkout (usually until 2:00 PM) subject to availability that day, but it's not guaranteed. Alternatively, you could check out at noon and store your luggage with the bell desk for free, then use the hotel lobby/restaurant until your departure. Some guests find that more economical than paying $75 for the room after checkout.",
+          "timestamp": "2025-08-20T14:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Let me do the 4pm late checkout for $50. That gives me enough time to shower after a late lunch.",
+          "timestamp": "2025-08-20T14:06:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I'm adding 4:00 PM late checkout to your booking for $50. This will be added to your final bill at checkout. I'm also adding a reminder note so the front desk knows you're checking out at 4:00 PM on August 30th instead of noon. Your booking reference remains HL778822.",
+          "timestamp": "2025-08-20T14:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Great, thank you!",
+          "timestamp": "2025-08-20T14:08:30Z"
+        }
+      ],
+      "resolution_summary": "Customer needed late checkout for evening flight. Agent presented tiered late checkout pricing options, customer selected 4 PM checkout for $50 fee, added to final bill.",
+      "tags": ["late_checkout", "tiered_pricing", "departure_flexibility", "evening_flight", "resolved"]
+    },
+    {
+      "id": "conv_hotel_030",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "room_location_preference",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "Can I request a quiet room away from elevators? I'm a light sleeper. Booking HQ889933",
+          "timestamp": "2025-09-18T10:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Absolutely! Let me add that preference to booking HQ889933.",
+          "timestamp": "2025-09-18T10:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I'm adding notes to your booking at the Westin Seattle (October 5-7) requesting: 1) Quiet room location, 2) Away from elevators, 3) Away from ice machines and vending areas. These are important preferences and the hotel will do their best to accommodate. High floor rooms tend to be quieter - would you also like me to request a higher floor?",
+          "timestamp": "2025-09-18T10:03:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes, high floor would be great! Is there a charge for these requests?",
+          "timestamp": "2025-09-18T10:03:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "No charge at all! Room location preferences are complimentary requests. I should mention that these are noted preferences, not guarantees - the hotel will accommodate based on availability at check-in. However, booking in advance like you have (17 days ahead) gives them good flexibility to assign you a quiet, high-floor room away from elevators.",
+          "timestamp": "2025-09-18T10:05:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Understood. Should I mention this again when I check in?",
+          "timestamp": "2025-09-18T10:06:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "It's always helpful to politely remind the front desk during check-in. Your preferences are in the system, but mentioning it shows it's important to you. I've made the notes prominent in your booking. You'll receive an updated confirmation email showing these preferences. Booking reference remains HQ889933.",
+          "timestamp": "2025-09-18T10:07:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you!",
+          "timestamp": "2025-09-18T10:08:00Z"
+        }
+      ],
+      "resolution_summary": "Customer requested quiet room location away from elevators and high floor. Agent added all preferences to booking at no charge, explained they're best-effort based on availability.",
+      "tags": ["room_preference", "quiet_room", "high_floor", "elevator_distance", "complimentary_request"]
+    },
+    {
+      "id": "conv_hotel_031",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "connecting_rooms_request",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I have 2 separate room bookings for my family. Can they be connecting rooms? Bookings HC445588 and HC445599",
+          "timestamp": "2025-08-25T15:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me look at both bookings and see if we can arrange connecting rooms.",
+          "timestamp": "2025-08-25T15:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "I can see both bookings at the Marriott Orlando for September 10-13: HC445588 (2 Queen Beds) and HC445599 (King Room). These are perfect for connecting rooms. Let me check availability... Yes! I can request connecting rooms for your stay. There's no additional charge, subject to availability at check-in.",
+          "timestamp": "2025-08-25T15:03:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Is it guaranteed or just a request?",
+          "timestamp": "2025-08-25T15:04:15Z"
+        },
+        {
+          "role": "agent",
+          "content": "It's a priority request but not guaranteed. Hotels have limited connecting room inventory. However, you're booking 16 days in advance which is great! I'm noting this as a family travel request with preference for connecting rooms. The hotel will prioritize this when assigning rooms. You can also call the hotel directly 2-3 days before arrival to confirm they've assigned connecting rooms.",
+          "timestamp": "2025-08-25T15:06:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Ok, please add the request. We're traveling with young kids so it would really help.",
+          "timestamp": "2025-08-25T15:06:45Z"
+        },
+        {
+          "role": "agent",
+          "content": "Perfect! I've linked both bookings (HC445588 and HC445599) and added a prominent note: \"Family travel with young children - connecting rooms strongly preferred.\" I've also added the number of children and ages if you can provide that? It helps hotels understand the family configuration.",
+          "timestamp": "2025-09-25T15:08:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Two kids, ages 5 and 7.",
+          "timestamp": "2025-08-25T15:08:30Z"
+        },
+        {
+          "role": "agent",
+          "content": "Added! Both booking confirmations will show the connecting room request and children's ages. The hotel's direct number is 407-555-0100 if you want to follow up closer to your arrival. Have a wonderful family trip!",
+          "timestamp": "2025-08-25T15:09:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Thank you so much!",
+          "timestamp": "2025-08-25T15:10:00Z"
+        }
+      ],
+      "resolution_summary": "Customer requested connecting rooms for 2 separate bookings for family travel with young kids. Agent linked bookings, added priority request with children's ages, explained availability-based accommodation.",
+      "tags": ["connecting_rooms", "family_travel", "multiple_bookings", "children", "priority_request"]
+    },
+    {
+      "id": "conv_hotel_032",
+      "category": "hotels",
+      "subcategory": "modification",
+      "issue_type": "change_bed_type",
+      "resolution_status": "resolved",
+      "sentiment": "neutral",
+      "messages": [
+        {
+          "role": "customer",
+          "content": "I booked a King bed but actually need 2 Queen beds. Can I change that? Booking HK667799",
+          "timestamp": "2025-09-12T13:00:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Hello! Let me check if we can change your bed configuration. Looking at booking HK667799.",
+          "timestamp": "2025-09-12T13:01:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Your booking at the Hampton Inn Dallas for September 25-27 is currently a King Room at $140/night. Let me check availability for a 2 Queen Beds room... Great! It's available at the same rate ($140/night). Shall I make the change?",
+          "timestamp": "2025-09-12T13:02:30Z"
+        },
+        {
+          "role": "customer",
+          "content": "Yes please! And there's no price difference?",
+          "timestamp": "2025-09-12T13:03:00Z"
+        },
+        {
+          "role": "agent",
+          "content": "Correct - same price! I'm updating your room type from King to 2 Queen Beds now. Your total stays $280 for 2 nights. Booking reference remains HK667799. You'll receive an updated confirmation showing the new bed configuration.",
+          "timestamp": "2025-09-12T13:04:00Z"
+        },
+        {
+          "role": "customer",
+          "content": "Perfect, thank you!",
+          "timestamp": "2025-09-12T13:04:30Z"
+        }
+      ],
+      "resolution_summary": "Customer needed to change from King bed to 2 Queen beds. Agent confirmed availability at same rate, updated room configuration with no price change.",
+      "tags": ["bed_type_change", "room_configuration", "same_rate", "simple_modification", "resolved"]
+    }
+  ]
+}
