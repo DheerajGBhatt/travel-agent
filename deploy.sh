@@ -23,4 +23,4 @@ sam deploy \
     EnvName="dev" \
     BedrockModelId="global.anthropic.claude-sonnet-4-5-20250929-v1:0" \
     FoundationModelId="anthropic.claude-sonnet-4-5-20250929-v1:0" \
-    NeonDatabaseUrl="postgresql://neondb_owner:npg_5lHrwUfi7LTa@ep-rapid-mode-a1f44s5y-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+    NeonDatabaseUrl=""
